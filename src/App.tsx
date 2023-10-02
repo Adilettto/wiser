@@ -1,25 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Navigate, Route, Routes, useLocation } from 'react-router';
+import { routeArray } from 'Routes/route-config';
+import { useAuthRedirect } from 'Shared/Hooks/use-auth';
+import { useSelector } from 'react-redux';
+import { readObj } from 'Service/storage';
+import { useAppDispatch } from 'Redux/store';
+import { restoreSession } from 'Redux/Auth/reducer';
+import { ToastBlock } from 'Components/Notify/notify';
+import { selectAccount } from 'Redux/Auth/slice';
 
 function App() {
+  const location = useLocation();
+  const profile = useSelector(selectAccount);
+  const dispatch = useAppDispatch();
+
+  const routes = routeArray.map((r) => (
+    <Route key={r.path} path={r.path} element={<r.page />} />
+  ))
+  const redirect = useAuthRedirect(location);
+
+  if (!profile) {
+    const acc = readObj('account');
+    if (acc) {
+      dispatch(restoreSession())
+    }
+  }
+
+  if (redirect !== undefined) return <Navigate to={redirect} />
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ToastBlock />
+      <Routes>
+        {routes}
+      </Routes>
+    </>
   );
 }
 

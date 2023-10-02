@@ -1,6 +1,19 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "baseUrl": "src",
+    "paths": {
+      "@":["/"],
+      "Pages/*":["Pages/*"],
+      "Components/*":["Components/*"],
+      "Service/*":["Service/*"],
+      "Shared/*":["Shared/*"],
+      "Redux/*":["Redux/*"],
+      "Routes/*": ["Routes/*"],
+      "Styles/*": ["Styles/*"],
+      "Assets/*": ["Assets/*"],
+      "Containers/*": ["Containers/*"],
+    },
     "lib": [
       "dom",
       "dom.iterable",
