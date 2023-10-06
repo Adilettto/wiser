@@ -1,1 +1,14 @@
-export const svg = 'SVG';
+export { ReactComponent as SearchIcon } from "../Assets/sidebar/search.svg";
+export { ReactComponent as DashboardIcon } from "../Assets/sidebar/dashboard.svg";
+export { ReactComponent as LoadBoardICon } from "../Assets/sidebar/loadboard.svg";
+export { ReactComponent as MybidsIcon } from "../Assets/sidebar/myBids.svg";
+export { ReactComponent as MyloadsIcon } from "../Assets/sidebar/myLoads.svg";
+export { ReactComponent as CapacitySearchIcon } from "../Assets/sidebar/capacitySearch.svg";
+export { ReactComponent as AddLoadIcon } from "../Assets/sidebar/addLoad.svg";
+export { ReactComponent as NotificationIcon } from "../Assets/sidebar/notification.svg";
+export { ReactComponent as GroupChatsIcon } from "../Assets/sidebar/groupChats.svg";
+export { ReactComponent as SmsIcon } from "../Assets/sidebar/sms.svg";
+export { ReactComponent as UnitsIcon } from "../Assets/sidebar/units.svg";
+export { ReactComponent as AccountingIcon } from "../Assets/sidebar/accounting.svg";
+export { ReactComponent as SettingsIcon } from "../Assets/sidebar/settings.svg";
+export { ReactComponent as HomeIcon } from "../Assets/sidebar/home.svg";
