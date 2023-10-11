@@ -1,0 +1,9 @@
+.select {
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+  }
+}

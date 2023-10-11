@@ -6,9 +6,14 @@ export interface RouteData {
   page: FC;
 }
 
-export const routeMap = new Map<string, RouteData>().set("/", {
-  page: pages.HomePage,
-  permissions: [],
-});
+export const routeMap = new Map<string, RouteData>()
+  .set("/", {
+    page: pages.HomePage,
+    permissions: [],
+  })
+  .set("/load", {
+    page: pages.LoadListPage,
+    permissions: [],
+  });
 
 export const routeArray = Array.from(routeMap, ([path, r]) => ({ ...r, path }));

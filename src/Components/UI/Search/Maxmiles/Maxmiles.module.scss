@@ -1,0 +1,67 @@
+.container {
+  background-color: #fdfdfd;
+  border-radius: 15px;
+  width: 230px;
+  height: 176px;
+  position: absolute;
+  top: 30px;
+
+  &__backg {
+    margin: 20px;
+    width: 190px;
+    height: 41px;
+    &__text {
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #005dac;
+      padding-bottom: 20px;
+    }
+    &__registr {
+      position: relative;
+
+      &_input {
+        padding-left: 30px;
+        color: #a5a5a5;
+      }
+      &_icon {
+        position: absolute;
+        top: 4px;
+        left: 3px;
+      }
+    }
+    &_btn {
+      background-color: #005dac;
+      color: white;
+      font-family: Roboto;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: center;
+      width: 190px;
+      height: 41px;
+      padding: 10px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    &__switch {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding-top: 20px;
+      &_match {
+        color: #a5a5a5;
+        font-family: Roboto;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+  }
+}
