@@ -1,0 +1,60 @@
+.search {
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  width: 299px;
+  height: 215px;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  &__contant {
+    width: 260px;
+    height: 136px;
+    padding: 20px;
+    &__title {
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #005dac;
+      padding-bottom: 20px;
+    }
+    &__registration {
+      display: flex;
+      justify-content: space-around;
+      &_switch {
+        &_switchItem {
+          margin: 0;
+          padding: 0;
+        }
+        &_text {
+          font-family: Roboto;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 14px;
+          letter-spacing: 0em;
+          text-align: left;
+          color: #a5a5a5;
+        }
+      }
+    }
+
+    &__btn {
+      background-color: #005dac;
+      color: white;
+      font-family: Roboto;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: center;
+      width: 259px;
+      height: 41px;
+      padding: 10px;
+      border-radius: 10px;
+      gap: 10px;
+      margin-top: 20px;
+    }
+  }
+}
