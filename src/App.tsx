@@ -9,6 +9,8 @@ import { useAppDispatch } from 'Redux/store';
 import { restoreSession } from 'Redux/Auth/reducer';
 import { ToastBlock } from 'Components/Notify/notify';
 import { selectAccount } from 'Redux/Auth/slice';
+import { AddLoad } from 'Components/AddLoad/AddLoad';
+
 
 function App() {
   const location = useLocation();
@@ -33,6 +35,7 @@ function App() {
       <ToastBlock />
       <Routes>
         {routes}
+        <Route path="/add-load" element={<AddLoad/>}/>
       </Routes>
     </>
   );
