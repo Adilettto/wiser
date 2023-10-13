@@ -1,9 +1,9 @@
 import React from "react";
 import type { CustomTagProps } from "rc-select/lib/BaseSelect";
 import { Select, Tag } from "antd";
-import styles from "./Select.module.scss";
 import { ReactComponent as Search } from "../../Assets/search.svg";
 import { DownOutlined } from "@ant-design/icons";
+import styles from "./Select.module.scss";
 
 const options = [
   { value: "gold" },
@@ -37,12 +37,11 @@ const SelectField: React.FC = () => (
       mode="multiple"
       className={styles.select}
       tagRender={tagRender}
-      // defaultValue={["gold", "cyan"]}
       style={{ width: "100%", minWidth: "150px" }}
       options={options}
       suffixIcon={<DownOutlined />}
     />
-    <span className={styles.select__icon}>
+    <span className={styles.select__icon} style={{ marginRight: "25px " }}>
       <Search />
     </span>
   </div>

@@ -1,0 +1,12 @@
+.pagination {
+  li {
+    background: transparent !important;
+    border: none !important;
+    span.active {
+      a {
+        text-decoration: underline;
+        color: #0586ff;
+      }
+    }
+  }
+}

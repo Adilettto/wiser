@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import styles from "./Sidebar.module.scss";
 import wiserLogo from "../../Assets/sidebar/wiserLogo.svg";
 import { sidebar } from "Shared/Constants/sidebar";
 import Icon from "@ant-design/icons";
 import cn from "classnames";
 import { useLocation, useNavigate } from "react-router";
+import styles from "./Sidebar.module.scss";
 
 const Sidebar = () => {
   const navigate = useNavigate();

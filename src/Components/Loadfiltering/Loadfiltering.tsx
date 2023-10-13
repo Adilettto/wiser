@@ -6,13 +6,20 @@ import Vehicle from "./Vehicle/Vehicle";
 import Miles from "./Miles/Miles";
 import Match from "./Match/Match";
 
+import Paginations from "Components/UI/Pagination/Pagination";
+import { useParams } from "react-router-dom";
+
 import styles from "./Loadfiltering.module.scss";
 
 const Loadfiltering: React.FC = () => {
+  let params = useParams();
+
   return (
     <div className={styles.loadfilter}>
       <div className={styles.loadfilter__header}>
-        <h2 className={styles.loadfilter__header_text}>Loadboard</h2>
+        <h2 className={styles.loadfilter__header_text}>
+          Loadboard id: {params.id}
+        </h2>
         <div className={styles.loadfilter__header_loadbar}>
           <Button className={styles.loadfilter__header__loadbar_addload}>
             Add load
@@ -90,6 +97,9 @@ const Loadfiltering: React.FC = () => {
           </tr>
         </tbody>
       </table>
+      <div className={styles.loadfilter__blockpagination}>
+        <Paginations />
+      </div>
     </div>
   );
 };
