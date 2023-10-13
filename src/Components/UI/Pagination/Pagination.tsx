@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import styled from "./Pagination.module.scss";
 
 const Paginations: React.FC = () => {
-  const navigate = useNavigate();
   const [active, setActive] = useState<number>(1);
+  const navigate = useNavigate();
 
   const onChange = (page: number) => navigate(`/load/page/${page}`);
 
