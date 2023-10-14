@@ -7,9 +7,13 @@ export interface RouteData {
 }
 
 export const routeMap = new Map<string, RouteData>()
-  .set('/', {
+  .set("/", {
     page: pages.HomePage,
-    permissions: []
+    permissions: [],
   })
+  .set("/loadboard", {
+    page: pages.Loadboard,
+    permissions: [],
+  });
 
 export const routeArray = Array.from(routeMap, ([path, r]) => ({ ...r, path }));
