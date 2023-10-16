@@ -1,0 +1,23 @@
+.info {
+  &__columns {
+    display: flex;
+    gap: 88px;
+    align-items: flex-start;
+  }
+
+  &__column {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 10%;
+
+    &__li {
+      color: #005dac;
+    }
+  }
+
+  &__column li {
+    margin-bottom: 10px;
+    white-space: nowrap;
+  }
+}

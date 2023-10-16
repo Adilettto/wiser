@@ -7,10 +7,10 @@ const Paginations: React.FC = () => {
   const [active, setActive] = useState<number>(1);
   const navigate = useNavigate();
 
-  const onChange = (page: number) => navigate(`/load/page/${page}`);
+  const onChange = (page: number) => navigate(`/load/?page=${page}`);
 
   return (
-    <div className="">
+    <div>
       <Pagination
         className={styled.pagination}
         itemRender={(pageNumber, _, a) => (

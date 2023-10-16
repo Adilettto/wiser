@@ -1,0 +1,69 @@
+.miles {
+  &__title {
+    width: 90px;
+  }
+  &__ul {
+    width: 100%;
+    &__dis {
+      margin-top: 5px;
+      color: black;
+    }
+    &__mi {
+      display: flex;
+      flex-direction: column;
+      margin-top: -5px;
+      white-space: nowrap;
+    }
+    &__cr {
+      margin-top: -5px;
+      margin-left: 7px;
+    }
+    &__lbs {
+      color: black;
+      margin-top: -4px;
+      margin-left: 10px;
+    }
+    &__CA {
+      color: red;
+
+      margin-left: 10px;
+    }
+    &__in {
+      color: black;
+      margin-top: -4px;
+      margin-left: 10px;
+    }
+    &__num {
+      margin-left: 10px;
+      margin-top: 3px;
+    }
+    &__p {
+      color: black;
+      margin-left: 10px;
+    }
+    &__li {
+      background-color: white;
+      border-radius: 10px;
+      margin: 20px;
+      display: flex;
+      list-style-type: none;
+      gap: 50px;
+      height: 40px;
+      padding: 10px;
+      color: #0077b6;
+
+      &__miles {
+        background-color: white;
+        border-radius: 10px;
+        margin: 20px;
+        display: flex;
+        list-style-type: none;
+        gap: 60px;
+        height: 40px;
+        padding: 10px;
+        margin-top: 45px;
+        color: #0077b6;
+      }
+    }
+  }
+}

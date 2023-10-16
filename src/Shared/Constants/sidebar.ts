@@ -15,7 +15,7 @@ import { HomeIcon } from "Assets/index";
 
 export const sidebar = [
   { icon: DashboardIcon, name: "Dashboard", link: "/dashboard" },
-  { icon: LoadBoardICon, name: "Load Board", link: "/load/page/1" },
+  { icon: LoadBoardICon, name: "Load Board", link: "/load?page=1" },
   { icon: MybidsIcon, name: "My Bids", link: "/mybids" },
   { icon: MyloadsIcon, name: "My Loads", link: "/myloads" },
   { icon: CapacitySearchIcon, name: "Capacity Search", link: "/capacity" },

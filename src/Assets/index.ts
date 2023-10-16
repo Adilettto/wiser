@@ -12,3 +12,4 @@ export { ReactComponent as UnitsIcon } from "../Assets/sidebar/units.svg";
 export { ReactComponent as AccountingIcon } from "../Assets/sidebar/accounting.svg";
 export { ReactComponent as SettingsIcon } from "../Assets/sidebar/settings.svg";
 export { ReactComponent as HomeIcon } from "../Assets/sidebar/home.svg";
+export { ReactComponent as HorizIcon } from "./horiz.svg";
