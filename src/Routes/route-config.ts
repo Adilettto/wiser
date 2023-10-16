@@ -14,6 +14,14 @@ export const routeMap = new Map<string, RouteData>()
   .set("/loadboard", {
     page: pages.Loadboard,
     permissions: [],
+  })
+  .set("/health", {
+    page: pages.HomePage,
+    permissions: [],
+  })
+  .set("/load", {
+    page: pages.LoadListPage,
+    permissions: [],
   });
 
 export const routeArray = Array.from(routeMap, ([path, r]) => ({ ...r, path }));
