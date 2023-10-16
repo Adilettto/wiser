@@ -1,5 +1,5 @@
 export { HomePage } from "./Home/Home";
-export { Loadboard } from "./Loadboard/Loadboard";
+export { LoadDetailPage } from "./LoadBoard/LoadDetail";
 
-export { LoadListPage } from "./Loadboard/LoadList";
-export {Health} from './HealthCheck/Health';
+export { LoadListPage } from "./LoadBoard/LoadList";
+export { Health } from './HealthCheck/Health';

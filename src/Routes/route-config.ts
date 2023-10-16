@@ -16,7 +16,7 @@ export const routeMap = new Map<string, RouteData>()
     permissions: [],
   })
   .set("/load/:id", {
-    page: pages.Loadboard,
+    page: pages.LoadDetailPage,
     permissions: [],
   })
   .set("/health", {
