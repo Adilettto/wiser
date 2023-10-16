@@ -11,16 +11,16 @@ export const routeMap = new Map<string, RouteData>()
     page: pages.HomePage,
     permissions: [],
   })
-  .set("/loadboard", {
+  .set("/load", {
+    page: pages.LoadListPage,
+    permissions: [],
+  })
+  .set("/load/:id", {
     page: pages.Loadboard,
     permissions: [],
   })
   .set("/health", {
     page: pages.HomePage,
-    permissions: [],
-  })
-  .set("/load", {
-    page: pages.LoadListPage,
     permissions: [],
   });
 

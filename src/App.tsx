@@ -32,7 +32,6 @@ function App() {
   return (
     <>
       <ToastBlock />
-      <Loadboard />
       <Routes>{routes}</Routes>
     </>
   );
