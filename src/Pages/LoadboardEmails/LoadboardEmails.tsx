@@ -1,3 +1,5 @@
+import React from "react";
+import styles from "./LoadboardEmails.module.scss";
 import line from "../../Assets/line.png";
 import primary from "../../Assets/primary.png";
 import { Info } from "../../Components/Info/Info";
@@ -8,13 +10,9 @@ import Frame from "../../Assets/Frame.svg";
 import frameOne from "../../Assets/FrameTwo.svg";
 import frameTwo from "../../Assets/FrameThree.svg";
 import frameThree from "../../Assets/FrameFour.svg";
-import email from "../../Assets/email.svg";
-import phone from "../../Assets/phone.svg";
-import styles from "./Loadboard.module.scss";
 import { InfoBlock } from "Components/InfoBlock/InfoBlock";
-import { LoadboardEmails } from "Pages/LoadboardEmails/LoadboardEmails";
 
-export const Loadboard = () => {
+export const LoadboardEmails = () => {
   return (
     <div className={styles.loadpage}>
       <div className={styles.loadboard}>
@@ -72,41 +70,7 @@ export const Loadboard = () => {
             </div>
           </div>
         </div>
-        <Info />
-        <Miles />
       </div>
-      <div className={styles.data}>
-        <div className={styles.data__broker}>
-          <div className={styles.data__one}>
-            <h4>Broker</h4>
-            <div>
-              <img src={phone} />
-              <img src={email} />
-            </div>
-          </div>
-          <div className={styles.data__two}>
-            <p>Chreistiano (9130) Ronaldo</p>
-          </div>
-        </div>
-
-        <div className={styles.data__company}>
-          <div className={styles.data__one}>
-            <h4>Company</h4>
-            <div>
-              <img src={Frame} alt="frame" />
-              <img src={email} alt="email icon" />
-            </div>
-          </div>
-          <div className={styles.data__two}>
-            <p>(S) ASAP ESPRES</p>
-          </div>
-          <div className={styles.data__icons}>
-            <img src={star} alt="star icon" />
-            <img src={horiz} alt=" horizontal icon" />
-          </div>
-        </div>
-      </div>
-      <LoadboardEmails />
     </div>
   );
 };
