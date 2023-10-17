@@ -19,6 +19,10 @@ export const routeMap = new Map<string, RouteData>()
     page: pages.LoadDetailPage,
     permissions: [],
   })
+  .set("/bids", {
+    page: pages.Bids,
+    permissions: [],
+  })
   .set("/health", {
     page: pages.HomePage,
     permissions: [],
