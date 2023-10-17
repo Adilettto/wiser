@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import line from "Assets/line.png";
 import primary from "Assets/primary.png";
 import { Info } from "Components/Info/Info";
@@ -14,12 +16,20 @@ import styles from "./Loadboard.module.scss";
 import { InfoBlock } from "Components/InfoBlock/InfoBlock";
 
 export const Loadboard = () => {
+  const navigate = useNavigate();
+
+  function goBack() {
+    navigate(-1);
+  }
+
   return (
     <div className={styles.loadpage}>
       <div className={styles.loadboard}>
         <div className={styles.loadboard__block}>
           <div className={styles.loadboard__arrow}>
-            <img src={primary} alt="arrow" />
+            <button className={styles.loadboard__button} onClick={goBack}>
+              <img src={primary} alt="arrow" />
+            </button>
             <h1>Loadboard</h1>
           </div>
           <div className={styles.loadboard__form}>
@@ -79,8 +89,8 @@ export const Loadboard = () => {
           <div className={styles.data__one}>
             <h4>Broker</h4>
             <div>
-              <img src={phone} alt='phone' />
-              <img src={email} alt='email' />
+              <img src={phone} alt="phone" />
+              <img src={email} alt="email" />
             </div>
           </div>
           <div className={styles.data__two}>
