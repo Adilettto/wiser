@@ -24,9 +24,7 @@ export const InfoBlock: React.FC<InfoBlockProps> = ({
         <li className={styles.info__column__li}>Weight</li>
         <li className={styles.info__column__li}>Truck size</li>
         <li className={styles.info__column__li}>Notes</li>
-        <p>
-          LG/PJ/offloading/residential delievery/place the skid to the ground
-        </p>
+       
       </ul>
       <ul className={styles.info__column}>
         <li>{leaded}</li>

@@ -78,6 +78,10 @@ export const Loadboard = () => {
                 weight="10"
                 truckSize="CARGO VAN"
               />
+              <p>
+                LG/PJ/offloading/residential delievery/place the skid to the
+                ground
+              </p>
             </div>
           </div>
         </div>

@@ -93,6 +93,7 @@ h2 {
 
   &__li {
     color: #005dac;
+    margin-top: 10px;
   }
   &__delivery {
     display: flex;
@@ -109,9 +110,9 @@ h2 {
     height: 158px;
     flex-direction: column;
     gap: 20px;
-    top: -7px;
+
     align-items: flex-start;
-    margin-top: -259px;
+    margin-top: -283px;
     display: flex;
     margin-left: 33px;
   }
@@ -124,13 +125,13 @@ h2 {
     gap: 10px;
 
     &__copyIcon {
-      margin-top: 50px;
+      margin-top: 78px;
     }
   }
 
   h5 {
     font-size: 20px;
-    margin-top: 50px;
+    margin-top: 75px;
     padding: 10px;
   }
 }
