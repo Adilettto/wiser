@@ -2,6 +2,7 @@ import Sidebar from "Components/Sidebar/Sidebar";
 import React, { useState } from "react";
 import styles from "./MyBids.module.scss";
 import { Button, Pagination, Tabs } from "antd";
+import phoneIcon from "../../Assets/phone.svg";
 
 const { TabPane } = Tabs;
 
@@ -32,11 +33,14 @@ export const MyBids = () => {
           onChange={handleTabChange}
           className={styles.bids__block__tabs}
         >
-          <TabPane  tab={<div className={styles.bids__block__tabs__tab}>Active</div>} key="1" >
+          <TabPane
+            tab={<div className={styles.bids__block__tabs__tab}>Pending</div>}
+            key="1"
+          >
             <table className={styles.bids__table}>
               <thead>
                 <tr>
-                  <th>Created</th>
+                  <th>CREATED</th>
                   <th>REF ID</th>
                   <th>PICK-UP AND DELIVERY</th>
                   <th>MILES</th>
@@ -50,40 +54,42 @@ export const MyBids = () => {
 
               <tbody>
                 <tr>
-                  <td>05:14 am</td>
                   <td>
-                    miami, <br /> FL 33166
+                    08:01 pm <br />
+                    09/11/2023
                   </td>
                   <td>
-                    Orlando, <br /> FL 32827
+                    12191 <br /> Pro#Ship
                   </td>
+                  <td>Hammond, IN 46327 <br/>Channahon, IL 60410</td>
                   <td>
-                    CARGO <br /> VAN
+                  48 mi
                   </td>
-                  <td>240</td>
-                  <td>0/0</td>
-                  <td>cdienoed</td>
+                  <td>WOO9 <br/>$485</td>
+                  <td>AIm transfer and sto...<br/>$485 </td>
+                  <td>Johny W<br/>dispatch@wiserinc.us</td>
                   <td>
-                    (S) PINNACLE <br /> PRO LOGISTIC...
+                    <img src={phoneIcon} alt="phone-icon" />
                   </td>
                 </tr>
 
                 <tr>
-                  <td>05:14 am</td>
                   <td>
-                    miami, <br /> FL 33166
+                    08:01 pm <br />
+                    09/11/2023
                   </td>
                   <td>
-                    Orlando, <br /> FL 32827
+                    12191 <br /> Pro#Ship
                   </td>
+                  <td>Hammond, IN 46327 <br/>Channahon, IL 60410</td>
                   <td>
-                    CARGO <br /> VAN
+                  48 mi
                   </td>
-                  <td>240</td>
-                  <td>0/0</td>
-                  <td>cdienoed</td>
+                  <td>WOO9 <br/>$485</td>
+                  <td>AIm transfer and sto...<br/>$485 </td>
+                  <td>Johny W<br/>dispatch@wiserinc.us</td>
                   <td>
-                    (S) PINNACLE <br /> PRO LOGISTIC...
+                    <img src={phoneIcon} alt="phone-icon" />
                   </td>
                 </tr>
               </tbody>
@@ -95,26 +101,11 @@ export const MyBids = () => {
               className={styles.bids__block__navPage}
             />
           </TabPane>
-          <TabPane tab={<div className={styles.bids__block__tabs__tab}>Completed</div>} key="2">
+          <TabPane
+            tab={<div className={styles.bids__block__tabs__tab}>History</div>}
+            key="2"
+          >
             Content 2
-            <Pagination
-              current={currentPagination}
-              onChange={handlePaginationChange}
-              total={50}
-              className={styles.bids__block__navPage}
-            />
-          </TabPane>
-          <TabPane tab={<div className={styles.bids__block__tabs__tab}>History</div>} key="3">
-            Content 3
-            <Pagination
-              current={currentPagination}
-              onChange={handlePaginationChange}
-              total={50}
-              className={styles.bids__block__navPage}
-            />
-          </TabPane>
-          <TabPane tab={<div className={styles.bids__block__tabs__tab}>Unit</div>} key="4">
-            Content 4
             <Pagination
               current={currentPagination}
               onChange={handlePaginationChange}
