@@ -6,19 +6,24 @@
   font-family: "Inter", sans-serif;
   font-style: normal;
   line-height: normal;
+  margin-left: 4px;
 }
 
 h2 {
   font-size: 26px;
-  font-weight: 10px;
+  font-weight: 500;
 }
 
 .loadpage {
-  background-color: #a2d2ff;
 }
 
 .loadboard {
   display: flex;
+
+  &__button {
+    background: rgb(0 0 0 / 0%);
+    border: none;
+  }
 
   h3 {
     display: inline-flex;
@@ -48,7 +53,8 @@ h2 {
 
     h1 {
       display: inline;
-      font-size: 20px;
+      font-size: 30px;
+      font-weight: 500;
     }
   }
 
@@ -58,7 +64,7 @@ h2 {
     width: 282px;
     margin: 0 20px;
     padding: 10px;
-    height: 740px;
+    height: 778px;
   }
   &__h {
     display: inline-flex;
@@ -66,6 +72,7 @@ h2 {
     font-size: 10px;
     color: #0077b6;
     gap: 10px;
+    margin-top: 10px;
   }
 }
 
@@ -86,6 +93,7 @@ h2 {
 
   &__li {
     color: #005dac;
+    margin-top: 10px;
   }
   &__delivery {
     display: flex;
@@ -102,9 +110,9 @@ h2 {
     height: 158px;
     flex-direction: column;
     gap: 20px;
-    top: -7px;
+
     align-items: flex-start;
-    margin-top: -259px;
+    margin-top: -283px;
     display: flex;
     margin-left: 33px;
   }
@@ -117,13 +125,13 @@ h2 {
     gap: 10px;
 
     &__copyIcon {
-      margin-top: 50px;
+      margin-top: 78px;
     }
   }
 
   h5 {
     font-size: 20px;
-    margin-top: 50px;
+    margin-top: 75px;
     padding: 10px;
   }
 }
@@ -139,6 +147,8 @@ h2 {
   width: 282px;
   height: 253px;
   margin: 20px;
+  margin-top: -124px;
+  margin-left: 29px;
 
   &__broker {
     color: #0077b6;
