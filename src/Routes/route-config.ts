@@ -15,6 +15,10 @@ export const routeMap = new Map<string, RouteData>()
     page: pages.LoadListPage,
     permissions: [],
   })
+  .set("/loads", {
+    page: pages.Loads,
+    permissions: [],
+  })
   .set("/load/:id", {
     page: pages.LoadDetailPage,
     permissions: [],
