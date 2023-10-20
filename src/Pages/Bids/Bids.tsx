@@ -1,6 +1,11 @@
+import { Layout } from "Components/Layout/Layout";
 import { MyBids } from "Containers/MyBids/MyBids";
 import React from "react";
 
 export const Bids = () => {
-  return <MyBids />;
+  return (
+    <Layout>
+      <MyBids />
+    </Layout>
+  );
 };

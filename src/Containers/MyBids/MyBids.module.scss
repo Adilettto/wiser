@@ -1,22 +1,15 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .bids {
-  background: url(../../Assets/bg.jpg);
-  height: 965px;
+  // height: 965px;
   position: relative;
 
-  h1 {
+  & h1 {
     font-size: 30px;
     font-style: normal;
     font-weight: 500;
   }
 
   &__block {
-    margin-left: 10%;
+    margin-left: 20px;
     padding: 31px 20px;
 
     &__header {
@@ -50,18 +43,21 @@
         border-radius: 14px;
         cursor: pointer;
         transition: background-color 0.3s;
-        background: #005dac;
-        color: #fff;
-        
+        background: white;
+        color: #005dac;
+
+        &_active {
+          background: #005dac;
+          color: #fff;
+        }
       }
+      
     }
   }
 
   & table {
     border-spacing: 0 3px;
-    width: 95%;
-    
-
+    width: 100%;
     & thead {
         
       & tr {
