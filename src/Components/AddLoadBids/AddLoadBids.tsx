@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./AddLoad.module.scss";
+import styles from "./AddLoadBids.module.scss";
 import { Button, Input, Modal } from "antd";
 import addIcon from "Assets/plusIcon.svg";
 import dotsIcon from "Assets/dotsIcon.svg";
@@ -13,12 +13,10 @@ export const AddLoad: React.FC<AddLoadProps> = ({visible, onCancel}) => {
   
   const [isPickupFieldVisible, setIsPickupFieldVisible] = useState(false);
 
- 
-
   const handleAddPickupField = () => {
     setIsPickupFieldVisible(true);
   };
-
+  
   return (
     <Modal
       title="Add load"
