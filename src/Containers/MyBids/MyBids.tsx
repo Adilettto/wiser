@@ -11,10 +11,10 @@ const { TabPane } = Tabs;
 export const MyBids = () => {
   const [currentTab, setCurrentTab] = useState<string>("1");
   const [currentPagination, setCurrentPagination] = useState<number>(1);
-  const [isModalVisible, setIsModalVisible] = useState(true);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleModalVisiblity = () => {
-    setIsModalVisible(false);
+    setIsModalVisible(!isModalVisible);
   };
 
   const handleTabChange = (tab: string) => {
