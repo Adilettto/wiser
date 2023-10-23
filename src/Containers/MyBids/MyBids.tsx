@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styles from "./MyBids.module.scss";
 import { Button, Pagination, Tabs } from "antd";
-import phoneIcon from "../../Assets/phone.svg";
+import phoneIcon from "Assets/phone.svg";
 import { AddLoad } from "Components/AddLoadBids/AddLoadBids";
+
 
 
 const { TabPane } = Tabs;
