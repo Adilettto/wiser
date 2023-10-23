@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from "./MyBids.module.scss";
 import { Button, Pagination, Tabs } from "antd";
-import phoneIcon from "Assets/phone.svg";
 import { AddLoad } from "Components/AddLoadBids/AddLoadBids";
-
+import cn from "classnames";
+import BidsList from "Components/MyBids/BidsList/BidsList";
 
 
 const { TabPane } = Tabs;
@@ -17,12 +17,9 @@ export const MyBids = () => {
     setIsModalVisible(false);
   };
 
-
   const handleTabChange = (tab: string) => {
     setCurrentTab(tab);
   };
-
- 
 
   const handlePaginationChange = (page: number) => {
     setCurrentPagination(page);
@@ -33,8 +30,11 @@ export const MyBids = () => {
       <div className={styles.bids__block}>
         <div className={styles.bids__block__header}>
           <h1>My Bids</h1>
-          <AddLoad visible={isModalVisible} onCancel={handleModalVisiblity}/>
-          <Button className={styles.bids__block__header__btn} onClick={handleModalVisiblity}>
+          <AddLoad visible={isModalVisible} onCancel={handleModalVisiblity} />
+          <Button
+            className={styles.bids__block__header__btn}
+            onClick={handleModalVisiblity}
+          >
             + Add load
           </Button>
         </div>

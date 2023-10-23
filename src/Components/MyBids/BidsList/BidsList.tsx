@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./BidsList.module.scss";
+import phoneIcon from "Assets/phone.svg";
 
 type BidsListProps = {};
 
@@ -85,12 +86,6 @@ const BidsList: React.FC<BidsListProps> = () => {
           </tr>
         </tbody>
       </table>
-      <Pagination
-        current={currentPagination}
-        onChange={handlePaginationChange}
-        total={50}
-        className={styles.bids__block__navPage}
-      />
     </div>
   );
 };
