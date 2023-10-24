@@ -49,8 +49,14 @@
         border-radius: 14px;
         cursor: pointer;
         transition: background-color 0.3s;
-        background: #fff;
-        color: #a5a5a5;
+        transition: background-color 0.3s;
+        background: white;
+        color: #005dac;
+
+        &_active {
+          background: #005dac;
+          color: #fff;
+        }
       }
 
       &__status {

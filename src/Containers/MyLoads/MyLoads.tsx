@@ -2,6 +2,7 @@ import Sidebar from "Components/Sidebar/Sidebar";
 import React, { useState } from "react";
 import styles from "./MyLoads.module.scss";
 import { Button, Pagination, Tabs } from "antd";
+import cn from "classnames";
 
 const { TabPane } = Tabs;
 
@@ -33,7 +34,10 @@ export const MyLoads = () => {
           className={styles.loads__block__tabs}
         >
           <TabPane
-            tab={<div className={styles.loads__block__tabs__tab}>Active</div>}
+            tab={<div className={cn(
+              styles.loads__block__tabs__tab,
+              currentTab === "1" && styles.loads__block__tabs__tab_active
+            )}>Active</div>}
             key="1"
           >
             <table className={styles.loads__table}>
@@ -139,7 +143,10 @@ export const MyLoads = () => {
             />
           </TabPane>
           <TabPane
-            tab={<div className={styles.loads__block__tabs__tab}>Checkout</div>}
+            tab={<div className={cn(
+              styles.loads__block__tabs__tab,
+              currentTab === "2" && styles.loads__block__tabs__tab_active
+            )}>Checkout</div>}
             key="2"
           >
             <table className={styles.loads__table}>
@@ -284,8 +291,10 @@ export const MyLoads = () => {
             />
           </TabPane>
           <TabPane
-            tab={
-              <div className={styles.loads__block__tabs__tab}>Completed</div>
+            tab={<div className={cn(
+              styles.loads__block__tabs__tab,
+              currentTab === "3" && styles.loads__block__tabs__tab_active
+            )}>Completed</div>
             }
             key="3"
           >
@@ -431,7 +440,10 @@ export const MyLoads = () => {
             />
           </TabPane>
           <TabPane
-            tab={<div className={styles.loads__block__tabs__tab}>History</div>}
+            tab={<div className={cn(
+              styles.loads__block__tabs__tab,
+              currentTab === "4" && styles.loads__block__tabs__tab_active
+            )}>History</div>}
             key="4"
           >
             <table className={styles.loads__table}>
