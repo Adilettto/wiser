@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./MyBids.module.scss";
 import { Button, Pagination, Tabs } from "antd";
-import { AddLoad } from "Components/AddLoadBids/AddLoadBids";
+import { NewLoad } from "Components/AddLoadBids/NewLoad";
 import cn from "classnames";
 import BidsList from "Components/MyBids/BidsList/BidsList";
 
@@ -30,7 +30,7 @@ export const MyBids = () => {
       <div className={styles.bids__block}>
         <div className={styles.bids__block__header}>
           <h1>My Bids</h1>
-          <AddLoad visible={isModalVisible} onCancel={handleModalVisiblity} />
+          <NewLoad visible={isModalVisible} onCancel={handleModalVisiblity} />
           <Button
             className={styles.bids__block__header__btn}
             onClick={handleModalVisiblity}
@@ -57,6 +57,12 @@ export const MyBids = () => {
             key="1"
           >
             <BidsList />
+            <Pagination
+              current={currentPagination}
+              onChange={handlePaginationChange}
+              total={50}
+              className={styles.bids__block__navPage}
+            />
           </TabPane>
           <TabPane
             tab={
@@ -71,7 +77,7 @@ export const MyBids = () => {
             }
             key="2"
           >
-            Content 2
+            <BidsList/>
             <Pagination
               current={currentPagination}
               onChange={handlePaginationChange}
