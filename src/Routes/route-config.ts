@@ -22,6 +22,10 @@ export const routeMap = new Map<string, RouteData>()
   .set("/health", {
     page: pages.HomePage,
     permissions: [],
+  })
+  .set("/settings", {
+    page: pages.Settings,
+    permissions: [],
   });
 
 export const routeArray = Array.from(routeMap, ([path, r]) => ({ ...r, path }));

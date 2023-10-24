@@ -3,11 +3,14 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "./Pagination.module.scss";
 
-const Paginations: React.FC = () => {
+type PaginationsProps = {
+  link: string;
+};
+const Paginations: React.FC<PaginationsProps> = ({ link }) => {
   const [active, setActive] = useState<number>(1);
   const navigate = useNavigate();
 
-  const onChange = (page: number) => navigate(`/load/?page=${page}`);
+  const onChange = (page: number) => navigate(`/${link}/?page=${page}`);
 
   return (
     <div>

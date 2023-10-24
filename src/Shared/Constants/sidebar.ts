@@ -6,7 +6,6 @@ import { MyloadsIcon } from "Assets/index";
 import { CapacitySearchIcon } from "Assets/index";
 import { AddLoadIcon } from "Assets/index";
 import { NotificationIcon } from "Assets/index";
-import { GroupChatsIcon } from "Assets/index";
 import { SmsIcon } from "Assets/index";
 import { UnitsIcon } from "Assets/index";
 import { AccountingIcon } from "Assets/index";
@@ -21,7 +20,6 @@ export const sidebar = [
   { icon: CapacitySearchIcon, name: "Capacity Search", link: "/capacity" },
   { icon: AddLoadIcon, name: "Add Load", link: "/addload" },
   { icon: NotificationIcon, name: "Notification", link: "/notification" },
-  { icon: GroupChatsIcon, name: "Group Chats", link: "/groupchats" },
   { icon: SmsIcon, name: "Sms", link: "/sms" },
   { icon: UnitsIcon, name: "Units", link: "/units" },
   { icon: AccountingIcon, name: "Accounting", link: "/accounting" },

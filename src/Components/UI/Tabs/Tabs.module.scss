@@ -1,0 +1,29 @@
+.tabs {
+  :global {
+    .ant-tabs-tab {
+      color: #a5a5a5;
+    }
+    .ant-tabs-tab-active {
+      background-color: blue;
+      color: white !important;
+      padding-left: 10px;
+      width: 96px;
+      height: 30px;
+      border-radius: 14px;
+      text-align: center;
+      & > div {
+        color: inherit !important;
+      }
+    }
+
+    .ant-tabs-nav-list {
+      background-color: #fff;
+      text-align: center;
+      transition: 0.1s;
+      height: 38px;
+      border-radius: 19px;
+      padding-top: 3px;
+      padding-right: 10px;
+    }
+  }
+}

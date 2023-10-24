@@ -1,0 +1,117 @@
+.blockteam {
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & h3 {
+      color: #fff;
+      font-size: 18px;
+      font-style: italic;
+      font-weight: 500;
+      line-height: normal;
+    }
+    &_btnfirst {
+      color: #fffffd;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      background-color: #005dac;
+    }
+  }
+  &__flex {
+    display: flex;
+    &__bgshared {
+      width: 305px;
+      height: 223px;
+      background-color: #e5edf4;
+      border-radius: 10px;
+      &__center {
+        padding: 20px;
+        &__boxfirst {
+          display: flex;
+          margin-top: 10px;
+          width: 260px;
+          height: 105px;
+          background-color: #fff;
+          border-radius: 10px;
+          &_textitem {
+            font-size: 16px;
+            font-weight: 500;
+            color: #82aeda;
+            margin-top: 43px;
+            margin-left: 10px;
+          }
+          &_spantext {
+            font-size: 12px;
+            font-weight: 500;
+            color: #000;
+            margin-top: 80px;
+            margin-left: 50px;
+          }
+        }
+        & h4 {
+          font-size: 16px;
+          font-weight: 500;
+          color: #005dac;
+        }
+        &_box {
+          margin-top: 10px;
+          width: 260px;
+          height: 105px;
+          background-color: #fff;
+          border-radius: 10px;
+
+          & p {
+            font-size: 16px;
+            font-weight: 500;
+            color: #82aeda;
+            padding: 10px;
+          }
+          & span {
+            padding-top: 95px;
+            padding-left: 160px;
+            color: #202020;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+          }
+
+          &_flex {
+            display: flex;
+            gap: 9px;
+            &_icon {
+              width: 34px;
+              height: 34px;
+              background-color: #d9d9d9;
+              border-radius: 50%;
+            }
+            & h5 {
+              color: #202020;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 500;
+            }
+            & h6 {
+              color: #82aeda;
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
+            }
+          }
+        }
+        &_btnsecond {
+          margin-top: 10px;
+          width: 100%;
+          color: #fff;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          background-color: #005dac;
+        }
+      }
+    }
+  }
+}

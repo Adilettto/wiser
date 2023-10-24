@@ -98,7 +98,7 @@ const Loadfiltering: React.FC = () => {
           </tbody>
         </table>
         <div className={styles.loadfilter__contant__blockpagination}>
-          <Paginations />
+          <Paginations link="load" />
         </div>
       </div>
       <div className={styles.loadfilter__background}></div>

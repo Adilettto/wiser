@@ -14,7 +14,7 @@ const Sidebar: React.FC<SidebarProps> = ({ height }) => {
     navigate(link);
   };
   return (
-    <div className={styles.sidebar} style={{ height: `${height}px` }}>
+    <div className={styles.sidebar}>
       <img className={styles.sidebar__logo} src={wiserLogo} alt="logo" />
       <ul className={styles.sidebar__items}>
         {sidebar.map((el, index) => (

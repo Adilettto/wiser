@@ -1,0 +1,41 @@
+.content {
+  width: 1140px;
+  padding-left: 20px;
+
+  &__tabs {
+    position: relative;
+    &__btn {
+      position: absolute;
+      right: 10px;
+      top: 2px;
+      background-color: #005dac;
+      color: white;
+      font-family: Inter;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+  &__settings {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0px 32px 0px;
+
+    h2 {
+      font-family: Inter;
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 36px;
+      letter-spacing: 0em;
+      color: black;
+    }
+    &_btn {
+      background-color: #005dac;
+      color: white;
+      font-family: Inter;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 22px;
+      letter-spacing: 0em;
+    }
+  }
+}

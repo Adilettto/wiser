@@ -1,40 +1,44 @@
-import React, { ReactNode, useEffect, useRef, useState } from "react";
+import React, { ReactNode, useEffect, useRef } from "react";
 import Sidebar from "Components/Sidebar/Sidebar";
 import styles from "./Layout.module.scss";
 
 type LayoutProps = {
   children: ReactNode;
+  update?: boolean;
 };
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const contentRef = useRef<HTMLDivElement | null>(null);
-  const [height, setHeight] = useState<number>();
+  const sidebarRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (contentRef.current) {
-      const contentHeight = contentRef.current?.clientHeight;
-      const sidebar: HTMLElement | null = document.querySelector(
-        `.${styles.layout__sidebar}`
-      );
-      if (sidebar) {
-        console.log(sidebar.clientHeight, contentHeight);
-        if (1000 < contentHeight) {
-          setHeight(contentHeight);
-          sidebar.style.height = `${contentHeight}px`;
+    const sidebarDiv = sidebarRef.current;
+
+    if (sidebarDiv) {
+      const updateSidebarHeight = () => {
+        const contentHeight = 1000 + window.scrollY;
+        console.log(contentHeight);
+        if (contentHeight > 1000 && contentHeight < 2000) {
+          sidebarDiv.style.height = `${contentHeight}px`;
         }
-      }
+      };
+
+      updateSidebarHeight();
+
+      window.addEventListener("scroll", updateSidebarHeight);
+
+      return () => {
+        window.removeEventListener("scroll", updateSidebarHeight);
+      };
     }
-  }, [contentRef]);
+  }, [window.scrollY]);
   return (
     <div className={styles.layout}>
-      <div className={styles.layout__sidebar}>
-        <Sidebar height={height} />
+      <div className={styles.layout__sidebar} ref={sidebarRef}>
+        <Sidebar />
       </div>
 
       <div className={styles.layout__background}></div>
-      <div ref={contentRef} className={styles.layout__content}>
-        {children}
-      </div>
+      <div className={styles.layout__content}>{children}</div>
     </div>
   );
 };

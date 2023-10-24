@@ -1,0 +1,42 @@
+.content {
+  display: flex;
+  gap: 21px;
+  &__blockfirst {
+    width: 414px;
+    height: 695px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    &_logoblock {
+      margin: 62px 120px 46px 117px;
+      text-align: center;
+      & h3 {
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 31px;
+        color: #005dac;
+      }
+    }
+
+    &_listblock {
+      margin: 70px 20px 0px 20px;
+      li {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+        color: #005dac;
+        list-style: none !important;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+
+  &__blocksecond {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

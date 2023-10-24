@@ -1,0 +1,62 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 300px;
+  right: 0;
+  background-position: center center;
+  background-blend-mode: multiply;
+  background: #fff;
+  border-radius: 15px;
+  display: flex;
+  width: 400px;
+  height: 515px;
+  &__bg {
+    padding: 25px;
+    width: 100%;
+
+    & h3 {
+      font-size: 30px;
+      font-weight: 500;
+      color: #000;
+    }
+    &__close {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &_formfirst {
+      width: 100%;
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+
+      gap: 10px;
+      &_text {
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      & label {
+        font-size: 20px;
+        font-weight: 500;
+        color: #000;
+        text-align: start;
+      }
+      &_blockBtn {
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+      }
+      &_blockBtnFirst {
+        background-color: #a5a5a5;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        height: 40px;
+      }
+    }
+  }
+}
