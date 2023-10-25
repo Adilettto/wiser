@@ -1,12 +1,10 @@
 import styles from "./Info.module.scss";
-import { ReactComponent as DollarSign } from "../../Assets/dollar.svg";
-import { Input } from "antd";
 import { Button } from "antd";
 import InputWithLine from "Components/UI/InputWithLine/InputWithLine";
 
 export const Info = () => {
   return (
-    <div>
+    <div className={styles.bid}>
       <div className={styles.container}>
         <div className={styles.container__box}>
           <ul className={styles.container__ul}>

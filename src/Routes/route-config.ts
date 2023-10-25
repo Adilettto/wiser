@@ -12,11 +12,15 @@ export const routeMap = new Map<string, RouteData>()
     permissions: [],
   })
   .set("/load", {
-    page: pages.LoadListPage,
+    page: pages.LoadDetailPage,
     permissions: [],
   })
-  .set("/load/:id", {
-    page: pages.LoadDetailPage,
+  .set("/mybids", {
+    page: pages.BidDetailPage,
+    permissions: [],
+  })
+  .set("/myloads", {
+    page: pages.LoadListPage,
     permissions: [],
   })
   .set("/health", {

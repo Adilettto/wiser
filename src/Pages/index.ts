@@ -5,3 +5,4 @@ export { LoadListPage } from "./LoadBoard/LoadList";
 export { Health } from "./HealthCheck/Health";
 
 export { Settings } from "./Settings/Settings";
+export { BidDetailPage } from "./Bids/BidDetail";
