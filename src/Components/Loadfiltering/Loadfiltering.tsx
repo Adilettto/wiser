@@ -7,8 +7,13 @@ import PickUp from "./PickUp/PickUp";
 import Vehicle from "./Vehicle/Vehicle";
 import Brokerages from "./Brokerage/Brokerage";
 import styles from "./Loadfiltering.module.scss";
+import { useNavigate } from "react-router";
 
 const Loadfiltering: React.FC = () => {
+  const navigate = useNavigate();
+  const goToDetailPage = () => {
+    navigate("/load/1");
+  };
   return (
     <div className={styles.loadfilter}>
       <div className={styles.loadfilter__contant}>
@@ -56,7 +61,7 @@ const Loadfiltering: React.FC = () => {
           </thead>
 
           <tbody>
-            <tr>
+            <tr onClick={goToDetailPage}>
               <td>05:14 am</td>
               <td>
                 miami, <br /> FL 33166
@@ -76,7 +81,7 @@ const Loadfiltering: React.FC = () => {
               <td>cdienoed</td>
             </tr>
 
-            <tr>
+            <tr onClick={goToDetailPage}>
               <td>05:14 am</td>
               <td>
                 miami, <br /> FL 33166

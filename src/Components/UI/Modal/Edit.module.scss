@@ -30,8 +30,6 @@
       margin-top: 20px;
       display: flex;
       flex-direction: column;
-
-      // gap: 10px;
       &_text {
         text-align: left;
         display: flex;
@@ -59,10 +57,20 @@
       }
       &_blockBtnSecond {
         background-color: #a5a5a5;
-        color: #d13333;
+        color: #fff;
         font-size: 20px;
         font-weight: 500;
         height: 40px;
+        border: none;
+      }
+      &_blockBtnSecond:hover {
+        background-color: red;
+        color: #fff !important;
+        font-size: 20px;
+        font-weight: 500;
+        height: 40px;
+        transition: 0.3;
+        border: none;
       }
     }
   }

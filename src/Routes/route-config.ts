@@ -12,6 +12,10 @@ export const routeMap = new Map<string, RouteData>()
     permissions: [],
   })
   .set("/load", {
+    page: pages.LoadListPage,
+    permissions: [],
+  })
+  .set("/load/:id", {
     page: pages.LoadDetailPage,
     permissions: [],
   })
@@ -20,7 +24,7 @@ export const routeMap = new Map<string, RouteData>()
     permissions: [],
   })
   .set("/myloads", {
-    page: pages.LoadListPage,
+    page: pages.HomePage,
     permissions: [],
   })
   .set("/health", {

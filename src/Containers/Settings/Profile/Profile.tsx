@@ -1,6 +1,6 @@
 import React from "react";
 import { DeleteOutlined, FormOutlined, PlusOutlined } from "@ant-design/icons";
-import { ReactComponent as Email } from "Assets/email.svg";
+import { ReactComponent as Email } from "Assets/emailsetting.svg";
 import { ReactComponent as User } from "Assets/user.svg";
 import Button from "Components/UI/Button/Button";
 import { Link } from "react-router-dom";

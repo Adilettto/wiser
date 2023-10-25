@@ -91,6 +91,10 @@
               border-bottom-right-radius: 10px;
             }
           }
+          &:hover {
+            background-color: #d8d8d8;
+            cursor: pointer;
+          }
         }
       }
     }
