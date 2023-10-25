@@ -10,11 +10,40 @@
     &_logoblock {
       margin: 62px 120px 46px 117px;
       text-align: center;
+      &_relative {
+        position: relative;
+
+        &_deleteIcon {
+          position: absolute;
+          bottom: 0;
+          background-color: #fff;
+          color: red;
+          border-radius: 15px;
+          border: 1px solid gray;
+          width: 34px;
+          height: 34px;
+          padding: 9px;
+          font-size: 26px;
+        }
+        &_formIcon {
+          position: absolute;
+          top: 20px;
+          right: -35px;
+          background-color: #fff;
+          border-radius: 15px;
+          border: 1px solid gray;
+          width: 34px;
+          height: 34px;
+          padding: 9px;
+          font-size: 26px;
+        }
+      }
       & h3 {
         font-size: 26px;
         font-weight: 600;
         line-height: 31px;
         color: #005dac;
+        padding-top: 46px;
       }
     }
 
@@ -22,7 +51,7 @@
       margin: 70px 20px 0px 20px;
       li {
         font-size: 18px;
-        font-weight: 500;
+        font-weight: 400;
         line-height: 22px;
         color: #005dac;
         list-style: none !important;

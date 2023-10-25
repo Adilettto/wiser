@@ -10,7 +10,7 @@
   border-radius: 15px;
   display: flex;
   width: 400px;
-  height: 720px;
+  height: 750px;
   &__bg {
     padding: 25px;
     width: 100%;
@@ -27,11 +27,11 @@
     }
     &_formfirst {
       width: 100%;
-      margin-top: 30px;
+      margin-top: 20px;
       display: flex;
       flex-direction: column;
 
-      gap: 10px;
+      // gap: 10px;
       &_text {
         text-align: left;
         display: flex;

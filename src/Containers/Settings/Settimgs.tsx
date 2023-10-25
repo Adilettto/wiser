@@ -6,10 +6,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import Company from "./Company/Company";
 import Profile from "./Profile/Profile";
-import styles from "./Settings.module.scss";
 import Teams from "./Teams/Teams";
 import User from "./Users/User";
 import Newuser from "Components/UI/Newuser/Newuser";
+import styles from "./Settings.module.scss";
 
 const tabs: TabsProps["items"] = [
   {

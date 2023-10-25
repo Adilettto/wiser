@@ -42,36 +42,6 @@ const Teams = () => {
             </Button>
           </div>
         </div>
-
-        <div className={styles.blockteam__flex__bgshared}>
-          <div className={styles.blockteam__flex__bgshared__center}>
-            <h4>Shared 1 groups</h4>
-
-            <div className={styles.blockteam__flex__bgshared__center_box}>
-              <p>Responsible User</p>
-              <div
-                className={styles.blockteam__flex__bgshared__center_box_flex}
-              >
-                <div
-                  className={
-                    styles.blockteam__flex__bgshared__center_box_flex_icon
-                  }
-                ></div>
-                <div>
-                  <h5>Wiser D</h5>
-                  <h6>development@wiserinc.us</h6>
-                </div>
-              </div>
-              <span>6 users, 0 units</span>
-            </div>
-
-            <Button
-              className={styles.blockteam__flex__bgshared__center_btnsecond}
-            >
-              Viev All Groups
-            </Button>
-          </div>
-        </div>
       </div>
     </div>
   );

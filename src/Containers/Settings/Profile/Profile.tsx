@@ -5,6 +5,7 @@ import { ReactComponent as User } from "Assets/user.svg";
 import Button from "Components/UI/Button/Button";
 import { Link } from "react-router-dom";
 import styles from "./Profile.module.scss";
+import Input from "antd/es/input/Input";
 
 const Profile = () => {
   return (
@@ -69,27 +70,27 @@ const Profile = () => {
             <form action="">
               <label htmlFor="">Name</label>
               <br />
-              <input type="text" />
+              <Input type="text" />
               <br />
               <label htmlFor="">Last name</label>
               <br />
-              <input type="text" name="" id="" />
+              <Input />
               <br />
               <label htmlFor="">Real name</label>
               <br />
-              <input type="text" name="" id="" />
+              <Input />
               <br />
               <label htmlFor="">Email</label>
               <br />
-              <input type="email" name="" id="" />
+              <Input type="email" />
               <br />
               <label htmlFor=""> Phone number</label>
               <br />
-              <input type="number" name="" id="" />
+              <Input type="number" />
               <br />
               <label htmlFor="">Extension</label>
               <br />
-              <input type="text" name="" id="" />
+              <Input type="number" />
             </form>
           </div>
         </div>

@@ -44,7 +44,7 @@ const Rateconfirmation = () => {
         </Row>
 
         <Row>
-          <Col>
+          <Col xs={12}>
             <div>
               <p>Represenative Signature</p>
               <br />

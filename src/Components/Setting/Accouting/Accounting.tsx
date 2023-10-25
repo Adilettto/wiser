@@ -44,14 +44,14 @@ const Accounting = () => {
         </Row>
 
         <Row wrap={false}>
-          <Col>
+          <Col xs={12}>
             <div>
               <p>Pay Sheet Scheduled Week</p>
               <br />
               <Input placeholder="222 Vic" />
             </div>
           </Col>
-          <Col>
+          <Col xs={12}>
             <div>
               <p>Pay Sheet Scheduled Time</p>
               <br />

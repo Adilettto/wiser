@@ -5,16 +5,31 @@ import NameAdress from "Components/Setting/NameAdress/NameAdress";
 import Emailing from "Components/Setting/Emailing/Emailing";
 import Rateconfirmation from "Components/Setting/Rateconfirmation/Rateconfirmation";
 import styles from "./Company.module.scss";
+import { DeleteFilled, FormOutlined } from "@ant-design/icons";
 
 const Company = () => {
   return (
     <div className={styles.content}>
       <div className={styles.content__blockfirst}>
         <div className={styles.content__blockfirst_logoblock}>
-          <div className={styles.content__blockfirst_logoblock_relative_logo}>
-            <Logo />
-            <h3>Company Logo</h3>
+          <div className={styles.content__blockfirst_logoblock_relative}>
+            <div>
+              <Logo
+                className={styles.content__blockfirst_logoblock_relative_logo}
+              />
+              <FormOutlined
+                className={
+                  styles.content__blockfirst_logoblock_relative_formIcon
+                }
+              />
+              <DeleteFilled
+                className={
+                  styles.content__blockfirst_logoblock_relative_deleteIcon
+                }
+              />
+            </div>
           </div>
+          <h3>Company Logo</h3>
         </div>
 
         <ul className={styles.content__blockfirst_listblock}>

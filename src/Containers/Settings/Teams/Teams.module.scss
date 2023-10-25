@@ -12,6 +12,9 @@
     }
     &_btnfirst {
       color: #fffffd;
+      height: 40px;
+      border: none;
+      margin-right: 20px;
       font-size: 18px;
       font-style: normal;
       font-weight: 500;
@@ -21,9 +24,10 @@
   }
   &__flex {
     display: flex;
+    margin-top: 30px;
     &__bgshared {
-      width: 305px;
-      height: 223px;
+      min-width: 305px;
+      min-height: 223px;
       background-color: #e5edf4;
       border-radius: 10px;
       &__center {
@@ -31,7 +35,7 @@
         &__boxfirst {
           display: flex;
           margin-top: 10px;
-          width: 260px;
+          min-width: 260px;
           height: 105px;
           background-color: #fff;
           border-radius: 10px;

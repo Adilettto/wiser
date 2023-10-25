@@ -1,11 +1,13 @@
 .content {
-  width: 1140px;
-  padding-left: 20px;
+  width: 98%;
+  margin-left: 20px;
 
   &__tabs {
     position: relative;
+
     &__btn {
       position: absolute;
+      height: 40px;
       right: 10px;
       top: 2px;
       background-color: #005dac;
@@ -20,7 +22,7 @@
     justify-content: space-between;
     padding: 30px 0px 32px 0px;
 
-    h2 {
+    & h2 {
       font-family: Inter;
       font-size: 30px;
       font-weight: 500;
@@ -36,6 +38,7 @@
       font-weight: 500;
       line-height: 22px;
       letter-spacing: 0em;
+      margin-right: 20px;
     }
   }
 }
