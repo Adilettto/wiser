@@ -1,32 +1,32 @@
 import React, { useState } from "react";
 import styles from "./Signup.module.scss";
-import { InputField } from "Components/UI/InputField/InputField";
-import { AuthBtn } from "Components/UI/MainBtn/MainBtn";
-import { Navigate, useNavigate } from "react-router";
-import { BackBtn } from "Components/UI/BackBtn/BackBtn";
-import * as axios from "axios";
+import { Navigate } from "react-router";
+import { instance } from "src/axios";
+import { InputField } from "src/Components/UI/InputField/InputField";
+import { BackBtn } from "src/Components/UI/BackBtn/BackBtn";
+import { MainBtn } from "src/Components/UI/MainBtn/MainBtn";
 
 export const SignupContainer = () => {
   const [email, setEmail] = useState("");
   const [navigate, setNavigate] = useState(false);
 
-  const submit = async (e:any) => {
+  const submit = async (e: any) => {
     e.prevent.default();
 
-    const response = await axios.post("/send-invitation/", {
-      email
-    }, {withCredentials: true})
+    const response = await instance.post(
+      "/send-invitation/",
+      {
+        email,
+      },
+      { withCredentials: true }
+    );
 
     setNavigate(true);
+  };
+
+  if (navigate) {
+    return <Navigate to="/forgot-password" />;
   }
-
-  if(navigate) {
-    return <Navigate to="/forgot-password"/>
-  }
-
- 
-
-
 
   return (
     <div className={styles.signup}>
@@ -42,13 +42,12 @@ export const SignupContainer = () => {
           type="email"
           placeholder="Enter your email"
           className=""
-          
         />
         <p className={styles.signup__block__request}>
           Didn’t receive the link?{" "}
           <span className={styles.signup__block__link}>Resend</span>{" "}
         </p>
-        <AuthBtn text="SEND" onClick={submit} />
+        <MainBtn text="SEND" onClick={submit} />
       </div>
     </div>
   );

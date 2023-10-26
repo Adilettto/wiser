@@ -1,11 +1,12 @@
 import { Checkbox } from "antd";
 import styles from "./Signin.module.scss";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import { AuthBtn } from "Components/UI/MainBtn/MainBtn";
-import { InputField } from "Components/UI/InputField/InputField";
-import { PasswordInput } from "Components/UI/PasswordInput/PasswordInput";
+
 import { useState } from "react";
-import * as axios from "axios";
+import { instance } from "src/axios";
+import { MainBtn } from "src/Components/UI/MainBtn/MainBtn";
+import { InputField } from "src/Components/UI/InputField/InputField";
+import { PasswordInput } from "src/Components/UI/PasswordInput/PasswordInput";
 
 
 
@@ -17,7 +18,7 @@ const SigninContainer = () => {
   const submit = async (e:any) => {
     e.prevent.default();
 
-    const response = await axios.post("/users/", {
+    const response = await instance.post("/users/", {
       email, password
     }, {withCredentials: true})
 
@@ -28,7 +29,7 @@ const SigninContainer = () => {
     return <Navigate to="/onboard"/>
   }
 
-  
+
 
   return (
     <form onSubmit={submit} className={styles.signin}>
@@ -50,7 +51,7 @@ const SigninContainer = () => {
             Forgot password?
           </Link>
         </div>
-        <AuthBtn text="SIGN IN" onClick={handleNavigate} />
+        <MainBtn text="SIGN IN" onClick={submit} />
         <p className={styles.signin__block__link}>
           Don’t have an account? {}
           <Link className={styles.signin__link} to="/sign-up" onClick={submit}>

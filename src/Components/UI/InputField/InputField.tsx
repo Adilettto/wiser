@@ -17,22 +17,6 @@ export const InputField: React.FC<MailInputProps> = ({
   className,
   onChange
 }) => {
-  // if (type === "select") {
-  //   return (
-  //     <div className={styles.inputField}>
-  //       <label className={styles.inputField__label} htmlFor={type}>
-  //         {text}
-  //       </label>
-  //       <select className={`${styles.inputField__input} ${styles.inputField__inputSelect} ${className || " "}`}>
-  //         <option value="">GMT+06:00) Almaty</option>
-  //         <option value="option1">GMT+06:00) Almaty</option>
-  //         <option value="option2">GMT+06:00) Almaty</option>
-  //         <option value="option3">GMT+06:00) Almaty</option>
-  //       </select>
-  //     </div>
-  //   );
-  // }
-
   return (
     <div className={styles.inputField}>
       <label className={styles.inputField__label} htmlFor={type}>
