@@ -6,12 +6,12 @@
   font-family: "Inter", sans-serif;
   font-style: normal;
   line-height: normal;
-  margin-left: 4px;
 }
 
 .loadboard {
   display: flex;
   justify-content: space-between;
+  margin-left: 4px;
   &__block {
     width: 28%;
     margin-left: 20px;
@@ -83,19 +83,18 @@
     flex-direction: column;
     gap: 20px;
     text-decoration: none;
-    top: -7px;
     align-items: flex-start;
-    margin-right: 73px;
-    margin-top: -54px;
+    margin-top: -56px;
     list-style-type: none;
     white-space: nowrap;
+    margin-left: -29px;
   }
 
   &__li {
     color: #005dac;
     margin-top: 10px;
   }
-  
+
   &__delivery {
     display: flex;
     justify-content: space-between;

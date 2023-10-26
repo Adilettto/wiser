@@ -11,7 +11,6 @@ import styles from "./LoadboardEmails.module.scss";
 import Icon from "@ant-design/icons/lib/components/Icon";
 import { InfoIcon } from "Assets/index";
 
-
 export const LoadboardEmails = () => {
   const navigate = useNavigate();
 
@@ -69,7 +68,7 @@ export const LoadboardEmails = () => {
                 alt="line"
                 style={{
                   fontSize: "140px",
-                  marginLeft: "-59px",
+                  marginLeft: "-72px",
                   marginTop: "83px",
                 }}
               />
