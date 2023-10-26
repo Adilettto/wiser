@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./BidsList.module.scss";
-import phoneIcon from "Assets/phone.svg";
+import phoneIcon from "Assets/my BIds/Frame.svg";
 
 type BidsListProps = {};
 
