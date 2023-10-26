@@ -11,6 +11,19 @@ export const routeMap = new Map<string, RouteData>()
     page: pages.HomePage,
     permissions: [],
   })
+  .set("/dashboard", {
+    page: pages.HomePage,
+    permissions: [],
+  })
+  .set("/capacity", {
+    page: pages.HomePage,
+    permissions: [],
+  })
+  .set("/capacity", {
+    page: pages.HomePage,
+    permissions: [],
+  })
+
   .set("/load", {
     page: pages.LoadListPage,
     permissions: [],
@@ -21,6 +34,30 @@ export const routeMap = new Map<string, RouteData>()
   })
   .set("/loads", {
     page: pages.Loads,
+    permissions: [],
+  })
+  .set("/notification", {
+    page: pages.HomePage,
+    permissions: [],
+  })
+  .set("/chat", {
+    page: pages.HomePage,
+    permissions: [],
+  })
+  .set("/units", {
+    page: pages.HomePage,
+    permissions: [],
+  })
+  .set("/accounting", {
+    page: pages.HomePage,
+    permissions: [],
+  })
+  .set("/settings", {
+    page: pages.Settings,
+    permissions: [],
+  })
+  .set("/home", {
+    page: pages.HomePage,
     permissions: [],
   })
   .set("/load/:id", {
@@ -41,10 +78,6 @@ export const routeMap = new Map<string, RouteData>()
   })
   .set("/health", {
     page: pages.HomePage,
-    permissions: [],
-  })
-  .set("/settings", {
-    page: pages.Settings,
     permissions: [],
   });
 

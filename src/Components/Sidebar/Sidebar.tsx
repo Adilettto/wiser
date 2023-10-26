@@ -27,9 +27,9 @@ const Sidebar: React.FC<SidebarProps> = ({ height }) => {
             onClick={() => handleClick(el.link)}
           >
             <div className={styles.sidebar__items__item__icons}>
-              <span>
+              <p>
                 <Icon component={el.icon} />
-              </span>
+              </p>
               <span className={styles.sidebar__items__item__text}>
                 {el.name}
               </span>
