@@ -1,0 +1,12 @@
+.backBtn {
+    display: flex;
+    color: #fff;
+    gap: 20px;
+    height: 36px;
+    cursor: pointer;
+
+    &__text {
+        margin-top: 8px;
+        font-weight: 500;
+    }
+}

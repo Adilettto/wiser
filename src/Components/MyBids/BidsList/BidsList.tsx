@@ -1,10 +1,13 @@
 import React from "react";
 import styles from "./BidsList.module.scss";
 import phoneIcon from "Assets/my BIds/Frame.svg";
+import { useNavigate } from "react-router";
 
-type BidsListProps = {};
-
-const BidsList: React.FC<BidsListProps> = () => {
+const BidsList: React.FC = () => {
+  const navigate = useNavigate();
+  const goToDetailPage = () => {
+    navigate("/bids");
+  };
   return (
     <div>
       <table className={styles.bids__table}>
@@ -23,7 +26,7 @@ const BidsList: React.FC<BidsListProps> = () => {
         </thead>
 
         <tbody>
-          <tr>
+          <tr onClick={goToDetailPage}>
             <td>
               08:01 pm <br />
               09/11/2023
@@ -54,7 +57,7 @@ const BidsList: React.FC<BidsListProps> = () => {
             </td>
           </tr>
 
-          <tr>
+          <tr onClick={goToDetailPage}>
             <td>
               08:01 pm <br />
               09/11/2023

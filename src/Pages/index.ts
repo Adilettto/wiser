@@ -1,9 +1,12 @@
-export { HomePage } from "./Home/Home";
+export { HomePage } from './Home/Home';
+export { ForgotPassword } from "../Pages/ForgotPassword/ForgotPassword";
+export { Signin } from "../Pages/Signin/Signin";
+export { Signup } from "../Pages/Signup/Signup";
+export { NewPassword } from "../Pages/NewPassword/NewPassword";
+export { Onboarding } from "../Pages/Onboarding/Onboarding";
 export { LoadDetailPage } from "./LoadBoard/LoadDetail";
-
 export { LoadListPage } from "./LoadBoard/LoadList";
 export { Health } from "./HealthCheck/Health";
-
 export { Settings } from "./Settings/Settings";
 export { Bids } from "./Bids/Bids";
 export { Loads } from "./Loads/Loads";

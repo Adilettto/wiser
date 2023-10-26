@@ -1,0 +1,10 @@
+.bids {
+  &__table {
+    & tbody {
+      & tr:hover {
+        background-color: #d8d8d8;
+        cursor: pointer;
+      }
+    }
+  }
+}

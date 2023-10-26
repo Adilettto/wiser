@@ -5,7 +5,6 @@ import { NewLoad } from "Components/AddLoadBids/NewLoad";
 import cn from "classnames";
 import BidsList from "Components/MyBids/BidsList/BidsList";
 
-
 const { TabPane } = Tabs;
 
 export const MyBids = () => {
@@ -77,7 +76,7 @@ export const MyBids = () => {
             }
             key="2"
           >
-            <BidsList/>
+            <BidsList />
             <Pagination
               current={currentPagination}
               onChange={handlePaginationChange}

@@ -19,7 +19,30 @@ export const routeMap = new Map<string, RouteData>()
     page: pages.HomePage,
     permissions: [],
   })
+  .set("/forgot-password", {
+    page: pages.ForgotPassword,
+    permissions: [],
+  })
 
+  .set("/sign-in", {
+    page: pages.Signin,
+    permissions: [],
+  })
+
+  .set("/sign-up", {
+    page: pages.Signup,
+    permissions: [],
+  })
+
+  .set("/onboard", {
+    page: pages.Onboarding,
+    permissions: [],
+  })
+
+  .set("/new-password", {
+    page: pages.NewPassword,
+    permissions: [],
+  })
   .set("/load", {
     page: pages.LoadListPage,
     permissions: [],
@@ -28,10 +51,7 @@ export const routeMap = new Map<string, RouteData>()
     page: pages.LoadDetailPage,
     permissions: [],
   })
-  .set("/loads", {
-    page: pages.Loads,
-    permissions: [],
-  })
+
   .set("/notification", {
     page: pages.HomePage,
     permissions: [],
@@ -61,15 +81,15 @@ export const routeMap = new Map<string, RouteData>()
     permissions: [],
   })
   .set("/mybids", {
-    page: pages.BidDetailPage,
+    page: pages.Bids,
     permissions: [],
   })
   .set("/myloads", {
-    page: pages.HomePage,
+    page: pages.Loads,
     permissions: [],
   })
   .set("/bids", {
-    page: pages.Bids,
+    page: pages.BidDetailPage,
     permissions: [],
   })
   .set("/health", {
