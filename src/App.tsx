@@ -1,14 +1,16 @@
-import React from "react";
-import "./App.css";
-import { Navigate, Route, Routes, useLocation } from "react-router";
-import { routeArray } from "Routes/route-config";
-import { useAuthRedirect } from "Shared/Hooks/use-auth";
-import { useSelector } from "react-redux";
-import { readObj } from "Service/storage";
-import { useAppDispatch } from "Redux/store";
-import { restoreSession } from "Redux/Auth/reducer";
-import { ToastBlock } from "Components/Notify/notify";
-import { selectAccount } from "Redux/Auth/slice";
+import React from 'react';
+import './App.css';
+import { Navigate, Route, Routes, useLocation } from 'react-router';
+import { routeArray } from 'Routes/route-config';
+import { useAuthRedirect } from 'Shared/Hooks/use-auth';
+import { useSelector } from 'react-redux';
+import { readObj } from 'Service/storage';
+import { useAppDispatch } from 'Redux/store';
+import { restoreSession } from 'Redux/Auth/reducer';
+import { ToastBlock } from 'Components/Notify/notify';
+import { selectAccount } from 'Redux/Auth/slice';
+import { AddLoad } from 'Components/AddLoad/AddLoad';
+
 
 function App() {
   const location = useLocation();
@@ -31,8 +33,15 @@ function App() {
   return (
     <>
       <ToastBlock />
+<<<<<<< HEAD
 
       <Routes>{routes}</Routes>
+=======
+      <Routes>
+        {routes}
+        <Route path="/add-load" element={<AddLoad/>}/>
+      </Routes>
+>>>>>>> 92813c950aae9deded6feaf43863a935c45c9162
     </>
   );
 }
