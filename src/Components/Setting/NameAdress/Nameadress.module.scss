@@ -1,0 +1,23 @@
+.content {
+  width: 640px;
+  height: 380px;
+  border-radius: 15px;
+  background-color: #fff;
+
+  &__adress {
+    margin: 20px 20px 30px 20px;
+    & h4 {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #000;
+    }
+    & p {
+      padding-top: 30px;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 22px;
+      color: #005dac;
+    }
+  }
+}

@@ -1,9 +1,11 @@
-import Home from 'Containers/Home/Home';
-import React from 'react';
+import Home from "Containers/Home/Home";
+import React from "react";
+import { Layout } from "Components/Layout/Layout";
 
 export const HomePage: React.FC = () => {
-
-  return <div>
-    <Home />
-  </div>
-}
+  return (
+    <Layout>
+      <Home />
+    </Layout>
+  );
+};

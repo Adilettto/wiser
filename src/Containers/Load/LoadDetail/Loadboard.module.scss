@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Manrope:wght@500&display=swap");
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   font-family: "Inter", sans-serif;
+//   font-style: normal;
+//   line-height: normal;
+//   margin-left: 4px;
+// }
+
+.loadboard {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 4px;
+  &__block {
+    width: 28%;
+    margin-left: 20px;
+  }
+  &__button {
+    background: rgb(0 0 0 / 0%);
+    border: none;
+  }
+
+  & h3 {
+    display: inline-flex;
+    border-radius: 10px;
+    font-size: 10px;
+    background: #e5edf4;
+    padding: 4px 8px;
+    width: 76px;
+  }
+
+  & h4 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 10px;
+    background: #e5edf4;
+    padding: 4px 8px;
+  }
+
+  &__arrow {
+    padding: 10px;
+
+    & h1 {
+      display: inline;
+      font-size: 30px;
+      font-weight: 500;
+      margin-left: 10px;
+    }
+  }
+
+  &__form {
+    border-radius: 10px;
+    background: #ffff;
+    margin: 0 20px;
+    padding: 10px;
+    height: 778px;
+    & h2 {
+      font-size: 26px;
+      font-weight: 500;
+    }
+  }
+  &__h {
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 10px;
+    color: #0077b6;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
+
+.place {
+  &__image {
+    display: flex;
+    margin-top: 72px;
+  }
+
+  &__list {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+    text-decoration: none;
+    align-items: flex-start;
+    margin-top: -56px;
+    list-style-type: none;
+    white-space: nowrap;
+    margin-left: -29px;
+  }
+
+  &__li {
+    color: #005dac;
+    margin-top: 10px;
+  }
+
+  &__delivery {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    &__frame {
+      margin-top: -6px;
+    }
+  }
+}
+
+.info {
+  &__delivery {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    & h5 {
+      font-size: 20px;
+      margin-top: 23px;
+      padding: 10px;
+    }
+
+    &__copyIcon {
+      margin-top: 78px;
+    }
+  }
+}
+
+.data {
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid #005dac;
+  display: flex;
+  flex-direction: column;
+  gap: 82px;
+  padding: 18px;
+  width: 26%;
+  height: 253px;
+  margin: 20px;
+  margin-top: -124px;
+  margin-left: 38px;
+
+  &__broker {
+    color: #0077b6;
+  }
+
+  &__company {
+    color: #0077b6;
+  }
+
+  &__one {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  &__two {
+    margin-top: 5px;
+  }
+
+  &__icons {
+    margin-top: 5px;
+  }
+}

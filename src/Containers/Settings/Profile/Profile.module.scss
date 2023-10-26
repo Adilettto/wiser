@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Inter:wght@100;200;300;500;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&family=PT+Sans+Narrow&family=Poiret+One&family=Poppins:wght@200;300;400;500;600;700&family=Rambla&family=Roboto:wght@300;400;500;700;900&family=Yellowtail&display=swap");
+.container {
+  max-width: 800px;
+
+  &__profilepicture {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 207px;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px;
+    background-color: #fff;
+    & h3 {
+      font-family: Inter;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 27px;
+      letter-spacing: 0em;
+      color: #000000;
+    }
+    & p {
+      padding-top: 12px;
+      font-family: Inter;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 22px;
+      letter-spacing: 0em;
+      color: #717171;
+    }
+    &_userimg {
+      position: relative;
+
+      &_bgtop {
+        background-color: #fff;
+        border: 1px solid #cdcdcd;
+        width: 34px;
+        height: 34px;
+        border-radius: 15px;
+        padding: 5px 5px 5px 10px;
+        position: absolute;
+        top: 7px;
+        right: -10px;
+      }
+
+      &_bgbottom {
+        background-color: #fff;
+        border: 1px solid #cdcdcd;
+        width: 34px;
+        height: 34px;
+        border-radius: 15px;
+        padding: 5px 5px 5px 10px;
+        position: absolute;
+        bottom: 10px;
+        right: -10px;
+        &_icondel {
+          color: red;
+        }
+      }
+    }
+  }
+
+  &__bgpersonal {
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    &__flex {
+      display: flex;
+      padding: 30px;
+      gap: 91px;
+      &_firstblock {
+        display: flex;
+        flex-direction: column;
+        gap: 281px;
+        & h3 {
+          font-family: Inter;
+          font-size: 22px;
+          font-weight: 500;
+          line-height: 27px;
+          letter-spacing: 0em;
+          color: #000000;
+        }
+        & p {
+          font-family: Inter;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 22px;
+          letter-spacing: 0em;
+          padding-top: 12px;
+          padding-bottom: 20px;
+          color: #717171;
+        }
+        &_btnfirst {
+          font-family: Inter;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 19px;
+          letter-spacing: 0em;
+          color: #005dac;
+          margin-right: 10px;
+        }
+        &_btnsecond {
+          font-family: Inter;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 22px;
+          letter-spacing: 0em;
+          background-color: #005dac;
+          color: #fff;
+        }
+
+        &_emailbar {
+          text-align: center;
+          width: 187px;
+          height: 44px;
+          padding: 10px 16px 10px 16px;
+          border-radius: 10px;
+          gap: 10px;
+          background-color: #fbc02d;
+
+          &_link {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19px;
+            color: #005dac;
+          }
+        }
+      }
+    }
+    & form {
+      & label {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        color: #005dac;
+      }
+      & input {
+        width: 306px;
+        margin-top: 8px;
+        margin-bottom: 14px;
+        height: 35px;
+        padding: 8px 10px 8px 10px;
+        border-radius: 10px;
+        border: 1px solid #e0e0e0;
+        gap: 10px;
+      }
+    }
+  }
+}

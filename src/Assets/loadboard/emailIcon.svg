@@ -1,0 +1,6 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="email">
+<path id="primary" d="M20 5H4C3.44772 5 3 5.44772 3 6V18C3 18.5523 3.44772 19 4 19H20C20.5523 19 21 18.5523 21 18V6C21 5.44772 20.5523 5 20 5Z" stroke="#B0B0B0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="secondary" d="M20 5.22898L12.1114 11.7758C11.9373 11.921 11.7219 12 11.5 12C11.2781 12 11.0627 11.921 10.8886 11.7758L3 5.22898C3.17349 5.08206 3.38894 5.00136 3.61137 5H19.3886C19.6111 5.00136 19.8265 5.08206 20 5.22898Z" stroke="#B0B0B0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
