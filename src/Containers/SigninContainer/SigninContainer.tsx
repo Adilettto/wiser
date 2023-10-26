@@ -21,6 +21,7 @@ const validationSchema = Yup.object().shape({
 const SigninContainer = () => {
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
+  const nav = useNavigate();
   const [navigate, setNavigate] = useState(false);
   const { control, handleSubmit, formState } = useForm<ISignIn>({
     resolver: yupResolver(validationSchema),
@@ -34,8 +35,12 @@ const SigninContainer = () => {
     setNavigate(true);
   };
 
+  const handleNav = () => {
+    nav("/myloads");
+  };
+
   if (navigate) {
-    return <Navigate to="/onboard" />;
+    return <Navigate to="/myloads" />;
   }
 
   return (
@@ -70,7 +75,7 @@ const SigninContainer = () => {
             Forgot password?
           </Link>
         </div>
-        <MainBtn text="SIGN IN" htmlType="submit" />
+        <MainBtn text="SIGN IN" htmlType="submit" onClick={handleNav} />
         <p className={styles.signin__block__link}>
           Don’t have an account? {}
           <Link
