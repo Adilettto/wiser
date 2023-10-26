@@ -22,7 +22,6 @@ const SigninContainer = () => {
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
   const nav = useNavigate();
-  const [navigate, setNavigate] = useState(false);
   const { control, handleSubmit, formState } = useForm<ISignIn>({
     resolver: yupResolver(validationSchema),
   });
@@ -31,17 +30,11 @@ const SigninContainer = () => {
   const onSubmit = async (values: any) => {
     console.log(values);
     // dispatch(signIn());
-
-    setNavigate(true);
   };
 
   const handleNav = () => {
-    nav("/myloads");
+    nav("/load");
   };
-
-  if (navigate) {
-    return <Navigate to="/myloads" />;
-  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.signin}>
@@ -64,7 +57,9 @@ const SigninContainer = () => {
         <Controller
           control={control}
           name="password"
-          render={({ field }) => <PasswordInput {...field} text="PASSWORD" />}
+          render={({ field }) => (
+            <PasswordInput {...field} text="PASSWORD" required />
+          )}
         />
 
         <div className={styles.signin__block__requests}>

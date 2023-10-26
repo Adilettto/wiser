@@ -5,11 +5,16 @@ import { Input } from "antd";
 import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 
 interface PasswordInputProps {
-    text: string;
-    onChange?: any;
+  text: string;
+  onChange?: any;
+  required?: boolean;
 }
 
-export const PasswordInput: React.FC<PasswordInputProps> = ({text, onChange}) => {
+export const PasswordInput: React.FC<PasswordInputProps> = ({
+  text,
+  onChange,
+  required,
+}) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -25,16 +30,19 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({text, onChange}) =>
         type={passwordVisible ? "text" : "password"}
         placeholder="Enter password"
         onChange={onChange}
-        suffix={passwordVisible ? (
-            <EyeOutlined onClick={togglePasswordVisibility}/>
-        ) : (
-            <EyeInvisibleOutlined onClick={togglePasswordVisibility}/>
-        )}
+        required={required}
+        suffix={
+          passwordVisible ? (
+            <EyeOutlined onClick={togglePasswordVisibility} />
+          ) : (
+            <EyeInvisibleOutlined onClick={togglePasswordVisibility} />
+          )
+        }
       />
     </div>
   );
 };
 
 PasswordInput.propTypes = {
-    text: Proptypes.string.isRequired,
-}
+  text: Proptypes.string.isRequired,
+};
