@@ -1,10 +1,11 @@
-import { MyLoads } from 'Containers/MyLoads/MyLoads'
-import React from 'react'
+import { Layout } from "Components/Layout/Layout";
+import { MyLoads } from "Containers/MyLoads/MyLoads";
+import React from "react";
 
 export const Loads = () => {
   return (
-    <div>
-        <MyLoads/>
-    </div>
-  )
-}
+    <Layout>
+      <MyLoads />
+    </Layout>
+  );
+};

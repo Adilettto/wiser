@@ -26,13 +26,14 @@ export const MyLoads = () => {
 
   return (
     <div className={styles.loads}>
-      <Sidebar />
       <div className={styles.loads__block}>
         <div className={styles.loads__block__header}>
           <h1>My loads</h1>
-          <AddLoad  visible={isModalVisible} onCancel={handleModalVisiblity}/>
-          <Button className={styles.loads__block__header__btn}
-          onClick={handleModalVisiblity}>
+          <AddLoad visible={isModalVisible} onCancel={handleModalVisiblity} />
+          <Button
+            className={styles.loads__block__header__btn}
+            onClick={handleModalVisiblity}
+          >
             + Add load
           </Button>
         </div>
@@ -42,10 +43,16 @@ export const MyLoads = () => {
           className={styles.loads__block__tabs}
         >
           <TabPane
-            tab={<div className={cn(
-              styles.loads__block__tabs__tab,
-              currentTab === "1" && styles.loads__block__tabs__tab_active
-            )}>Active</div>}
+            tab={
+              <div
+                className={cn(
+                  styles.loads__block__tabs__tab,
+                  currentTab === "1" && styles.loads__block__tabs__tab_active
+                )}
+              >
+                Active
+              </div>
+            }
             key="1"
           >
             <table className={styles.loads__table}>
@@ -151,10 +158,16 @@ export const MyLoads = () => {
             />
           </TabPane>
           <TabPane
-            tab={<div className={cn(
-              styles.loads__block__tabs__tab,
-              currentTab === "2" && styles.loads__block__tabs__tab_active
-            )}>Checkout</div>}
+            tab={
+              <div
+                className={cn(
+                  styles.loads__block__tabs__tab,
+                  currentTab === "2" && styles.loads__block__tabs__tab_active
+                )}
+              >
+                Checkout
+              </div>
+            }
             key="2"
           >
             <table className={styles.loads__table}>
@@ -299,10 +312,15 @@ export const MyLoads = () => {
             />
           </TabPane>
           <TabPane
-            tab={<div className={cn(
-              styles.loads__block__tabs__tab,
-              currentTab === "3" && styles.loads__block__tabs__tab_active
-            )}>Completed</div>
+            tab={
+              <div
+                className={cn(
+                  styles.loads__block__tabs__tab,
+                  currentTab === "3" && styles.loads__block__tabs__tab_active
+                )}
+              >
+                Completed
+              </div>
             }
             key="3"
           >
@@ -448,10 +466,16 @@ export const MyLoads = () => {
             />
           </TabPane>
           <TabPane
-            tab={<div className={cn(
-              styles.loads__block__tabs__tab,
-              currentTab === "4" && styles.loads__block__tabs__tab_active
-            )}>History</div>}
+            tab={
+              <div
+                className={cn(
+                  styles.loads__block__tabs__tab,
+                  currentTab === "4" && styles.loads__block__tabs__tab_active
+                )}
+              >
+                History
+              </div>
+            }
             key="4"
           >
             <table className={styles.loads__table}>
