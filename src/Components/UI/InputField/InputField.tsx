@@ -1,13 +1,12 @@
-import { Input } from "antd";
+import { Input, InputProps } from "antd";
 import React from "react";
 import styles from "./InputField.module.scss";
 
-interface MailInputProps {
+interface MailInputProps extends InputProps {
   text: string;
   type: string;
   placeholder: string;
   className: string;
-  onChange?: any;
 }
 
 export const InputField: React.FC<MailInputProps> = ({
@@ -15,7 +14,7 @@ export const InputField: React.FC<MailInputProps> = ({
   type,
   placeholder,
   className,
-  onChange
+  ...props
 }) => {
   return (
     <div className={styles.inputField}>
@@ -23,10 +22,10 @@ export const InputField: React.FC<MailInputProps> = ({
         {text}
       </label>
       <Input
-        onChange={onChange}
         className={`${styles.inputField__input} ${className || " "}`}
         type={type}
         placeholder={placeholder}
+        {...props}
       />
     </div>
   );

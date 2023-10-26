@@ -1,10 +1,10 @@
-import axios from 'axios';
-import { baseURL } from './config';
+import axios from "axios";
+import { baseURL } from "./config";
 
 const client = axios.create({
   baseURL: baseURL,
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
 

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ForgotPassword.module.scss";
 import { InputField } from "Components/UI/InputField/InputField";
-import { AuthBtn } from "Components/UI/MainBtn/MainBtn";
+import { MainBtn } from "Components/UI/MainBtn/MainBtn";
 import { useNavigate } from "react-router";
 import { BackBtn } from "Components/UI/BackBtn/BackBtn";
 
@@ -30,7 +30,7 @@ export const ForgotPasswordContainer = () => {
           Didn’t receive the link?{" "}
           <span className={styles.forgotPass__block__link}>Resend</span>{" "}
         </p>
-        <AuthBtn text="SEND" onClick={handleNavigate} />
+        <MainBtn text="SEND" onClick={handleNavigate} />
       </div>
     </div>
   );

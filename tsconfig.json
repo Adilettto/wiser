@@ -3,22 +3,18 @@
     "target": "es5",
     "baseUrl": "src",
     "paths": {
-      "@":["/"],
-      "Pages/*":["Pages/*"],
-      "Components/*":["Components/*"],
-      "Service/*":["Service/*"],
-      "Shared/*":["Shared/*"],
-      "Redux/*":["Redux/*"],
+      "@": ["/"],
+      "Pages/*": ["Pages/*"],
+      "Components/*": ["Components/*"],
+      "Service/*": ["Service/*"],
+      "Shared/*": ["Shared/*"],
+      "Redux/*": ["Redux/*"],
       "Routes/*": ["Routes/*"],
       "Styles/*": ["Styles/*"],
       "Assets/*": ["Assets/*"],
-      "Containers/*": ["Containers/*"],
+      "Containers/*": ["Containers/*"]
     },
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -33,7 +29,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

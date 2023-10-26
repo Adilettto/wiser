@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Onboarding.module.scss";
 import { InputField } from "Components/UI/InputField/InputField";
-import { AuthBtn } from "Components/UI/MainBtn/MainBtn";
+import { MainBtn } from "Components/UI/MainBtn/MainBtn";
 
 type Props = {};
 
@@ -43,7 +43,7 @@ export const OnboardingContainer = (props: Props) => {
           /> */}
         </div>
         <div className={styles.onboard__block__btn}>
-          <AuthBtn text="Let's get started" />
+          <MainBtn text="Let's get started" />
         </div>
       </div>
     </div>

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import styles from "./Signup.module.scss";
 import { Navigate } from "react-router";
-import { instance } from "src/axios";
-import { InputField } from "src/Components/UI/InputField/InputField";
-import { BackBtn } from "src/Components/UI/BackBtn/BackBtn";
-import { MainBtn } from "src/Components/UI/MainBtn/MainBtn";
+import { InputField } from "Components/UI/InputField/InputField";
+import { BackBtn } from "Components/UI/BackBtn/BackBtn";
+import { MainBtn } from "Components/UI/MainBtn/MainBtn";
 
 export const SignupContainer = () => {
   const [email, setEmail] = useState("");
@@ -12,14 +11,6 @@ export const SignupContainer = () => {
 
   const submit = async (e: any) => {
     e.prevent.default();
-
-    const response = await instance.post(
-      "/send-invitation/",
-      {
-        email,
-      },
-      { withCredentials: true }
-    );
 
     setNavigate(true);
   };

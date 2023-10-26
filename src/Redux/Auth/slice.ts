@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IUser } from "Shared/Types";
-import { restoreSession } from "./reducer";
+import { restoreSession, signIn } from "./reducer";
 import { RootState } from "Redux/store";
 
 interface ICompanyRequestsState {
-  account: IUser | null,
-  error?: string | null,
+  account: IUser | null;
+  error?: string | null;
   loading: boolean;
   success?: boolean | null;
 }
@@ -17,7 +17,7 @@ const initialState: ICompanyRequestsState = {
 };
 
 const authSlice = createSlice({
-  name: 'companyRequest',
+  name: "companyRequest",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -26,8 +26,21 @@ const authSlice = createSlice({
       state.error = null;
       state.account = action.payload.profile;
     });
-  }
-})
+    builder.addCase(signIn.pending, (state, action) => {
+      state.loading = true;
+      state.error = null;
+    });
+    builder.addCase(signIn.fulfilled, (state, action) => {
+      state.loading = false;
+      state.error = null;
+      // state.account = action.payload.profile;
+    });
+    builder.addCase(signIn.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message;
+    });
+  },
+});
 
 export const selectAccount = (state: RootState) => state.auth.account;
 export const selectAuthLoading = (state: RootState) => state.auth.loading;

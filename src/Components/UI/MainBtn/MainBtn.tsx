@@ -1,11 +1,11 @@
-import { Button } from "antd";
+import { Button, ButtonProps } from "antd";
 import React from "react";
 import styles from "./MainBtn.module.scss";
 
-interface MainBtnProps {
+type MainBtnProps = ButtonProps & {
   text: string;
   onClick?: any;
-}
+};
 
 export const MainBtn: React.FC<MainBtnProps> = ({ text, onClick }) => {
   return (
@@ -14,4 +14,3 @@ export const MainBtn: React.FC<MainBtnProps> = ({ text, onClick }) => {
     </Button>
   );
 };
-

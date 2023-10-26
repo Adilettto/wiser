@@ -9,8 +9,6 @@ import { useAppDispatch } from "Redux/store";
 import { restoreSession } from "Redux/Auth/reducer";
 import { ToastBlock } from "Components/Notify/notify";
 import { selectAccount } from "Redux/Auth/slice";
-import "./axios";
-
 
 function App() {
   const location = useLocation();

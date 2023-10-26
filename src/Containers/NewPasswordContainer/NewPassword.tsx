@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./NewPassword.module.scss";
 import { PasswordInput } from "Components/UI/PasswordInput/PasswordInput";
-import { AuthBtn } from "Components/UI/MainBtn/MainBtn";
 import { Link } from "react-router-dom";
+import { MainBtn } from "Components/UI/MainBtn/MainBtn";
 
 export const NewPasswordContainer = () => {
   return (
@@ -11,7 +11,7 @@ export const NewPasswordContainer = () => {
         <h2>New Password</h2>
         <PasswordInput text="NEW PASSWORD" />
         <PasswordInput text="REPEAT PASSWORD" />
-        <AuthBtn text="SAVE" />
+        <MainBtn text="SAVE" />
         <p className={styles.newPassword__block__text}>
           I remembered my password{" "}
           <Link to="/sign-in" className={styles.newPassword__block__link}>
