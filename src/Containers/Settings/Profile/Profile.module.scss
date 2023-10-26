@@ -80,7 +80,7 @@
           letter-spacing: 0em;
           color: #000000;
         }
-        p {
+        & p {
           font-family: Inter;
           font-size: 18px;
           font-weight: 500;
@@ -128,14 +128,14 @@
         }
       }
     }
-    form {
-      label {
+    & form {
+      & label {
         font-size: 16px;
         font-weight: 400;
         line-height: 19px;
         color: #005dac;
       }
-      input {
+      & input {
         width: 306px;
         margin-top: 8px;
         margin-bottom: 14px;

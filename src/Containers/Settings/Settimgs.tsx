@@ -23,7 +23,7 @@ const tabs: TabsProps["items"] = [
   },
   {
     label: "Company",
-    key: "key2",
+    key: "company",
     children: (
       <div>
         <Company />
@@ -31,8 +31,8 @@ const tabs: TabsProps["items"] = [
     ),
   },
   {
-    label: "Teams ",
-    key: "key3",
+    label: "Teams",
+    key: "teams",
     children: (
       <div>
         <Teams />
@@ -40,28 +40,27 @@ const tabs: TabsProps["items"] = [
     ),
   },
   {
-    label: "Users ",
-    key: "key4",
+    label: "Users",
+    key: "users",
     children: (
       <div>
-        {" "}
         <User />
       </div>
     ),
   },
   {
-    label: "Accounting ",
-    key: "key5",
+    label: "Accounting",
+    key: "accounting",
     children: <div>tab3</div>,
   },
   {
-    label: "Blacklist ",
-    key: "key6",
+    label: "Blacklist",
+    key: "blacklist",
     children: <div>tab3</div>,
   },
   {
-    label: "Incentives ",
-    key: "key7",
+    label: "Incentives",
+    key: "incentives",
     children: <div>tab3</div>,
   },
 ];
@@ -78,7 +77,7 @@ const Settimgs: React.FC<SettimgsProps> = ({ setUpdate, update }) => {
   const handleChange = (tab: string) => {
     setCurrentTab(tab);
     setUpdate(!update);
-    if (tab !== "key4") {
+    if (tab !== "users") {
       navigate("/settings");
     }
   };
@@ -94,7 +93,7 @@ const Settimgs: React.FC<SettimgsProps> = ({ setUpdate, update }) => {
       </div>
       <div className={styles.content__tabs}>
         <Tabs items={tabs} onChange={handleChange} />
-        {currentTab === "key4" && (
+        {currentTab === "users" && (
           <Button
             className={styles.content__tabs__btn}
             onClick={() => {
