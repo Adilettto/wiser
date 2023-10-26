@@ -19,10 +19,6 @@ export const routeMap = new Map<string, RouteData>()
     page: pages.HomePage,
     permissions: [],
   })
-  .set("/capacity", {
-    page: pages.HomePage,
-    permissions: [],
-  })
 
   .set("/load", {
     page: pages.LoadListPage,
