@@ -1,11 +1,10 @@
 import styles from "./Info.module.scss";
-import { ReactComponent as DollarSign } from "../../Assets/dollar.svg";
-import { Input } from "antd";
 import { Button } from "antd";
+import InputWithLine from "Components/UI/InputWithLine/InputWithLine";
 
 export const Info = () => {
   return (
-    <div>
+    <div className={styles.bid}>
       <div className={styles.container}>
         <div className={styles.container__box}>
           <ul className={styles.container__ul}>
@@ -15,17 +14,10 @@ export const Info = () => {
                 Empty miles{" "}
               </span>
               <div className={styles.dollar}>
-                <Input
-                  placeholder="default size"
-                  prefix={<DollarSign className={styles.dollar__sign} />}
-                />
-                <hr className={styles.dollar__sign} />
+                <InputWithLine line="example" />
               </div>
               <div className={styles.dollar}>
-                <Input
-                  placeholder="default size"
-                  prefix={<DollarSign className={styles.dollar__sign} />}
-                />
+                <InputWithLine line="example" mi="/mi" />
               </div>
             </li>
             <li className={styles.container__list}>
@@ -33,16 +25,10 @@ export const Info = () => {
                 Loaded miles{" "}
               </span>
               <div className={styles.dollar}>
-                <Input
-                  placeholder="default size"
-                  prefix={<DollarSign className={styles.dollar__sign} />}
-                />
+                <InputWithLine line="example" />
               </div>
               <div className={styles.dollar}>
-                <Input
-                  placeholder="default size"
-                  prefix={<DollarSign className={styles.dollar__sign} />}
-                />
+                <InputWithLine line="example" mi="/mi" />
               </div>
             </li>
             <li className={styles.container__list}>
@@ -50,16 +36,10 @@ export const Info = () => {
                 Broker price
               </span>
               <div className={styles.dollar}>
-                <Input
-                  placeholder="default size"
-                  prefix={<DollarSign className={styles.dollar__sign} />}
-                />
+                <InputWithLine line="example" />
               </div>
               <div className={styles.dollar}>
-                <Input
-                  placeholder="default size"
-                  prefix={<DollarSign className={styles.dollar__sign} />}
-                />
+                <InputWithLine line="example" mi="/mi" />
               </div>
             </li>
             <li className={styles.container__list}>
@@ -67,31 +47,19 @@ export const Info = () => {
                 Driver price
               </span>
               <div className={styles.dollar}>
-                <Input
-                  placeholder="default size"
-                  prefix={<DollarSign className={styles.dollar__sign} />}
-                />
+                <InputWithLine line="example" />
               </div>
               <div className={styles.dollar}>
-                <Input
-                  placeholder="default size"
-                  prefix={<DollarSign className={styles.dollar__sign} />}
-                />
+                <InputWithLine line="example" mi="/mi" />
               </div>
             </li>
             <li className={styles.container__list}>
               <span className={styles.container__list__title}>Revenue</span>
               <div className={styles.dollar}>
-                <Input
-                  placeholder="default size"
-                  prefix={<DollarSign className={styles.dollar__sign} />}
-                />
+                <InputWithLine line="example" />
               </div>
               <div className={styles.dollar}>
-                <Input
-                  placeholder="default size"
-                  prefix={<DollarSign className={styles.dollar__sign} />}
-                />
+                <InputWithLine line="example" mi="/mi" />
               </div>
             </li>
           </ul>

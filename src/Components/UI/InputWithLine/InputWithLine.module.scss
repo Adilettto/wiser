@@ -1,8 +1,31 @@
-.input {
+.dollar {
+  &__sign {
+    padding: 1px;
+  }
+}
 
-  &__line {
+.input {
+  position: relative;
+  &_withText {
+    & input {
+      padding-left: 25px!important;
+    }
+  }
+  &__mi {
+    color: #0077b6;
     position: absolute;
-    top: 5px;
-    left: 30px;
+    left: 40px;
+    top: 7px;
+    z-index: 100;
+  }
+  &__line {
+    color: gray;
+    position: absolute;
+    top: 8px;
+    left: 45px;
+    z-index: 100;
+    &_withText {
+      left: 70px
+    }
   }
 }

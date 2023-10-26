@@ -6,21 +6,22 @@
   font-family: "Inter", sans-serif;
   font-style: normal;
   line-height: normal;
-}
-
-h2 {
-  font-size: 26px;
-  font-weight: 10px;
-}
-
-.loadpage {
-  background-color: #a2d2ff;
+  margin-left: 4px;
 }
 
 .loadboard {
   display: flex;
+  justify-content: space-between;
+  &__block {
+    width: 28%;
+    margin-left: 20px;
+  }
+  &__button {
+    background: rgb(0 0 0 / 0%);
+    border: none;
+  }
 
-  h3 {
+  & h3 {
     display: inline-flex;
     border-radius: 10px;
     font-size: 10px;
@@ -29,7 +30,7 @@ h2 {
     width: 76px;
   }
 
-  h4 {
+  & h4 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -42,23 +43,24 @@ h2 {
   &__arrow {
     padding: 10px;
 
-    img {
-      margin-right: 10px;
-    }
-
-    h1 {
+    & h1 {
       display: inline;
-      font-size: 20px;
+      font-size: 30px;
+      font-weight: 500;
+      margin-left: 10px;
     }
   }
 
   &__form {
     border-radius: 10px;
     background: #ffff;
-    width: 282px;
     margin: 0 20px;
     padding: 10px;
-    height: 740px;
+    height: 778px;
+    & h2 {
+      font-size: 26px;
+      font-weight: 500;
+    }
   }
   &__h {
     display: inline-flex;
@@ -66,16 +68,21 @@ h2 {
     font-size: 10px;
     color: #0077b6;
     gap: 10px;
+    margin-top: 10px;
   }
 }
 
 .place {
+  &__image {
+    display: flex;
+    margin-top: 72px;
+  }
+
   &__list {
     display: inline-flex;
     flex-direction: column;
     gap: 20px;
     text-decoration: none;
-    padding: 71px;
     top: -7px;
     align-items: flex-start;
     margin-right: 73px;
@@ -86,7 +93,9 @@ h2 {
 
   &__li {
     color: #005dac;
+    margin-top: 10px;
   }
+  
   &__delivery {
     display: flex;
     justify-content: space-between;
@@ -96,18 +105,6 @@ h2 {
       margin-top: -6px;
     }
   }
-
-  &__image {
-    width: 20px;
-    height: 158px;
-    flex-direction: column;
-    gap: 20px;
-    top: -7px;
-    align-items: flex-start;
-    margin-top: -259px;
-    display: flex;
-    margin-left: 33px;
-  }
 }
 
 .info {
@@ -116,15 +113,15 @@ h2 {
     justify-content: space-between;
     gap: 10px;
 
-    &__copyIcon {
-      margin-top: 50px;
+    & h5 {
+      font-size: 20px;
+      margin-top: 23px;
+      padding: 10px;
     }
-  }
 
-  h5 {
-    font-size: 20px;
-    margin-top: 50px;
-    padding: 10px;
+    &__copyIcon {
+      margin-top: 78px;
+    }
   }
 }
 
@@ -136,9 +133,11 @@ h2 {
   flex-direction: column;
   gap: 82px;
   padding: 18px;
-  width: 282px;
+  width: 26%;
   height: 253px;
   margin: 20px;
+  margin-top: -124px;
+  margin-left: 38px;
 
   &__broker {
     color: #0077b6;

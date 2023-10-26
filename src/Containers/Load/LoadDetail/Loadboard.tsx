@@ -1,25 +1,41 @@
-import line from "Assets/line.png";
-import primary from "Assets/primary.png";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { GroupIcon } from "Assets/index";
+import { ArrowIcon } from "Assets/index";
 import { Info } from "Components/Info/Info";
 import { Miles } from "Components/Miles/Miles";
-import star from "Assets/star.svg";
-import Frame from "Assets/Frame.svg";
-import frameOne from "Assets/FrameTwo.svg";
-import frameTwo from "Assets/FrameThree.svg";
-import frameThree from "Assets/FrameFour.svg";
-import email from "Assets/email.svg";
-import phone from "Assets/phone.svg";
-import horiz from "Assets/horiz.svg";
-import styles from "./Loadboard.module.scss";
 import { InfoBlock } from "Components/InfoBlock/InfoBlock";
+import { StarIcon } from "Assets/index";
+import { Frame } from "Assets/index";
+import { MapIcon } from "Assets/index";
+import { DestinationIcon } from "Assets/index";
+import { InfoIcon } from "Assets/index";
+import { EmailIcon } from "Assets/index";
+import { PhoneIcon } from "Assets/index";
+import { HorizIcon } from "Assets/index";
+import { PrintIcon } from "Assets/index";
+import Icon from "@ant-design/icons";
+import styles from "./Loadboard.module.scss";
 
 export const Loadboard = () => {
+  const navigate = useNavigate();
+
+  function goBack() {
+    navigate(-1);
+  }
+
   return (
     <div className={styles.loadpage}>
       <div className={styles.loadboard}>
         <div className={styles.loadboard__block}>
           <div className={styles.loadboard__arrow}>
-            <img src={primary} alt="arrow" />
+            <button className={styles.loadboard__button} onClick={goBack}>
+              <Icon
+                component={ArrowIcon}
+                alt="arrow"
+                style={{ fontSize: "35px" }}
+              />
+            </button>
             <h1>Loadboard</h1>
           </div>
           <div className={styles.loadboard__form}>
@@ -29,36 +45,49 @@ export const Loadboard = () => {
               <h4>Expires 08.09.2023, 05-28</h4>
             </div>
             <div className={styles.place}>
-              <ul className={styles.place__list}>
-                <li className={styles.place__li}>Pick up</li>
-                <div className={styles.place__delivery}>
-                  <li>Miami, FL 33166</li>
-                  <img
-                    className={styles.place__delivery__frame}
-                    src={frameOne}
-                    alt="frame"
-                  />
-                </div>
-                <li className={styles.place__li}>09/08/2023 06:00 am</li>
-                <li className={styles.place__li}>Delivery</li>
-                <div className={styles.place__delivery}>
-                  <li>Miami, FL 33166</li>
-                  <img src={frameTwo} alt="frame" />
-                </div>
-                <li className={styles.place__li}>09/08/2023 06:00 am</li>
-              </ul>
-
               <div className={styles.place__image}>
-                <img src={line} alt="line" />
+                <Icon
+                  component={GroupIcon}
+                  alt="line"
+                  style={{
+                    fontSize: "170px",
+                    marginLeft: "-59px",
+                    marginTop: "-56px",
+                  }}
+                />
+
+                <ul className={styles.place__list}>
+                  <li className={styles.place__li}>Pick up</li>
+                  <div className={styles.place__delivery}>
+                    <li>Miami, FL 33166</li>
+                    <Icon
+                      className={styles.place__delivery__frame}
+                      component={MapIcon}
+                      alt="frame"
+                      style={{ fontSize: "25px" }}
+                    />
+                  </div>
+                  <li className={styles.place__li}>09/08/2023 06:00 am</li>
+                  <li className={styles.place__li}>Delivery</li>
+                  <div className={styles.place__delivery}>
+                    <li>Miami, FL 33166</li>
+                    <Icon
+                      component={DestinationIcon}
+                      alt="frame"
+                      style={{ fontSize: "25px", marginTop: "-4px" }}
+                    />
+                  </div>
+                  <li className={styles.place__li}>09/08/2023 06:00 am</li>
+                </ul>
               </div>
             </div>
             <div className={styles.info}>
               <div className={styles.info__delivery}>
-                <h5>Information</h5>
-                <img
-                  className={styles.info__delivery__copyIcon}
-                  src={frameThree}
+                <h5 className={styles.delivery__h5}>Information</h5>
+                <Icon
+                  component={InfoIcon}
                   alt="frame"
+                  style={{ fontSize: "25px", marginTop: "24px" }}
                 />
               </div>
               <InfoBlock
@@ -68,6 +97,10 @@ export const Loadboard = () => {
                 weight="10"
                 truckSize="CARGO VAN"
               />
+              <p>
+                LG/PJ/offloading/residential delievery/place the skid to the
+                ground
+              </p>
             </div>
           </div>
         </div>
@@ -79,8 +112,16 @@ export const Loadboard = () => {
           <div className={styles.data__one}>
             <h4>Broker</h4>
             <div>
-              <img src={phone} alt='phone' />
-              <img src={email} alt='email' />
+              <Icon
+                component={PhoneIcon}
+                alt="phone"
+                style={{ fontSize: "25px", color: "grey" }}
+              />
+              <Icon
+                component={EmailIcon}
+                alt="email"
+                style={{ fontSize: "25px", color: "grey" }}
+              />
             </div>
           </div>
           <div className={styles.data__two}>
@@ -92,16 +133,32 @@ export const Loadboard = () => {
           <div className={styles.data__one}>
             <h4>Company</h4>
             <div>
-              <img src={Frame} alt="frame" />
-              <img src={email} alt="email icon" />
+              <Icon
+                component={Frame}
+                alt="frame"
+                style={{ fontSize: "25px", color: "grey" }}
+              />
+              <Icon
+                component={PrintIcon}
+                alt="email icon"
+                style={{ fontSize: "25px", color: "grey" }}
+              />
             </div>
           </div>
           <div className={styles.data__two}>
             <p>(S) ASAP ESPRES</p>
           </div>
           <div className={styles.data__icons}>
-            <img src={star} alt="star icon" />
-            <img src={horiz} alt=" horizontal icon" />
+            <Icon
+              component={StarIcon}
+              alt="star icon"
+              style={{ fontSize: "25px" }}
+            />
+            <Icon
+              component={HorizIcon}
+              alt=" horizontal icon"
+              style={{ fontSize: "25px" }}
+            />
           </div>
         </div>
       </div>

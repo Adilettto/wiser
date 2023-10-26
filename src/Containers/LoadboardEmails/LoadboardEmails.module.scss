@@ -1,65 +1,65 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Manrope:wght@500&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  line-height: normal;
-}
-
-h2 {
-  font-size: 26px;
-  font-weight: 10px;
-}
-
-.loadpage {
-  background-color: #a2d2ff;
-}
 
 .loadboard {
   display: flex;
-
-  h3 {
-    display: inline-flex;
-    border-radius: 10px;
-    font-size: 10px;
-    background: #e5edf4;
-    padding: 4px 8px;
-    width: 76px;
+  &__h2 {
+    font-size: 26px;
+    font-weight: 10px;
   }
 
-  h4 {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
+  &__block {
+    width: 28%;
+  }
+
+  &__button {
+    background: rgb(0 0 0 / 0%);
+    border: none;
+    margin-left: 31px;
+  }
+
+  &__h1 {
+    display: inline;
     font-size: 10px;
-    background: #e5edf4;
-    padding: 4px 8px;
+    font-weight: 500;
+    font-size: 30px;
+  }
+
+  h {
+    & h3 {
+      display: inline-flex;
+      font-size: 12px;
+      width: 76px;
+      margin-top: 10px;
+    }
+
+    & h4 {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      font-size: 12px;
+      padding: 4px 8px;
+    }
   }
 
   &__arrow {
+    display: flex;
     padding: 10px;
 
-    img {
+    & img {
       margin-right: 10px;
-    }
-
-    h1 {
-      display: inline;
-      font-size: 20px;
     }
   }
 
   &__form {
     border-radius: 10px;
     background: #ffff;
-    width: 282px;
-    margin: 0 20px;
+    height: 904px;
+    flex-shrink: 0;
+    margin-left: 48px;
     padding: 10px;
-    height: 740px;
   }
+
   &__h {
     display: inline-flex;
     flex-direction: column;
@@ -70,16 +70,19 @@ h2 {
 }
 
 .place {
+  &__image {
+    display: flex;
+    margin-top: 72px;
+  }
+
   &__list {
     display: inline-flex;
     flex-direction: column;
     gap: 20px;
     text-decoration: none;
-    padding: 71px;
-    top: -7px;
     align-items: flex-start;
-    margin-right: 73px;
-    margin-top: -54px;
+    margin-left: 104px;
+    margin-top: 30px;
     list-style-type: none;
     white-space: nowrap;
   }
@@ -87,13 +90,15 @@ h2 {
   &__li {
     color: #005dac;
   }
+
   &__delivery {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 10px;
 
     &__frame {
-      margin-top: -6px;
+      margin-top: -8px;
+      font-size: 25px;
     }
   }
 
@@ -111,19 +116,76 @@ h2 {
 }
 
 .info {
+  margin-top: 65px;
   &__delivery {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
 
     &__copyIcon {
       margin-top: 50px;
+      font-size: 24px;
     }
   }
 
-  h5 {
+  & h5 {
     font-size: 20px;
     margin-top: 50px;
     padding: 10px;
+  }
+}
+
+.h6 {
+  padding: 10px;
+  font-size: 20px;
+  margin-top: 16px;
+}
+
+.data {
+  display: flex;
+  gap: 33px;
+  list-style-type: none;
+  margin-top: 10px;
+
+  &__0 {
+    display: flex;
+    list-style-type: none;
+    gap: 70px;
+  }
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__options {
+    display: flex;
+    margin-top: 23px;
+    color: #82aeda;
+    background: #eaeaea;
+    border-radius: 10px;
+    gap: 28px;
+  }
+}
+
+.driver {
+  color: #a5a5a5;
+  margin-top: 22px;
+  
+  &__name {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  &__info {
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__icon {
+    margin-top: -6px;
+    color: white;
+    font-size: 25px;
   }
 }
