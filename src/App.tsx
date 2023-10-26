@@ -33,15 +33,8 @@ function App() {
   return (
     <>
       <ToastBlock />
-<<<<<<< HEAD
 
       <Routes>{routes}</Routes>
-=======
-      <Routes>
-        {routes}
-        <Route path="/add-load" element={<AddLoad/>}/>
-      </Routes>
->>>>>>> 92813c950aae9deded6feaf43863a935c45c9162
     </>
   );
 }

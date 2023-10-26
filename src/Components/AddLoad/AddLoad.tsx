@@ -1,23 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./AddLoad.module.scss";
 import { Button, Input, Modal } from "antd";
 import addIcon from "../../Assets/plusIcon.svg";
 import dotsIcon from "../../Assets/dotsIcon.svg";
 
-export const AddLoad = () => {
-  const [isModalVisilbe, setIsModalVisible] = useState(true);
+interface AddLoadProps {
+  visible: any;
+  onCancel: any;
+}
 
-  const handleModalVisiblity = () => {
-    setIsModalVisible(false);
-  };
+export const AddLoad: React.FC<AddLoadProps> = ({onCancel, visible}) => {
   return (
     <Modal
-      title="Add load"
-      visible={isModalVisilbe}
+      title={<h1>Add load</h1>}
+      visible={visible}
       footer={true}
       maskClosable={true}
       width={410}
-      onCancel={handleModalVisiblity}
+      onCancel={onCancel}
       className={styles.addLoad}
     >
       <label htmlFor="pickup">Pick-up</label>

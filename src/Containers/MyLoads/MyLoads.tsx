@@ -3,12 +3,18 @@ import React, { useState } from "react";
 import styles from "./MyLoads.module.scss";
 import { Button, Pagination, Tabs } from "antd";
 import cn from "classnames";
+import { AddLoad } from "Components/AddLoad/AddLoad";
 
 const { TabPane } = Tabs;
 
 export const MyLoads = () => {
   const [currentTab, setCurrentTab] = useState<string>("1");
   const [currentPagination, setCurrentPagination] = useState<number>(1);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const handleModalVisiblity = () => {
+    setIsModalVisible(!isModalVisible);
+  };
 
   const handleTabChange = (tab: string) => {
     setCurrentTab(tab);
@@ -24,7 +30,9 @@ export const MyLoads = () => {
       <div className={styles.loads__block}>
         <div className={styles.loads__block__header}>
           <h1>My loads</h1>
-          <Button className={styles.loads__block__header__btn}>
+          <AddLoad  visible={isModalVisible} onCancel={handleModalVisiblity}/>
+          <Button className={styles.loads__block__header__btn}
+          onClick={handleModalVisiblity}>
             + Add load
           </Button>
         </div>

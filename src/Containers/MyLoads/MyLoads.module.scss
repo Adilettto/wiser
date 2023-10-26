@@ -1,19 +1,7 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .loads {
   background: url(../../Assets/bg.jpg);
   height: 965px;
   position: relative;
-
-  h1 {
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 500;
-  }
 
   &__block {
     margin-left: 10%;
@@ -22,6 +10,11 @@
     &__header {
       display: flex;
       justify-content: space-between;
+
+      & h1 {
+        font-size: 30px;
+        font-weight: 500;
+      }
 
       &__btn {
         border-radius: 10px;
@@ -63,7 +56,7 @@
         border-radius: 10px;
         background: #fee0e0;
         padding: 4px 8px;
-        color: #ED4545;
+        color: #ed4545;
       }
     }
   }
@@ -88,7 +81,7 @@
 
           font-weight: 400;
           padding: 0;
-          padding: 15px 24px; 
+          padding: 15px 24px;
           margin: 0;
           border-spacing: 0;
           width: auto;
