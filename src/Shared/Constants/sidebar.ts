@@ -1,4 +1,5 @@
-import { DashboardIcon } from "Assets/index";
+import { LogoutOutlined } from "@ant-design/icons";
+import { DashboardIcon, Logout } from "Assets/index";
 import { LoadBoardICon } from "Assets/index";
 import { MybidsIcon } from "Assets/index";
 import { MyloadsIcon } from "Assets/index";
@@ -9,7 +10,6 @@ import { SmsIcon } from "Assets/index";
 import { UnitsIcon } from "Assets/index";
 import { AccountingIcon } from "Assets/index";
 import { SettingsIcon } from "Assets/index";
-import { Logout } from "Assets/index";
 
 export const sidebar = [
   { icon: DashboardIcon, name: "Dashboard", link: "/dashboard" },
@@ -23,5 +23,5 @@ export const sidebar = [
   { icon: UnitsIcon, name: "Units", link: "/units" },
   { icon: AccountingIcon, name: "Accounting", link: "/accounting" },
   { icon: SettingsIcon, name: "Settings", link: "/settings" },
-  { icon: Logout, name: "Logout", link: "/home" },
+  { icon: Logout, name: "Logout", link: "/sign-in" },
 ];
