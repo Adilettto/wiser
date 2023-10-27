@@ -10,11 +10,7 @@ interface AddLoadProps {
   setOpen: (open: boolean) => void;
 }
 
-export const AddLoad: React.FC<AddLoadProps> = ({
-  onCancel,
-  visible,
-  setOpen,
-}) => {
+export const AddLoad: React.FC<AddLoadProps> = ({ onCancel, visible }) => {
   return (
     <Modal
       title={<h1>Add load</h1>}

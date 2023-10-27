@@ -29,13 +29,11 @@ export const MyLoads = () => {
       <div className={styles.loads__block}>
         <div className={styles.loads__block__header}>
           <h1>My loads</h1>
-          {/* <AddLoad set visible={isModalVisible} onCancel={handleModalVisiblity} /> */}
-          <Button
-            className={styles.loads__block__header__btn}
-            onClick={handleModalVisiblity}
-          >
-            + Add load
-          </Button>
+          {/* <AddLoad
+            setOpen={setOpen}
+            visible={isModalVisible}
+            onCancel={handleModalVisiblity}
+          /> */}
         </div>
         <Tabs
           activeKey={currentTab}
