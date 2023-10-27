@@ -7,9 +7,14 @@ import dotsIcon from "../../Assets/dotsIcon.svg";
 interface AddLoadProps {
   visible: any;
   onCancel: any;
+  setOpen: (open: boolean) => void;
 }
 
-export const AddLoad: React.FC<AddLoadProps> = ({onCancel, visible}) => {
+export const AddLoad: React.FC<AddLoadProps> = ({
+  onCancel,
+  visible,
+  setOpen,
+}) => {
   return (
     <Modal
       title={<h1>Add load</h1>}
@@ -36,7 +41,11 @@ export const AddLoad: React.FC<AddLoadProps> = ({onCancel, visible}) => {
         <img src={dotsIcon} alt="dots-icon" />
       </div>
       <label htmlFor="delivery">Delivery</label>
-      <Input name="delivery" type="text" className={styles.addLoad__deliveryInput}/>
+      <Input
+        name="delivery"
+        type="text"
+        className={styles.addLoad__deliveryInput}
+      />
       <div className={styles.addLoad__deliveryField}>
         <Input className={styles.addLoad__deliveryField__mainInput} />
         <Input
@@ -47,8 +56,12 @@ export const AddLoad: React.FC<AddLoadProps> = ({onCancel, visible}) => {
         <img src={dotsIcon} alt="dots-icon" />
       </div>
       <label htmlFor="reply-email">Reply email</label>
-      <Input className={styles.addLoad__replyInput} name="reply-email" type="email" />
-      <label  htmlFor="note">Note</label>
+      <Input
+        className={styles.addLoad__replyInput}
+        name="reply-email"
+        type="email"
+      />
+      <label htmlFor="note">Note</label>
       <Input className={styles.addLoad__noteInput} name="note" type="text" />
       <p>Dims</p>
       <div className={styles.addLoad__dims}>

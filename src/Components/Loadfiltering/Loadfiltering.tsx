@@ -8,8 +8,11 @@ import Vehicle from "./Vehicle/Vehicle";
 import Brokerages from "./Brokerage/Brokerage";
 import { useNavigate } from "react-router";
 import styles from "./Loadfiltering.module.scss";
+import { useState } from "react";
+import { AddLoad } from "Components/AddLoad/AddLoad";
 
 const Loadfiltering: React.FC = () => {
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const goToDetailPage = () => {
     navigate("/load/1");
@@ -22,9 +25,18 @@ const Loadfiltering: React.FC = () => {
           <div className={styles.loadfilter__contant__header_loadbar}>
             <Button
               className={styles.loadfilter__contant__header__loadbar_addload}
+              onClick={() => setOpen(true)}
             >
               Add load
             </Button>
+
+            {open && (
+              <AddLoad
+                visible={open}
+                onCancel={() => setOpen(false)}
+                setOpen={setOpen}
+              />
+            )}
             <Button
               className={styles.loadfilter__contant__header__loadbar_capacity}
             >
