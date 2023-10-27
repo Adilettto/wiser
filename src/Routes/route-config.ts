@@ -60,6 +60,10 @@ export const routeMap = new Map<string, RouteData>()
     page: pages.HomePage,
     permissions: [],
   })
+  .set("/addload", {
+    page: pages.HomePage,
+    permissions: [],
+  })
   .set("/units", {
     page: pages.HomePage,
     permissions: [],
@@ -76,10 +80,7 @@ export const routeMap = new Map<string, RouteData>()
     page: pages.HomePage,
     permissions: [],
   })
-  .set("/load/:id", {
-    page: pages.LoadDetailPage,
-    permissions: [],
-  })
+
   .set("/mybids", {
     page: pages.Bids,
     permissions: [],
