@@ -4,13 +4,21 @@ import Icon from "@ant-design/icons";
 import cn from "classnames";
 import { useLocation, useNavigate } from "react-router";
 import styles from "./Sidebar.module.scss";
+import { AddLoad } from "Components/AddLoad/AddLoad";
+import { useState } from "react";
+import { NewLoad } from "Components/AddLoadBids/NewLoad";
 type SidebarProps = {
   height?: number;
 };
 const Sidebar: React.FC<SidebarProps> = ({ height }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const [open, setOpen] = useState(false);
   const handleClick = (link: string) => {
+    if (link === "/addload") {
+      setOpen(true);
+      return;
+    }
     navigate(link);
   };
   return (
@@ -37,6 +45,7 @@ const Sidebar: React.FC<SidebarProps> = ({ height }) => {
           </li>
         ))}
       </ul>
+      <NewLoad visible={open} onCancel={() => setOpen(false)} />
     </div>
   );
 };

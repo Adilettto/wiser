@@ -16,7 +16,6 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     if (sidebarDiv) {
       const updateSidebarHeight = () => {
         const contentHeight = 1000 + window.scrollY;
-        console.log(contentHeight);
         if (contentHeight > 1000 && contentHeight < 2000) {
           sidebarDiv.style.height = `${contentHeight}px`;
         }
