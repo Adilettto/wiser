@@ -1,7 +1,6 @@
-import Sidebar from "Components/Sidebar/Sidebar";
 import React, { useState } from "react";
 import styles from "./MyLoads.module.scss";
-import { Button, Pagination, Tabs } from "antd";
+import { Pagination, Tabs } from "antd";
 import cn from "classnames";
 
 const { TabPane } = Tabs;

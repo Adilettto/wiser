@@ -1,4 +1,3 @@
-import { LogoutOutlined } from "@ant-design/icons";
 import { DashboardIcon, Logout } from "Assets/index";
 import { LoadBoardICon } from "Assets/index";
 import { MybidsIcon } from "Assets/index";
