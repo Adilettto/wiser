@@ -1,9 +1,7 @@
-import Sidebar from "Components/Sidebar/Sidebar";
 import React, { useState } from "react";
 import styles from "./MyLoads.module.scss";
-import { Button, Pagination, Tabs } from "antd";
+import { Pagination, Tabs } from "antd";
 import cn from "classnames";
-import { AddLoad } from "Components/AddLoad/AddLoad";
 
 const { TabPane } = Tabs;
 
@@ -29,11 +27,6 @@ export const MyLoads = () => {
       <div className={styles.loads__block}>
         <div className={styles.loads__block__header}>
           <h1>My loads</h1>
-          {/* <AddLoad
-            setOpen={setOpen}
-            visible={isModalVisible}
-            onCancel={handleModalVisiblity}
-          /> */}
         </div>
         <Tabs
           activeKey={currentTab}
