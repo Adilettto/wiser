@@ -30,13 +30,11 @@ const Loadfiltering: React.FC = () => {
               Add load
             </Button>
 
-            {open && (
-              <AddLoad
-                visible={open}
-                onCancel={() => setOpen(false)}
-                setOpen={setOpen}
-              />
-            )}
+            <AddLoad
+              visible={open}
+              onCancel={() => setOpen(false)}
+              setOpen={setOpen}
+            />
             <Button
               className={styles.loadfilter__contant__header__loadbar_capacity}
             >
