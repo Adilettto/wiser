@@ -2,12 +2,18 @@ import { Pagination } from "antd";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "./Pagination.module.scss";
+import cn from "classnames";
 
 type PaginationsProps = {
   link: string;
   className?: string;
+  totalCount?: number;
 };
-const Paginations: React.FC<PaginationsProps> = ({ link, className }) => {
+const Paginations: React.FC<PaginationsProps> = ({
+  link,
+  className,
+  totalCount = 50,
+}) => {
   const [active, setActive] = useState<number>(1);
   const navigate = useNavigate();
 
@@ -21,7 +27,7 @@ const Paginations: React.FC<PaginationsProps> = ({ link, className }) => {
         showSizeChanger={false}
         itemRender={(pageNumber, _, a) => (
           <span
-            className={pageNumber === active ? styled.active : ""}
+            className={cn(pageNumber === active && styled.active)}
             onClick={() => setActive(pageNumber)}
           >
             {a}
@@ -29,7 +35,7 @@ const Paginations: React.FC<PaginationsProps> = ({ link, className }) => {
         )}
         onChange={onChange}
         defaultCurrent={1}
-        total={500}
+        total={totalCount}
       />
     </div>
   );
