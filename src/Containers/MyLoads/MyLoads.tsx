@@ -1,25 +1,16 @@
-import React, { useState } from "react";
-import styles from "./MyLoads.module.scss";
-import { Pagination, Tabs } from "antd";
+import Paginations from "Components/UI/Pagination/Pagination";
+import { Tabs } from "antd";
 import cn from "classnames";
+import { useState } from "react";
+import styles from "./MyLoads.module.scss";
 
 const { TabPane } = Tabs;
 
 export const MyLoads = () => {
   const [currentTab, setCurrentTab] = useState<string>("1");
-  const [currentPagination, setCurrentPagination] = useState<number>(1);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const handleModalVisiblity = () => {
-    setIsModalVisible(!isModalVisible);
-  };
 
   const handleTabChange = (tab: string) => {
     setCurrentTab(tab);
-  };
-
-  const handlePaginationChange = (page: number) => {
-    setCurrentPagination(page);
   };
 
   return (
@@ -141,12 +132,7 @@ export const MyLoads = () => {
                 </tr>
               </tbody>
             </table>
-            <Pagination
-              current={currentPagination}
-              onChange={handlePaginationChange}
-              total={50}
-              className={styles.loads__block__navPage}
-            />
+            <Paginations link="myloads" />
           </TabPane>
           <TabPane
             tab={
@@ -295,12 +281,7 @@ export const MyLoads = () => {
                 </tr>
               </tbody>
             </table>
-            <Pagination
-              current={currentPagination}
-              onChange={handlePaginationChange}
-              total={50}
-              className={styles.loads__block__navPage}
-            />
+            <Paginations link="myloads" />
           </TabPane>
           <TabPane
             tab={
@@ -449,12 +430,7 @@ export const MyLoads = () => {
                 </tr>
               </tbody>
             </table>
-            <Pagination
-              current={currentPagination}
-              onChange={handlePaginationChange}
-              total={50}
-              className={styles.loads__block__navPage}
-            />
+            <Paginations link="myloads" />
           </TabPane>
           <TabPane
             tab={
@@ -525,12 +501,7 @@ export const MyLoads = () => {
                 </tr>
               </tbody>
             </table>
-            <Pagination
-              current={currentPagination}
-              onChange={handlePaginationChange}
-              total={50}
-              className={styles.loads__block__navPage}
-            />
+            <Paginations link="myloads" />
           </TabPane>
         </Tabs>
       </div>

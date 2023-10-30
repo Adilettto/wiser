@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import styles from "./MyBids.module.scss";
-import { Button, Pagination, Tabs } from "antd";
 import { NewLoad } from "Components/AddLoadBids/NewLoad";
-import cn from "classnames";
 import BidsList from "Components/MyBids/BidsList/BidsList";
+import { Button, Tabs } from "antd";
+import cn from "classnames";
+import { useState } from "react";
 
+import Paginations from "Components/UI/Pagination/Pagination";
+import styles from "./MyBids.module.scss";
 const { TabPane } = Tabs;
 
 export const MyBids = () => {
   const [currentTab, setCurrentTab] = useState<string>("1");
-  const [currentPagination, setCurrentPagination] = useState<number>(1);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleModalVisiblity = () => {
@@ -18,10 +18,6 @@ export const MyBids = () => {
 
   const handleTabChange = (tab: string) => {
     setCurrentTab(tab);
-  };
-
-  const handlePaginationChange = (page: number) => {
-    setCurrentPagination(page);
   };
 
   return (
@@ -56,12 +52,7 @@ export const MyBids = () => {
             key="1"
           >
             <BidsList />
-            <Pagination
-              current={currentPagination}
-              onChange={handlePaginationChange}
-              total={50}
-              className={styles.bids__block__navPage}
-            />
+            <Paginations link="mybids" />
           </TabPane>
           <TabPane
             tab={
@@ -77,12 +68,7 @@ export const MyBids = () => {
             key="2"
           >
             <BidsList />
-            <Pagination
-              current={currentPagination}
-              onChange={handlePaginationChange}
-              total={50}
-              className={styles.bids__block__navPage}
-            />
+            <Paginations link="mybids" />
           </TabPane>
         </Tabs>
       </div>

@@ -1,5 +1,4 @@
 .bids {
-  // height: 965px;
   position: relative;
 
   & h1 {
@@ -31,10 +30,12 @@
       position: absolute;
       top: 30rem;
       left: 25rem;
+      .ant-pagination .ant-pagination-item-active {
+        background: transparent !important;
+      }
     }
 
     &__tabs {
-        
       &__tab {
         display: inline-block;
         padding: 8px 16px;
@@ -51,7 +52,6 @@
           color: #fff;
         }
       }
-      
     }
   }
 
@@ -59,10 +59,9 @@
     border-spacing: 0 3px;
     width: 100%;
     & thead {
-        
       & tr {
         background-color: #005dac;
-        
+
         &:first-child {
           height: 43px;
           min-width: 100%;
@@ -91,19 +90,18 @@
 
     & tbody {
       background: none;
-      
-      
+
       & tr {
         background-color: white;
         height: 52px;
         border-radius: 10px 10px 10px 10px;
-        
+
         & td {
           text-align: center;
           font-size: 16px;
           font-style: normal;
           font-weight: 400;
-          
+
           &:first-child {
             border-bottom-left-radius: 10px;
             border-top-left-radius: 10px;
