@@ -14,6 +14,7 @@ import { AddLoad } from "Components/AddLoad/AddLoad";
 const Loadfiltering: React.FC = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+
   const goToDetailPage = () => {
     navigate("/load/1");
   };
