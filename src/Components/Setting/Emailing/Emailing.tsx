@@ -8,7 +8,7 @@ const Emailing = () => {
       <div className={styles.content__emailng}>
         <h4>Emailing</h4>
 
-        <Row wrap={false}>
+        <Row wrap={false} justify="space-between">
           <Col span={12}>
             <div>
               <p>Email Send System</p>

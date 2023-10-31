@@ -1,8 +1,8 @@
 .content {
+  width: 100%;
   display: flex;
   gap: 21px;
   &__blockfirst {
-    width: 414px;
     height: 695px;
     background-color: #fff;
     border-radius: 10px;
@@ -65,6 +65,8 @@
 
   &__blocksecond {
     display: flex;
+    width: 100%;
+    flex-shrink: 1;
     flex-direction: column;
     gap: 20px;
   }

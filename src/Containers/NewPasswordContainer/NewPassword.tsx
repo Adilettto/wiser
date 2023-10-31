@@ -9,8 +9,8 @@ export const NewPasswordContainer = () => {
     <div className={styles.newPassword}>
       <div className={styles.newPassword__block}>
         <h2>New Password</h2>
-        <PasswordInput text="NEW PASSWORD" />
-        <PasswordInput text="REPEAT PASSWORD" />
+        <PasswordInput label="NEW PASSWORD" />
+        <PasswordInput label="REPEAT PASSWORD" />
         <MainBtn text="SAVE" />
         <p className={styles.newPassword__block__text}>
           I remembered my password{" "}

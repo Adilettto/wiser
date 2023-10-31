@@ -1,12 +1,13 @@
 import { Input, InputProps } from "antd";
 import React from "react";
 import styles from "./InputField.module.scss";
-
+import { Controller, Control } from "react-hook-form";
 interface MailInputProps extends InputProps {
   text: string;
   type: string;
   placeholder: string;
   className: string;
+  control?: Control<any>;
 }
 
 export const InputField: React.FC<MailInputProps> = ({
@@ -14,6 +15,7 @@ export const InputField: React.FC<MailInputProps> = ({
   type,
   placeholder,
   className,
+  control,
   ...props
 }) => {
   return (
@@ -21,12 +23,28 @@ export const InputField: React.FC<MailInputProps> = ({
       <label className={styles.inputField__label} htmlFor={type}>
         {text}
       </label>
-      <Input
-        className={`${styles.inputField__input} ${className || " "}`}
-        type={type}
-        placeholder={placeholder}
-        {...props}
-      />
+      {control ? (
+        <Controller
+          control={control}
+          name="email"
+          render={({ field }) => (
+            <Input
+              className={`${styles.inputField__input} ${className || " "}`}
+              type={type}
+              placeholder={placeholder}
+              {...props}
+              {...field}
+            />
+          )}
+        />
+      ) : (
+        <Input
+          className={`${styles.inputField__input} ${className || " "}`}
+          type={type}
+          placeholder={placeholder}
+          {...props}
+        />
+      )}
     </div>
   );
 };

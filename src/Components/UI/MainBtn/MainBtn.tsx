@@ -7,9 +7,13 @@ type MainBtnProps = ButtonProps & {
   onClick?: any;
 };
 
-export const MainBtn: React.FC<MainBtnProps> = ({ text, onClick }) => {
+export const MainBtn: React.FC<MainBtnProps> = ({
+  text,
+  onClick,
+  ...props
+}) => {
   return (
-    <Button onClick={onClick} className={styles.authBtn}>
+    <Button onClick={onClick} className={styles.authBtn} {...props}>
       {text}
     </Button>
   );

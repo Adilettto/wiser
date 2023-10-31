@@ -86,10 +86,6 @@ const Settimgs: React.FC<SettimgsProps> = ({ setUpdate, update }) => {
     <div className={styles.content}>
       <div className={styles.content__settings}>
         <h2>Settings</h2>
-        <Button className={styles.content__settings_btn}>
-          <PlusOutlined />
-          Add
-        </Button>
       </div>
       <div className={styles.content__tabs}>
         <Tabs items={tabs} onChange={handleChange} />

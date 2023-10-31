@@ -1,11 +1,8 @@
-import React from "react";
-import { DeleteOutlined, FormOutlined, PlusOutlined } from "@ant-design/icons";
-import { ReactComponent as Email } from "Assets/emailsetting.svg";
+import { DeleteOutlined, FormOutlined } from "@ant-design/icons";
 import { ReactComponent as User } from "Assets/user.svg";
 import Button from "Components/UI/Button/Button";
-import { Link } from "react-router-dom";
-import styles from "./Profile.module.scss";
 import Input from "antd/es/input/Input";
+import styles from "./Profile.module.scss";
 
 const Profile = () => {
   return (
@@ -50,19 +47,6 @@ const Profile = () => {
               >
                 Save
               </Button>
-            </div>
-            <div
-              className={styles.container__bgpersonal__flex_firstblock_emailbar}
-            >
-              <Link
-                to=""
-                className={
-                  styles.container__bgpersonal__flex_firstblock_emailbar_link
-                }
-              >
-                <Email />
-                Sing out (Gmail)
-              </Link>
             </div>
           </div>
 

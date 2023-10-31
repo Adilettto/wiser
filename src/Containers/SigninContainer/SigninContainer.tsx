@@ -1,66 +1,64 @@
 import { Checkbox } from "antd";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Signin.module.scss";
-import { Link, Navigate, useNavigate } from "react-router-dom";
 
-import { useState } from "react";
-import { MainBtn } from "Components/UI/MainBtn/MainBtn";
 import { InputField } from "Components/UI/InputField/InputField";
+import { MainBtn } from "Components/UI/MainBtn/MainBtn";
 import { PasswordInput } from "Components/UI/PasswordInput/PasswordInput";
-import { useAppDispatch } from "Redux/store";
 import { signIn } from "Redux/Auth/reducer";
-import { Controller, useForm } from "react-hook-form";
+import {
+  selectAuthError,
+  selectAuthLoading,
+  selectAuthSuccess,
+} from "Redux/Auth/slice";
+import { useAppDispatch } from "Redux/store";
 import { ISignIn } from "Shared/Types/auth";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as Yup from "yup";
-const validationSchema = Yup.object().shape({
-  email: Yup.string()
-    .email("Invalid email address")
-    .required("Email is required"),
-  password: Yup.string().required("Password is required"),
-});
+import { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
+
 const SigninContainer = () => {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
   const nav = useNavigate();
-  const { control, handleSubmit, formState } = useForm<ISignIn>({
-    resolver: yupResolver(validationSchema),
-  });
+  const error = useSelector(selectAuthError);
+  const success = useSelector(selectAuthSuccess);
+
+  const { control, handleSubmit, formState } = useForm<ISignIn>({});
+
   const dispatch = useAppDispatch();
-  console.log(formState.errors);
-  const onSubmit = async (values: any) => {
-    console.log(values);
-    // dispatch(signIn());
+
+  console.log(error);
+
+  const onSubmit = async (values: ISignIn) => {
+    dispatch(signIn(values));
   };
 
-  const handleNav = () => {
-    nav("/load");
-  };
+  useEffect(() => {
+    if (success) {
+      nav("/load");
+    }
+  }, [success]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.signin}>
       <div className={styles.signin__block}>
         <h2>Sign In</h2>
-        <Controller
+        <InputField
           control={control}
-          name="email"
-          render={({ field }) => (
-            <InputField
-              {...field}
-              text="EMAIL"
-              type="email"
-              required
-              placeholder="Enter your email"
-              className=""
-            />
-          )}
+          text="email"
+          type="email"
+          required
+          placeholder="Enter your email"
+          className=""
         />
-        <Controller
-          control={control}
+
+        <PasswordInput
           name="password"
-          render={({ field }) => (
-            <PasswordInput {...field} text="PASSWORD" required />
-          )}
+          control={control}
+          label="password"
+          required
         />
+
+        {error && <label style={{ color: "red" }}>{error}</label>}
 
         <div className={styles.signin__block__requests}>
           <Checkbox className={styles.signin__block__requests_checkbox}>
@@ -70,14 +68,11 @@ const SigninContainer = () => {
             Forgot password?
           </Link>
         </div>
-        <MainBtn text="SIGN IN" htmlType="submit" onClick={handleNav} />
+        <MainBtn text="SIGN IN" htmlType="submit" />
+
         <p className={styles.signin__block__link}>
           Don’t have an account? {}
-          <Link
-            className={styles.signin__link}
-            to="/sign-up"
-            onClick={onSubmit}
-          >
+          <Link className={styles.signin__link} to="/sign-up">
             Sign up
           </Link>
         </p>

@@ -1,17 +1,15 @@
 import { client } from "Service/axios";
+// import { baseURL } from "Service/config";
+import { ISignIn, ISignInResponse } from "Shared/Types/auth";
 
-const USER_URL = "user/";
-// write here your api
+const USER_URL = "token/";
 
 class Auth {
-  signIn() {
-    return client.post<any>(`${USER_URL}/sign-in`);
+  signIn(data: ISignIn) {
+    return client.post<ISignInResponse>(`${USER_URL}`, data);
   }
-  signUp() {
-    return client.post<any>(`${USER_URL}/sign-up`);
-  }
-  forgetPassword() {
-    return client.post<any>(`${USER_URL}/forget-password`);
+  refresh() {
+    return client.post<any>(`${USER_URL}refresh/`);
   }
 }
 
