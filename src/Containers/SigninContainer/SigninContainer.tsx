@@ -2,62 +2,51 @@ import { Checkbox } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Signin.module.scss";
 
-import { InputField } from "Components/UI/InputField/InputField";
 import { MainBtn } from "Components/UI/MainBtn/MainBtn";
-import { PasswordInput } from "Components/UI/PasswordInput/PasswordInput";
 import { signIn } from "Redux/Auth/reducer";
-import {
-  selectAuthError,
-  selectAuthLoading,
-  selectAuthSuccess,
-} from "Redux/Auth/slice";
+import { selectAuthError } from "Redux/Auth/slice";
 import { useAppDispatch } from "Redux/store";
 import { ISignIn } from "Shared/Types/auth";
-import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
+
+import { yupResolver } from "@hookform/resolvers/yup";
+import { AuthInput } from "Components/UI/AuthInput/AuthInput";
+import { signInSchema } from "Shared/Utils/auth";
+import { AuthInputPassword } from "Components/UI/AurhPassword/Authpassword";
 
 const SigninContainer = () => {
   const nav = useNavigate();
   const error = useSelector(selectAuthError);
-  const success = useSelector(selectAuthSuccess);
 
-  const { control, handleSubmit, formState } = useForm<ISignIn>({});
+  const { handleSubmit, formState, register } = useForm<ISignIn>({
+    resolver: yupResolver(signInSchema),
+  });
 
   const dispatch = useAppDispatch();
 
-  console.log(error);
-
-  const onSubmit = async (values: ISignIn) => {
-    dispatch(signIn(values));
+  const onSubmit = async (data: ISignIn) => {
+    return dispatch(signIn({ data, onSuccess: () => nav("/load") }));
   };
-
-  useEffect(() => {
-    if (success) {
-      nav("/load");
-    }
-  }, [success]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.signin}>
       <div className={styles.signin__block}>
         <h2>Sign In</h2>
-        <InputField
-          control={control}
-          text="email"
-          type="email"
-          required
-          placeholder="Enter your email"
-          className=""
-        />
+        <div className={styles.signin__fields}>
+          <AuthInput
+            {...register("email")}
+            label="Email"
+            error={formState.errors?.email}
+            placeholder="Enter your email"
+          />
 
-        <PasswordInput
-          name="password"
-          control={control}
-          label="password"
-          required
-        />
-
+          <AuthInputPassword
+            label="Password"
+            {...register("password")}
+            error={formState.errors?.password}
+          />
+        </div>
         {error && <label style={{ color: "red" }}>{error}</label>}
 
         <div className={styles.signin__block__requests}>
@@ -68,10 +57,14 @@ const SigninContainer = () => {
             Forgot password?
           </Link>
         </div>
-        <MainBtn text="SIGN IN" htmlType="submit" />
+        <MainBtn
+          disabled={formState.isSubmitting}
+          text="SIGN IN"
+          htmlType="submit"
+        />
 
         <p className={styles.signin__block__link}>
-          Don’t have an account? {}
+          Don’t have an account?{" "}
           <Link className={styles.signin__link} to="/sign-up">
             Sign up
           </Link>

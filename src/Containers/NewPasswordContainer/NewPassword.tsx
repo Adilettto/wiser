@@ -16,7 +16,7 @@ export const NewPasswordContainer = () => {
           I remembered my password{" "}
           <Link to="/sign-in" className={styles.newPassword__block__link}>
             Sign in
-          </Link>{" "}
+          </Link>
         </p>
       </div>
     </div>

@@ -1,18 +1,25 @@
-import React from "react";
-import styles from "./ForgotPassword.module.scss";
-import { InputField } from "Components/UI/InputField/InputField";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { AuthInput } from "Components/UI/AuthInput/AuthInput";
+import { BackBtn } from "Components/UI/BackBtn/BackBtn";
 import { MainBtn } from "Components/UI/MainBtn/MainBtn";
 import { useNavigate } from "react-router";
-import { BackBtn } from "Components/UI/BackBtn/BackBtn";
+import styles from "./ForgotPassword.module.scss";
+import { useForm } from "react-hook-form";
+import { ISignForgot } from "Shared/Types/auth";
+import { signForgotSchema } from "Shared/Utils/auth";
 
 export const ForgotPasswordContainer = () => {
+  const { register, formState, handleSubmit } = useForm<ISignForgot>({
+    resolver: yupResolver(signForgotSchema),
+  });
   const navigate = useNavigate();
 
-  const handleNavigate = () => {
-    navigate("/new-password");
+  const onSubmit = () => {
+    return navigate("/new-password");
   };
+
   return (
-    <div className={styles.forgotPass}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.forgotPass}>
       <BackBtn className={styles.forgotPass__backBtn} />
       <div className={styles.forgotPass__block}>
         <h2>Forgot Password</h2>
@@ -20,18 +27,22 @@ export const ForgotPasswordContainer = () => {
           Enter your email address and we will send a link to reset your
           password
         </p>
-        <InputField
-          text="EMAIL"
-          type="email"
+        <AuthInput
+          label="password"
+          {...register("password")}
           placeholder="Enter your email"
-          className=""
+          error={formState.errors?.password}
         />
         <p className={styles.forgotPass__block__request}>
           Didn’t receive the link?{" "}
-          <span className={styles.forgotPass__block__link}>Resend</span>{" "}
+          <span className={styles.forgotPass__block__link}>Resend</span>
         </p>
-        <MainBtn text="SEND" onClick={handleNavigate} />
+        <MainBtn
+          text="SEND"
+          htmlType="submit"
+          disabled={formState.isSubmitting}
+        />
       </div>
-    </div>
+    </form>
   );
 };

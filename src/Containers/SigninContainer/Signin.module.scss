@@ -1,8 +1,6 @@
-
-
 .signin {
   background: url(../../Assets/background.jpg);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +14,7 @@
     height: 75%;
     background-color: #fff;
     border-radius: 2rem;
-    padding: 3rem 9%;
+    padding: 4% 8%;
     display: flex;
     flex-direction: column;
 
@@ -31,6 +29,7 @@
     }
 
     &__requests {
+      margin-top: 26px;
       margin-bottom: 40px;
       display: flex;
       justify-content: space-between;
@@ -39,5 +38,10 @@
     &__link {
       text-align: center;
     }
+  }
+
+  &__fields {
+    display: grid;
+    gap: 10px;
   }
 }

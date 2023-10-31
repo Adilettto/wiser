@@ -1,45 +1,49 @@
-import React, { useState } from "react";
-import styles from "./Signup.module.scss";
-import { Navigate } from "react-router";
-import { InputField } from "Components/UI/InputField/InputField";
+import { AuthInput } from "Components/UI/AuthInput/AuthInput";
 import { BackBtn } from "Components/UI/BackBtn/BackBtn";
 import { MainBtn } from "Components/UI/MainBtn/MainBtn";
+import { useNavigate } from "react-router";
+import styles from "./Signup.module.scss";
+import { useForm } from "react-hook-form";
+import { ISignUp } from "Shared/Types/auth";
+import { signUpSchema } from "Shared/Utils/auth";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 export const SignupContainer = () => {
-  const [email, setEmail] = useState("");
-  const [navigate, setNavigate] = useState(false);
+  const { register, formState, handleSubmit } = useForm<ISignUp>({
+    resolver: yupResolver(signUpSchema),
+  });
+  const navigate = useNavigate();
 
-  const submit = async (e: any) => {
-    e.prevent.default();
+  const onSubmit = async (data: ISignUp) => {
+    console.log(data);
 
-    setNavigate(true);
+    return navigate("/forgot-password");
   };
 
-  if (navigate) {
-    return <Navigate to="/forgot-password" />;
-  }
-
   return (
-    <div className={styles.signup}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.signup}>
       <BackBtn className={styles.signup__backBtn} />
       <div className={styles.signup__block}>
         <h2>Sign Up</h2>
         <p className={styles.signup__block__text}>
           Please fill email and we’ll send you a link{" "}
         </p>
-        <InputField
-          onChange={(e: any) => setEmail(e.target.value)}
-          text="EMAIL"
-          type="email"
+        <AuthInput
+          label="Email"
+          {...register("email")}
           placeholder="Enter your email"
-          className=""
+          error={formState.errors?.email}
         />
         <p className={styles.signup__block__request}>
           Didn’t receive the link?{" "}
           <span className={styles.signup__block__link}>Resend</span>{" "}
         </p>
-        <MainBtn text="SEND" onClick={submit} />
+        <MainBtn
+          disabled={formState.isSubmitting}
+          text="SEND"
+          htmlType="submit"
+        />
       </div>
-    </div>
+    </form>
   );
 };
