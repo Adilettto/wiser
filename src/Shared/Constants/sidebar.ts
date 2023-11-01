@@ -9,6 +9,7 @@ import { SmsIcon } from "Assets/index";
 import { UnitsIcon } from "Assets/index";
 import { AccountingIcon } from "Assets/index";
 import { SettingsIcon } from "Assets/index";
+import { clear } from "Service/storage";
 
 export const sidebar = [
   { icon: DashboardIcon, name: "Dashboard", link: "/dashboard" },

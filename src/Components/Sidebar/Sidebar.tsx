@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import wiserLogo from "../../Assets/sidebar/wiserLogo.svg";
 import styles from "./Sidebar.module.scss";
+import { clear } from "Service/storage";
 type SidebarProps = {
   height?: number;
 };
@@ -20,6 +21,9 @@ const Sidebar: React.FC<SidebarProps> = ({ height }) => {
       setOpen(true);
       return;
     }
+
+    if (link === "/sign-in") clear("token");
+
     navigate(link);
   };
   return (
