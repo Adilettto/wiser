@@ -1,6 +1,6 @@
 import { Checkbox } from "antd";
 import { Link, useNavigate } from "react-router-dom";
-import styles from "./Signin.module.scss";
+import styles from "./SignIn.module.scss";
 
 import { MainBtn } from "Components/UI/MainBtn/MainBtn";
 import { signIn } from "Redux/Auth/reducer";
@@ -15,7 +15,7 @@ import { AuthInput } from "Components/UI/AuthInput/AuthInput";
 import { signInSchema } from "Shared/Utils/auth";
 import { AuthInputPassword } from "Components/UI/AurhPassword/Authpassword";
 
-const SigninContainer = () => {
+const SignInContainer = () => {
   const nav = useNavigate();
   const error = useSelector(selectAuthError);
 
@@ -47,7 +47,11 @@ const SigninContainer = () => {
             error={formState.errors?.password}
           />
         </div>
-        {error && <label style={{ color: "red" }}>{error}</label>}
+        {error && (
+          <label className={styles.signin__block_errorText}>
+            Does not exist
+          </label>
+        )}
 
         <div className={styles.signin__block__requests}>
           <Checkbox className={styles.signin__block__requests_checkbox}>
@@ -74,4 +78,4 @@ const SigninContainer = () => {
   );
 };
 
-export default SigninContainer;
+export default SignInContainer;

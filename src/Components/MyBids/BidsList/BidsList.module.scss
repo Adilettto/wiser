@@ -1,5 +1,9 @@
 .bids {
   &__table {
+    & thead {
+      padding: 0;
+      margin: 0;
+    }
     & tbody {
       & tr:hover {
         background-color: #d8d8d8;

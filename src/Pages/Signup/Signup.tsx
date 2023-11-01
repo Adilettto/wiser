@@ -1,9 +1,6 @@
-import { SignupContainer } from 'Containers/SignupContainer/SignupContainer'
-import React from 'react'
+import { SignUpContainer } from "Containers/SignUpContainer/SignUpContainer";
+import React from "react";
 
-export const Signup = () => {
-  return (
-    <SignupContainer/>
-  )
-}
-
+export const SignUp = () => {
+  return <SignUpContainer />;
+};

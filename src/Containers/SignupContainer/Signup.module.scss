@@ -38,6 +38,15 @@
       color: #005dac;
       font-weight: 500;
     }
+
+    &__fields {
+      display: grid;
+      gap: 10px;
+    }
+    &_errorText {
+      color: red;
+      padding-top: 10px;
+    }
   }
 
   h2 {

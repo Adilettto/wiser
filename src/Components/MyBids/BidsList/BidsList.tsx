@@ -8,6 +8,7 @@ const BidsList: React.FC = () => {
   const goToDetailPage = () => {
     navigate("/bids");
   };
+
   return (
     <div>
       <table className={styles.bids__table}>
@@ -35,8 +36,7 @@ const BidsList: React.FC = () => {
               12191 <br /> Pro#Ship
             </td>
             <td>
-              Hammond, IN 46327 <br />
-              Channahon, IL 60410
+              Hammond, IN <br /> 46327 Channahon, IL 60410
             </td>
             <td>48 mi</td>
             <td>
@@ -44,9 +44,7 @@ const BidsList: React.FC = () => {
               $485
             </td>
             <td>
-              AIm transfer and sto...
-              <br />
-              $485{" "}
+              AIm transfer <br /> and sto... $485{" "}
             </td>
             <td>
               Johny W<br />
@@ -66,8 +64,7 @@ const BidsList: React.FC = () => {
               12191 <br /> Pro#Ship
             </td>
             <td>
-              Hammond, IN 46327 <br />
-              Channahon, IL 60410
+              Hammond, IN <br /> 46327 Channahon, IL 60410
             </td>
             <td>48 mi</td>
             <td>
@@ -75,9 +72,7 @@ const BidsList: React.FC = () => {
               $485
             </td>
             <td>
-              AIm transfer and sto...
-              <br />
-              $485{" "}
+              AIm transfer <br /> and sto... $485{" "}
             </td>
             <td>
               Johny W<br />

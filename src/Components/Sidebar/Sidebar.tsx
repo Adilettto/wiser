@@ -1,12 +1,11 @@
-import wiserLogo from "../../Assets/sidebar/wiserLogo.svg";
-import { sidebar } from "Shared/Constants/sidebar";
 import Icon from "@ant-design/icons";
-import cn from "classnames";
-import { useLocation, useNavigate } from "react-router";
-import styles from "./Sidebar.module.scss";
-import { AddLoad } from "Components/AddLoad/AddLoad";
-import { useState } from "react";
 import { NewLoad } from "Components/AddLoadBids/NewLoad";
+import { sidebar } from "Shared/Constants/sidebar";
+import cn from "classnames";
+import { useState } from "react";
+import { useLocation, useNavigate } from "react-router";
+import wiserLogo from "../../Assets/sidebar/wiserLogo.svg";
+import styles from "./Sidebar.module.scss";
 type SidebarProps = {
   height?: number;
 };

@@ -1,7 +1,7 @@
-export { HomePage } from './Home/Home';
+export { HomePage } from "./Home/Home";
 export { ForgotPassword } from "../Pages/ForgotPassword/ForgotPassword";
-export { Signin } from "../Pages/Signin/Signin";
-export { Signup } from "../Pages/Signup/Signup";
+export { SignIn } from "./SignIn/SignIn";
+export { SignUp } from "./SignUp/SignUp";
 export { NewPassword } from "../Pages/NewPassword/NewPassword";
 export { Onboarding } from "../Pages/Onboarding/Onboarding";
 export { LoadDetailPage } from "./LoadBoard/LoadDetail";

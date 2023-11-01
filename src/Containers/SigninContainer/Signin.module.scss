@@ -38,6 +38,10 @@
     &__link {
       text-align: center;
     }
+    &_errorText {
+      color: red;
+      padding-top: 10px;
+    }
   }
 
   &__fields {

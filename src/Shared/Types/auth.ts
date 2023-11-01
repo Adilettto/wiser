@@ -15,6 +15,16 @@ export type SignInParams = {
 
 export type ISignUp = {
   email: string;
+  password: string;
+};
+export type ISignUpResponse = {
+  email: string;
+  password: string;
+};
+
+export type SignUpParams = {
+  data: ISignUp;
+  onSuccess: () => void;
 };
 export type ISignForgot = {
   password: string;

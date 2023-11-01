@@ -28,7 +28,7 @@ export const ForgotPasswordContainer = () => {
           password
         </p>
         <AuthInput
-          label="password"
+          label="Password"
           {...register("password")}
           placeholder="Enter your email"
           error={formState.errors?.password}

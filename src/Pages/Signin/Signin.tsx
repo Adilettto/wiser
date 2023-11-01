@@ -1,6 +1,6 @@
 import React from "react";
-import SigninContainer from "../../Containers/SigninContainer/SigninContainer";
+import SignInContainer from "../../Containers/SignInContainer/SignInContainer";
 
-export const Signin = () => {
-  return <SigninContainer />;
+export const SignIn = () => {
+  return <SignInContainer />;
 };

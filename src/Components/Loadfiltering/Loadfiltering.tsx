@@ -1,15 +1,15 @@
+import { AddLoad } from "Components/AddLoad/AddLoad";
 import Button from "Components/UI/Button/Button";
 import Paginations from "Components/UI/Pagination/Pagination";
+import { useState } from "react";
+import { useNavigate } from "react-router";
+import Brokerages from "./Brokerage/Brokerage";
 import Deliver from "./Deliver/Deliver";
+import styles from "./Loadfiltering.module.scss";
 import Match from "./Match/Match";
 import Miles from "./Miles/Miles";
 import PickUp from "./PickUp/PickUp";
 import Vehicle from "./Vehicle/Vehicle";
-import Brokerages from "./Brokerage/Brokerage";
-import { useNavigate } from "react-router";
-import styles from "./Loadfiltering.module.scss";
-import { useState } from "react";
-import { AddLoad } from "Components/AddLoad/AddLoad";
 
 const Loadfiltering: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -23,7 +23,7 @@ const Loadfiltering: React.FC = () => {
       <div className={styles.loadfilter__contant}>
         <div className={styles.loadfilter__contant__header}>
           <h2 className={styles.loadfilter__contant__header_text}>Loadboard</h2>
-          <div className={styles.loadfilter__contant__header_loadbar}>
+          <div className={styles.loadfilter__contant__header__loadbar}>
             <Button
               className={styles.loadfilter__contant__header__loadbar_addload}
               onClick={() => setOpen(true)}

@@ -60,7 +60,7 @@
 
   & table {
     border-spacing: 0 3px;
-    width: 95%;
+    width: 100%;
 
     & thead {
       & tr {
@@ -73,13 +73,10 @@
         color: #fff;
         & th {
           position: relative;
-          text-align: center;
           font-size: 16px;
-
           font-weight: 400;
+          margin: 0px;
           padding: 0;
-          padding: 15px 24px;
-          margin: 0;
           border-spacing: 0;
           width: auto;
 
@@ -100,11 +97,10 @@
         background-color: white;
         height: 52px;
         border-radius: 10px 10px 10px 10px;
-        padding-right: 10px;
 
         & td {
-          text-align: center;
           font-size: 16px;
+          padding-left: 10px;
           font-style: normal;
           font-weight: 400;
           padding-right: 10px;

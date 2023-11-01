@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IUser } from "Shared/Types";
-import { restoreSession, signIn } from "./reducer";
+import { restoreSession, signIn, signUp } from "./reducer";
 import { RootState } from "Redux/store";
 import { write } from "Service/storage";
 import { ISignIn, ISignInResponse } from "Shared/Types/auth";
@@ -43,6 +43,15 @@ const authSlice = createSlice({
       console.log(action.payload);
       write("token", action.payload as object);
       state.account = action.payload;
+    });
+
+    builder.addCase(signUp.pending, (state, action) => {
+      state.loading = true;
+      state.error = null;
+    });
+    builder.addCase(signUp.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message;
     });
   },
 });

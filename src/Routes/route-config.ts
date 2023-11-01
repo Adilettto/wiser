@@ -25,12 +25,12 @@ export const routeMap = new Map<string, RouteData>()
   })
 
   .set("/sign-in", {
-    page: pages.Signin,
+    page: pages.SignIn,
     permissions: [],
   })
 
   .set("/sign-up", {
-    page: pages.Signup,
+    page: pages.SignUp,
     permissions: [],
   })
 

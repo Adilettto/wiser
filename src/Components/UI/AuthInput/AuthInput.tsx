@@ -1,7 +1,7 @@
 import { Input, InputProps, InputRef } from "antd";
-import React, { forwardRef, useId } from "react";
-import styles from "./AuthInput.module.scss";
+import { forwardRef, useId } from "react";
 import { FieldError } from "react-hook-form";
+import styles from "./AuthInput.module.scss";
 
 interface AuthInputProps extends InputProps {
   label?: string;

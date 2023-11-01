@@ -11,8 +11,8 @@
 
       &_text {
         font-family: $font-primary;
-        font-size: 30px;
-        font-weight: 500;
+        font-weight: 400px;
+        font-size: 24px;
         line-height: 36px;
         letter-spacing: 0em;
         text-align: left;
@@ -20,14 +20,15 @@
       &__loadbar {
         display: flex;
         gap: 20px;
+
         &_addload {
           background-color: #005dac;
           width: 109px;
           height: 40px;
           color: #fff;
           font-family: $font-primary;
-          font-size: 18px;
-          font-weight: 500;
+          font-size: 16px;
+          font-weight: 400;
           line-height: 22px;
         }
         &_capacity {
@@ -36,8 +37,9 @@
           height: 40px;
           color: #fff;
           font-family: $font-primary;
-          font-size: 18px;
-          font-weight: 500;
+          font-size: 16px;
+
+          font-weight: 400;
           line-height: 22px;
         }
       }
@@ -51,16 +53,18 @@
       & thead {
         & tr {
           background-color: #005dac;
+
           &:first-child {
             height: 43px;
             min-width: 100%;
           }
           color: #fff;
           & th {
+            padding-left: 20px;
+            font-size: 16px;
+            font-weight: 400;
             position: relative;
-            text-align: center;
-            padding: 0;
-            margin: 0;
+            text-align: start;
             border-spacing: 0;
             width: auto;
 
@@ -76,12 +80,13 @@
 
       & tbody {
         background: none;
+
         & tr {
           background-color: white;
           height: 52px;
           border-radius: 10px 10px 10px 10px;
           & td {
-            text-align: center;
+            padding-left: 20px;
             &:first-child {
               border-bottom-left-radius: 10px;
               border-top-left-radius: 10px;

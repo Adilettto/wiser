@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./NewLoad.module.scss";
-import { Button, Input, Modal } from "antd";
+import { Button, Col, Input, Modal, Row } from "antd";
 import addIcon from "Assets/plusIcon.svg";
 import dotsIcon from "Assets/dotsIcon.svg";
 
@@ -148,25 +148,33 @@ export const NewLoad: React.FC<NewLoadProps> = ({ visible, onCancel }) => {
         <option value="Cargo Van">Cargo Van</option>
         <option value="Porter">Porter</option>
       </select>
-      <label className={styles.addLoad__noteTitle} htmlFor="note">Note</label>
+      <label className={styles.addLoad__noteTitle} htmlFor="note">
+        Note
+      </label>
       <Input className={styles.addLoad__noteInput} name="note" type="text" />
+
       <div className={styles.addLoad__checkboxes}>
-        <div>
-          <input type="checkbox" name="Dock level" />
-          <label htmlFor="Dock level">Dock level</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Dock level" />
-          <label htmlFor="Dock level">Fast load</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Dock level" />
-          <label htmlFor="Dock level">Hazardous</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Dock level" />
-          <label htmlFor="Dock level">Stackable</label>
-        </div>
+        <Row>
+          <Col md={12}>
+            <input type="checkbox" name="Dock level" />
+            <label htmlFor="Dock level">Dock level</label>
+          </Col>
+          <Col md={12}>
+            <input type="checkbox" name="Dock level" />
+            <label htmlFor="Dock level">Hazardous</label>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={12}>
+            <input type="checkbox" name="Dock level" />
+            <label htmlFor="Dock level">Fast load</label>
+          </Col>
+          <Col md={12}>
+            <input type="checkbox" name="Dock level" />
+            <label htmlFor="Dock level">Stackable</label>
+          </Col>
+        </Row>
       </div>
       <Button className={styles.addLoad__btn}>Save</Button>
     </Modal>
