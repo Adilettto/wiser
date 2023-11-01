@@ -17,13 +17,13 @@ export const useAuthRedirect = ({ pathname }: Location) => {
 
   if (profile == null) {
     if (
-      pathname === "/login" ||
+      pathname === "/sign-in" ||
       pathname === "/not-found" ||
       pathname === "/forbidden"
     )
       return;
 
-    return;
+    return "/sign-in";
   }
 
   const notFound = !hasMatch(permissions, pathname);

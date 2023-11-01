@@ -9,10 +9,12 @@ import styles from "./Sidebar.module.scss";
 type SidebarProps = {
   height?: number;
 };
+
 const Sidebar: React.FC<SidebarProps> = ({ height }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
+
   const handleClick = (link: string) => {
     if (link === "/addload") {
       setOpen(true);
