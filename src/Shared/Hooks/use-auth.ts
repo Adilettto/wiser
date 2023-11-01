@@ -19,12 +19,23 @@ export const useAuthRedirect = ({ pathname }: Location) => {
     if (
       pathname === "/sign-in" ||
       pathname === "/not-found" ||
-      pathname === "/forbidden"
+      pathname === "/forbidden" ||
+      pathname === "/sign-up"
     )
       return;
 
     return "/sign-in";
   }
+
+  // const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  // localStorage.setItem("isLoggedIn", "true");
+
+  // if (isLoggedIn === "true") {
+  // } else {
+  //   window.location.href = "/sign-in";
+  // }
+  // localStorage.removeItem("isLoggedIn");
 
   const notFound = !hasMatch(permissions, pathname);
 

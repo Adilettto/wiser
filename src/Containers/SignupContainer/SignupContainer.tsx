@@ -16,7 +16,6 @@ import styles from "./SignUp.module.scss";
 export const SignUpContainer = () => {
   const nav = useNavigate();
   const error = useSelector(selectAuthError);
-  const isUserRegistered = false;
 
   const { handleSubmit, formState, register } = useForm<ISignUp>({
     resolver: yupResolver(signUpSchema),
