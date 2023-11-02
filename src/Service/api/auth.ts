@@ -5,6 +5,10 @@ import {
   ISignInResponse,
   ISignUpResponse,
   ISignUp,
+  signForgotResponse,
+  ISignForgot,
+  ISignNewPassword,
+  ISignNewPasswordResponse,
 } from "Shared/Types/auth";
 
 const USER_URL = "token/";
@@ -15,6 +19,15 @@ class Auth {
   }
   signup(data: ISignUp) {
     return client.post<ISignUpResponse>(`users/`, data);
+  }
+  forgotPassword(data: ISignForgot) {
+    return client.post<signForgotResponse>(`users/reset-password/`, data);
+  }
+  NewPassword(data: ISignNewPassword) {
+    return client.post<ISignNewPasswordResponse>(
+      `users/reset-password/confirm/`,
+      data
+    );
   }
 
   refresh() {

@@ -1,8 +1,14 @@
+import { NewPassword } from "./../../Pages/NewPassword/NewPassword";
 import { ForgotPassword } from "./../../Pages/ForgotPassword/ForgotPassword";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import api from "Service/api/api";
 import { readObj } from "Service/storage";
-import { SignInParams, SignUpParams } from "Shared/Types/auth";
+import {
+  ISignNewPasswordParams,
+  SignInParams,
+  SignUpParams,
+  signForgotParams,
+} from "Shared/Types/auth";
 
 const restoreSession = createAsyncThunk(`auth/restoreSession`, async () => {
   const profile = readObj("profile");
@@ -39,10 +45,10 @@ const signUp = createAsyncThunk(
 );
 
 const forgotPassword = createAsyncThunk(
-  `auth/signUp`,
-  async ({ data, onSuccess }: SignUpParams) => {
+  `auth/forgotPassword`,
+  async ({ data, onSuccess }: signForgotParams) => {
     try {
-      const response = await api.auth.signup(data);
+      const response = await api.auth.forgotPassword(data);
       onSuccess();
       return response.data;
     } catch (error) {
@@ -51,4 +57,18 @@ const forgotPassword = createAsyncThunk(
     }
   }
 );
-export { restoreSession, signIn, signUp };
+
+const signNewPassword = createAsyncThunk(
+  `auth/NewPassword`,
+  async ({ data, onSuccess }: ISignNewPasswordParams) => {
+    try {
+      const response = await api.auth.NewPassword(data);
+      onSuccess();
+      return response.data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+);
+export { restoreSession, signIn, signUp, forgotPassword, signNewPassword };

@@ -1,9 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IUser } from "Shared/Types";
-import { restoreSession, signIn, signUp } from "./reducer";
 import { RootState } from "Redux/store";
 import { readObj, write } from "Service/storage";
-import { ISignIn, ISignInResponse } from "Shared/Types/auth";
+import { ISignInResponse } from "Shared/Types/auth";
+import {
+  forgotPassword,
+  restoreSession,
+  signIn,
+  signNewPassword,
+  signUp,
+} from "./reducer";
 
 interface ICompanyRequestsState {
   account?: ISignInResponse | null;
@@ -51,6 +56,30 @@ const authSlice = createSlice({
     builder.addCase(signUp.rejected, (state, action) => {
       state.loading = false;
       state.error = action.error.message;
+    });
+
+    builder.addCase(forgotPassword.pending, (state, action) => {
+      state.loading = true;
+      state.error = null;
+    });
+    builder.addCase(forgotPassword.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message;
+    });
+
+    builder.addCase(signNewPassword.pending, (state, action) => {
+      state.loading = true;
+      state.error = null;
+    });
+    builder.addCase(signNewPassword.rejected, (state, action) => {
+      state.loading = false;
+      console.log(action.payload);
+      state.error = action.error.message;
+    });
+    builder.addCase(signNewPassword.fulfilled, (state, action) => {
+      state.loading = false;
+      state.error = null;
+      write("token", action.payload as object);
     });
   },
 });
