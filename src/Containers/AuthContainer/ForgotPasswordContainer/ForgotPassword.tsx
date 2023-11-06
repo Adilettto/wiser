@@ -7,24 +7,15 @@ import styles from "./ForgotPassword.module.scss";
 import { useForm } from "react-hook-form";
 import { ISignForgot } from "Shared/Types/auth";
 import { signForgotSchema } from "Shared/Utils/auth";
-import { forgotPassword } from "Redux/Auth/reducer";
-import { useAppDispatch } from "Redux/store";
-import { selectAuthError } from "Redux/Auth/slice";
-import { useSelector } from "react-redux";
 
 export const ForgotPasswordContainer = () => {
-  const error = useSelector(selectAuthError);
   const { register, formState, handleSubmit } = useForm<ISignForgot>({
     resolver: yupResolver(signForgotSchema),
   });
+  const navigate = useNavigate();
 
-  const nav = useNavigate();
-  const dispatch = useAppDispatch();
-
-  const onSubmit = async (data: ISignForgot) => {
-    return dispatch(
-      forgotPassword({ data, onSuccess: () => nav("/new-password") })
-    );
+  const onSubmit = () => {
+    return navigate("/new-password");
   };
 
   return (
@@ -37,13 +28,11 @@ export const ForgotPasswordContainer = () => {
           password
         </p>
         <AuthInput
-          label="Email"
+          label="Password"
           {...register("email")}
           placeholder="Enter your email"
           error={formState.errors?.email}
         />
-        {/* TODO: error styles */}
-        {error && <div> {error}</div>}
         <p className={styles.forgotPass__block__request}>
           Didn’t receive the link?{" "}
           <span className={styles.forgotPass__block__link}>Resend</span>

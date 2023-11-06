@@ -35,6 +35,12 @@ export const OnboardingContainer = (props: Props) => {
             placeholder="0 (000) 000 0000"
             className={styles.onboard__block__input}
           />
+          {/* <InputField
+            text="Time zone"
+            type="select"
+            placeholder=""
+            className={styles.onboard__block__input}
+          /> */}
         </div>
         <div className={styles.onboard__block__btn}>
           <MainBtn text="Let's get started" />

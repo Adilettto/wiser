@@ -26,7 +26,6 @@ export const SignUpContainer = () => {
   const onSubmit = async (data: ISignUp) => {
     return dispatch(signUp({ data, onSuccess: () => nav("/sign-in") }));
   };
-
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.signup}>
       <BackBtn className={styles.signup__backBtn} />

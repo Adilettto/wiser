@@ -1,9 +1,9 @@
 export { HomePage } from "./Home/Home";
-export { ForgotPassword } from "../Pages/ForgotPassword/ForgotPassword";
-export { SignIn } from "./SignIn/SignIn";
-export { SignUp } from "./SignUp/SignUp";
-export { NewPassword } from "../Pages/NewPassword/NewPassword";
-export { Onboarding } from "../Pages/Onboarding/Onboarding";
+export { ForgotPassword } from "./AuthPages/ForgotPassword/ForgotPassword";
+export { SignIn } from "./AuthPages/SignIn/SignIn";
+export { SignUp } from "./AuthPages/SignUp/SignUp";
+export { NewPassword } from "./AuthPages/NewPassword/NewPassword";
+export { Onboarding } from "./AuthPages/Onboarding/Onboarding";
 export { LoadDetailPage } from "./LoadBoard/LoadDetail";
 export { LoadListPage } from "./LoadBoard/LoadList";
 export { Health } from "./HealthCheck/Health";
