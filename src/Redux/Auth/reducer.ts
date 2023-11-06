@@ -1,5 +1,3 @@
-import { NewPassword } from "./../../Pages/NewPassword/NewPassword";
-import { ForgotPassword } from "./../../Pages/ForgotPassword/ForgotPassword";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import api from "Service/api/api";
 import { readObj } from "Service/storage";
@@ -20,7 +18,6 @@ const signIn = createAsyncThunk(
   async ({ data, onSuccess }: SignInParams) => {
     try {
       const response = await api.auth.signIn(data);
-
       onSuccess();
       return response.data;
     } catch (error) {
@@ -59,10 +56,10 @@ const forgotPassword = createAsyncThunk(
 );
 
 const signNewPassword = createAsyncThunk(
-  `auth/NewPassword`,
+  `auth/newPassword`,
   async ({ data, onSuccess }: ISignNewPasswordParams) => {
     try {
-      const response = await api.auth.NewPassword(data);
+      const response = await api.auth.newPassword(data);
       onSuccess();
       return response.data;
     } catch (error) {

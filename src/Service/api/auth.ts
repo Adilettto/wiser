@@ -1,5 +1,4 @@
 import { client } from "Service/axios";
-import { baseURL } from "Service/config";
 import {
   ISignIn,
   ISignInResponse,
@@ -23,7 +22,7 @@ class Auth {
   forgotPassword(data: ISignForgot) {
     return client.post<signForgotResponse>(`users/reset-password/`, data);
   }
-  NewPassword(data: ISignNewPassword) {
+  newPassword(data: ISignNewPassword) {
     return client.post<ISignNewPasswordResponse>(
       `users/reset-password/confirm/`,
       data

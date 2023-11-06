@@ -21,6 +21,7 @@ export const NewPasswordContainer = () => {
   const dispatch = useAppDispatch();
 
   const onSubmit = async (data: ISignNewPassword) => {
+    // Todo: redirect to login page
     return dispatch(
       signNewPassword({ data, onSuccess: () => nav("/new-password") })
     );
