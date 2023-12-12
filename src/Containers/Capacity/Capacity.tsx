@@ -3,8 +3,7 @@ import { ArrowIcon, MapIcon } from "Assets/index";
 import Icon from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { Button, Input } from "antd";
-
-import styles from "./CapacitySearch.module.scss";
+import styles from "./Capacity.module.scss";
 
 export const CapacitySearch = () => {
   const navigate = useNavigate();
