@@ -32,3 +32,4 @@ export { ReactComponent as CloseIcon } from "./loadboardEmail/close.svg";
 export { ReactComponent as CrossIcon } from "./loadboardEmail/cross.svg";
 export { ReactComponent as AttachIcon } from "./loadboardEmail/attach.svg";
 export { ReactComponent as Logout } from "./log-out.svg";
+export { ReactComponent as MapImage } from "./loadboard/mapImage.svg";

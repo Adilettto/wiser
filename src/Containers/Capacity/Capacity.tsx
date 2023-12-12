@@ -1,8 +1,9 @@
 import React from "react";
-import { ArrowIcon, MapIcon } from "Assets/index";
+import { ArrowIcon } from "Assets/index";
 import Icon from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-import { Button, Input } from "antd";
+import { Avatar, Button, Input } from "antd";
+import { MapImage } from "../../Assets/index";
 import styles from "./Capacity.module.scss";
 
 export const CapacitySearch = () => {
@@ -66,7 +67,7 @@ export const CapacitySearch = () => {
             </div>
           </div>
           <div>
-            <MapIcon />
+            <MapImage />
           </div>
         </div>
       </div>
