@@ -1,0 +1,29 @@
+export interface IOrder {
+  id: number;
+  created_time: string;
+  is_active: boolean;
+  from_whom: string;
+  pick_up_at: string;
+  pick_up_date_CEN: string;
+  pick_up_date_EST: string;
+  deliver_to: string;
+  deliver_date_CEN: string;
+  deliver_date_EST: string;
+  notes: string;
+  miles: number;
+  pieces: number;
+  weight: number;
+  dims: string;
+  stackable: string;
+  hazardous: string;
+  fast_load: string;
+  dock_level: string;
+  suggested_truck_size: string;
+  this_posting_expires_cen: string;
+  this_posting_expires_est: string;
+  load_posted_by: string;
+  phone: string;
+  fax: string;
+  order_number: string;
+  user: number;
+}

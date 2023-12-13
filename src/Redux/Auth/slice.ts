@@ -45,7 +45,9 @@ const authSlice = createSlice({
     builder.addCase(signIn.fulfilled, (state, action) => {
       state.loading = false;
       state.error = null;
-      write("token", action.payload as object);
+      console.log(action.payload);
+      write("access", action.payload.access);
+      write("refresh", action.payload.refresh);
       state.account = action.payload;
     });
 
