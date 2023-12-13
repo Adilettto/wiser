@@ -1,38 +1,27 @@
 import styles from "./Miles.module.scss";
-import { DownOutlined } from "@ant-design/icons";
-import type { MenuProps } from "antd";
-import { Dropdown, Space, Menu } from "antd";
+import { Select } from "antd";
 
+const { Option } = Select;
 export const Miles = () => {
-  const items: MenuProps["items"] = [
-    {
-      label: <label>1st option</label>,
-      key: "0",
-    },
-    {
-      label: <label>2nd option</label>,
-      key: "0",
-    },
-    {
-      label: <label>3rd option</label>,
-      key: "0",
-    },
-  ];
+  const handleSelectChange = (value: any) => {
+    console.log(`Selected: ${value}`);
+  };
 
   return (
     <ul className={styles.miles__ul}>
       <div className={styles.miles__ul__li__miles}>
         <li className={styles.miles__title}>DRIVER</li>
         <div className={styles.miles__ul__dropdown}>
-          <Dropdown overlay={<Menu items={items} />} trigger={["click"]}>
-            <a onClick={(e) => e.preventDefault()}>
-              <Space>
-                <span className={styles.miles__ul__cr}>CRISTIANO RONALDO </span>
-                <p className={styles.miles__ul__p}> WOO5</p>
-                <DownOutlined />
-              </Space>
-            </a>
-          </Dropdown>
+          <Select
+            style={{ width: 250, marginBottom: 20, height: 25 }}
+            placeholder="Select an option"
+            onChange={handleSelectChange}
+          >
+            <Option value="option1">Option 1</Option>
+            <Option value="option2">Option 2</Option>
+            <Option value="option3">Option 3</Option>
+            <Option value="option4">Option 4</Option>
+          </Select>
         </div>
       </div>
       <div className={styles.miles__ul__li}>

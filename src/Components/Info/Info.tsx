@@ -5,38 +5,70 @@ import InputWithLine from "Components/UI/InputWithLine/InputWithLine";
 
 export const Info = () => {
   const [emtyMiles, setEmptyMiles] = useState<number | undefined>(0);
+  const [emptyDistance, setEmptyDistance] = useState<number | undefined>(0);
   const [loadedMiles, setLoadedMiles] = useState<number | undefined>(0);
   const [brokerAmount, setBrokerAmount] = useState<number | undefined>(0);
   const [driverAmount, setDriverAmount] = useState<number | undefined>(0);
   const [driverMiles, setDriverMiles] = useState<number | undefined>(0);
   const [brokerMiles, setBrokerMiles] = useState<number | undefined>(0);
+  const [loadedDistance, setLoadedDistance] = useState<number | undefined>(0);
 
   const brokerPrice =
     emtyMiles && loadedMiles ? Math.round(emtyMiles + loadedMiles) : undefined;
+
   const revenue =
     brokerPrice && driverAmount
       ? Math.round(brokerPrice - driverAmount)
       : undefined;
-  // const calculateBrokerMiles =
-  //   brokerMiles && 240 ? Math.round(brokerMiles * 240) : undefined;
-  // const calculateBrokerMi =
-  //   brokerAmount && 240 ? brokerAmount / 240 : undefined;
-  // const calculateMi = emtyMiles && 240 ? emtyMiles / 240 : undefined;
+
+  const calculateEmptyMiles =
+    emptyDistance && 227 ? emptyDistance * 227 : undefined;
+
+  const calculateLoadedMiles =
+    loadedDistance && 240 ? loadedDistance * 240 : undefined;
+
+  const calculateBrokerMiles =
+    emptyDistance && loadedDistance
+      ? Math.round(emptyDistance + loadedDistance)
+      : undefined;
+
+  const calculateBrokerDistance =
+    calculateEmptyMiles && calculateLoadedMiles
+      ? Math.round(calculateEmptyMiles + calculateLoadedMiles)
+      : undefined;
+
   const calculateDriverMi =
     driverAmount && 240 ? Math.round(driverAmount / 240) : undefined;
+
   const calculateDriverMiles =
     driverMiles && 240 ? Math.round(driverMiles * 240) : undefined;
-  const calculateMi =
+
+  const calculateEmptyMi =
     emtyMiles && 227 ? Math.round(emtyMiles / 227) : undefined;
+
   const calculateLoadedMi =
     loadedMiles && 227 ? Math.round(loadedMiles / 227) : undefined;
+
   const sumBroker =
-    calculateMi && calculateLoadedMi
-      ? calculateMi + calculateLoadedMi
+    calculateEmptyMi && calculateLoadedMi
+      ? calculateEmptyMi + calculateLoadedMi
       : undefined;
+
+  const revenueDistance =
+    calculateBrokerDistance && calculateDriverMiles
+      ? Math.round(calculateBrokerDistance - calculateDriverMiles)
+      : undefined;
+
+  const revenueTotalDistance =
+    revenueDistance && calculateBrokerDistance
+      ? Math.round((revenueDistance / calculateBrokerDistance) * 100)
+      : undefined;
+      
   const calculateTotalRevenue =
-    revenue && sumBroker ? Math.round(revenue / sumBroker) * 100 : undefined;
-  console.log("calculateRevenur" + calculateTotalRevenue);
+    revenue && brokerPrice
+      ? Math.round((revenue / brokerPrice) * 100)
+      : undefined;
+
   return (
     <div className={styles.bid}>
       <div className={styles.container}>
@@ -51,14 +83,15 @@ export const Info = () => {
                 <InputWithLine
                   line="example"
                   onChange={(e) => setEmptyMiles(Number(e.target.value))}
+                  value={calculateEmptyMiles}
                 />
               </div>
               <div className={styles.dollar}>
                 <InputWithLine
                   line="example"
                   mi="/mi"
-                  // onChange={(e) => setEmptyDistance(Number(e.target.value))}
-                  value={calculateMi}
+                  onChange={(e) => setEmptyDistance(Number(e.target.value))}
+                  value={calculateEmptyMi}
                 />
               </div>
             </li>
@@ -70,12 +103,14 @@ export const Info = () => {
                 <InputWithLine
                   line="example"
                   onChange={(e) => setLoadedMiles(Number(e.target.value))}
+                  value={calculateLoadedMiles}
                 />
               </div>
               <div className={styles.dollar}>
                 <InputWithLine
                   line="example"
                   mi="/mi"
+                  onChange={(e) => setLoadedDistance(Number(e.target.value))}
                   value={calculateLoadedMi}
                 />
               </div>
@@ -88,8 +123,7 @@ export const Info = () => {
                 <InputWithLine
                   line="example"
                   onChange={(e) => setBrokerAmount(Number(e.target.value))}
-                  value={brokerPrice}
-                  // value={brokerAmount ? brokerPrice : calculateBrokerMiles}
+                  value={brokerPrice || calculateBrokerDistance}
                 />
               </div>
               <div className={styles.dollar}>
@@ -97,7 +131,7 @@ export const Info = () => {
                   line="example"
                   mi="/mi"
                   onChange={(e) => setBrokerMiles(Number(e.target.value))}
-                  value={sumBroker}
+                  value={sumBroker || calculateBrokerMiles}
                 />
               </div>
             </li>
@@ -124,13 +158,16 @@ export const Info = () => {
             <li className={styles.container__list}>
               <span className={styles.container__list__title}>Revenue</span>
               <div className={styles.dollar}>
-                <InputWithLine line="example" value={revenue} />
+                <InputWithLine
+                  line="example"
+                  value={revenue || revenueDistance}
+                />
               </div>
               <div className={styles.dollar}>
                 <InputWithLine
                   line="example"
                   mi="/mi"
-                  value={calculateTotalRevenue}
+                  value={calculateTotalRevenue || revenueTotalDistance}
                 />
               </div>
             </li>

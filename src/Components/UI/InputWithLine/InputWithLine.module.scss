@@ -8,13 +8,13 @@
   position: relative;
   &_withText {
     & input {
-      padding-left: 25px!important;
+      padding-left: 25px !important;
     }
   }
   &__mi {
     color: #0077b6;
     position: absolute;
-    left: 40px;
+    left: 32px;
     top: 7px;
     z-index: 100;
   }
@@ -22,10 +22,10 @@
     color: gray;
     position: absolute;
     top: 8px;
-    left: 45px;
+    left: 32px;
     z-index: 100;
     &_withText {
-      left: 70px
+      left: 60px;
     }
   }
 }
