@@ -63,7 +63,7 @@ export const Info = () => {
     revenueDistance && calculateBrokerDistance
       ? Math.round((revenueDistance / calculateBrokerDistance) * 100)
       : undefined;
-      
+
   const calculateTotalRevenue =
     revenue && brokerPrice
       ? Math.round((revenue / brokerPrice) * 100)
@@ -167,7 +167,13 @@ export const Info = () => {
                 <InputWithLine
                   line="example"
                   mi="/mi"
-                  value={calculateTotalRevenue || revenueTotalDistance}
+                  value={
+                    (typeof calculateTotalRevenue === "number"
+                      ? `${calculateTotalRevenue.toLocaleString()}%`
+                      : typeof revenueTotalDistance === "number"
+                      ? `${revenueTotalDistance.toLocaleString()}%`
+                      : undefined) as unknown as number
+                  }
                 />
               </div>
             </li>
