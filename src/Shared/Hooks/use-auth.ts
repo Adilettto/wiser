@@ -4,6 +4,7 @@ import type { Location } from "history";
 import { hasAccess, hasMatch } from "Routes/route-utils";
 import { useSelector } from "react-redux";
 import { selectAccount } from "Redux/Auth/slice";
+import { readObj } from "Service/storage";
 
 export const usePermissions = () => {
   const profile = useSelector(selectAccount);
@@ -12,7 +13,8 @@ export const usePermissions = () => {
 };
 
 export const useAuthRedirect = ({ pathname }: Location) => {
-  const profile = useSelector(selectAccount);
+  const profile = useSelector(selectAccount) || readObj("account");
+  console.log(profile);
   const permissions = usePermissions();
 
   if (profile == null) {

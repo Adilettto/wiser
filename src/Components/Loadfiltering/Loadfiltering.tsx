@@ -20,13 +20,14 @@ const Loadfiltering: React.FC = () => {
   const orderlist = useSelector(selectOrderList);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+  console.log(orderlist);
 
   useEffect(() => {
     dispatch(getOrderList());
   }, []);
 
-  const goToDetailPage = () => {
-    navigate("/load/1");
+  const goToDetailPage = (id: number) => {
+    navigate("/load/" + id);
   };
   return (
     <div className={styles.loadfilter}>
@@ -83,7 +84,7 @@ const Loadfiltering: React.FC = () => {
 
           <tbody>
             {orderlist?.map((order) => (
-              <tr onClick={goToDetailPage} key={order.id}>
+              <tr onClick={() => goToDetailPage(order.id)} key={order.id}>
                 <td>{order.created_time}</td>
                 <td>{order.pick_up_at}</td>
                 <td>{order.deliver_to}</td>

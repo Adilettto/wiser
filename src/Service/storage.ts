@@ -20,4 +20,7 @@ export const write = (key: string, value: string | object) => {
 
 export const clear = (key: string) => localStorage.removeItem(key);
 
-export const clearAll = () => localStorage.clear();
+export const clearAll = () => {
+  console.log("logout");
+  localStorage.clear();
+};

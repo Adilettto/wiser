@@ -10,3 +10,15 @@ export const getOrderList = createAsyncThunk(`order/getOrderList`, async () => {
     throw error;
   }
 });
+export const getOrders = createAsyncThunk(
+  `order/getOrder`,
+  async (id: number) => {
+    try {
+      const response = await api.order.getOrder(id);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+);

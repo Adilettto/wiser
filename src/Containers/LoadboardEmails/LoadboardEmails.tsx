@@ -81,13 +81,13 @@ export const LoadboardEmails = () => {
                   className={styles.info__delivery__copyIcon}
                 />
               </div>
-              <InfoBlock
+              {/* <InfoBlock
                 leaded="240 mi"
                 pieces="1"
                 dims="15x15x15"
                 weight="10"
                 truckSize="CARGO VAN"
-              />
+              /> */}
             </div>
             <p>Test</p>
             <h6 className={styles.h6}>Rates</h6>

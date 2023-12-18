@@ -15,22 +15,27 @@ import {
 import { Info } from "Components/Info/Info";
 import { InfoBlock } from "Components/InfoBlock/InfoBlock";
 import { Miles } from "Components/Miles/Miles";
-import { selectOrderList } from "Redux/Order/slice";
+import { getOrders } from "Redux/Order/reducer";
+import { selectCurrentOrder } from "Redux/Order/slice";
 import { useAppDispatch } from "Redux/store";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./Loadboard.module.scss";
-import { getOrderList } from "Redux/Order/reducer";
 
 export const Loadboard: React.FC = () => {
   const navigate = useNavigate();
+  const params = useParams();
   const dispatch = useAppDispatch();
-  const orderlist = useSelector(selectOrderList);
+  const currentOrder = useSelector(selectCurrentOrder);
 
   useEffect(() => {
-    dispatch(getOrderList());
-  }, []);
+    console.log("params.id:", params.id);
+    if (params.id) {
+      const orderId = parseInt(params.id, 10);
+      dispatch(getOrders(orderId));
+    }
+  }, [params.id]);
 
   function goBack() {
     navigate(-1);
@@ -50,73 +55,74 @@ export const Loadboard: React.FC = () => {
             </button>
             <h1>Loadboard</h1>
           </div>
-          {orderlist?.map((order) => (
-            <div className={styles.loadboard__form}>
-              <h2>Order #16441744</h2>
-              <div className={styles.loadboard__h}>
-                <h3>RN# 178249</h3>
-                <h4>Expires 08.09.2023, 05-28</h4>
-              </div>
-              <div className={styles.place}>
-                <div className={styles.place__image}>
-                  <Icon
-                    component={GroupIcon}
-                    alt="line"
-                    style={{
-                      fontSize: "170px",
-                      marginLeft: "-59px",
-                      marginTop: "-56px",
-                    }}
-                  />
 
-                  <ul className={styles.place__list}>
-                    <li className={styles.place__li}>Pick up</li>
-                    <div className={styles.place__delivery}>
-                      <li>Miami, FL 33166</li>
-                      <Icon
-                        className={styles.place__delivery__frame}
-                        component={MapIcon}
-                        alt="frame"
-                        style={{ fontSize: "25px" }}
-                      />
-                    </div>
-                    <li className={styles.place__li}>09/08/2023 06:00 am</li>
-                    <li className={styles.place__li}>jhknl</li>
-                    <div className={styles.place__delivery}>
-                      <li>Miami, FL 33166</li>
-                      <Icon
-                        component={DestinationIcon}
-                        alt="frame"
-                        style={{ fontSize: "25px", marginTop: "-4px" }}
-                      />
-                    </div>
-                    <li className={styles.place__li}>09/08/2023 06:00 am</li>
-                  </ul>
-                </div>
-              </div>
-              <div className={styles.info}>
-                <div className={styles.info__delivery}>
-                  <h5 className={styles.delivery__h5}>Information</h5>
-                  <Icon
-                    component={InfoIcon}
-                    alt="frame"
-                    style={{ fontSize: "25px", marginTop: "24px" }}
-                  />
-                </div>
-                <InfoBlock
-                  leaded="240 mi"
-                  pieces="1"
-                  dims="15x15x15"
-                  weight=""
-                  truckSize="CARGO VAN"
+          <div className={styles.loadboard__form}>
+            <h2>Order {currentOrder?.id}</h2>
+            <div className={styles.loadboard__h}>
+              <h3>RN#{currentOrder?.order_number}</h3>
+              <h4>Expires {currentOrder?.this_posting_expires_est}</h4>
+            </div>
+            <div className={styles.place}>
+              <div className={styles.place__image}>
+                <Icon
+                  component={GroupIcon}
+                  alt="line"
+                  style={{
+                    fontSize: "170px",
+                    marginLeft: "-59px",
+                    marginTop: "-56px",
+                  }}
                 />
-                <p>
-                  LG/PJ/offloading/residential delievery/place the skid to the
-                  ground
-                </p>
+
+                <ul className={styles.place__list}>
+                  <li className={styles.place__li}>Pick up</li>
+                  <div className={styles.place__delivery}>
+                    <li>{currentOrder?.pick_up_at}</li>
+                    <Icon
+                      className={styles.place__delivery__frame}
+                      component={MapIcon}
+                      alt="frame"
+                      style={{ fontSize: "25px" }}
+                    />
+                  </div>
+                  <li className={styles.place__li}>
+                    {currentOrder?.deliver_date_EST}
+                  </li>
+                  <li className={styles.place__li}>Delivery</li>
+                  <div className={styles.place__delivery}>
+                    <li>{currentOrder?.deliver_to}</li>
+                    <Icon
+                      component={DestinationIcon}
+                      alt="frame"
+                      style={{ fontSize: "25px", marginTop: "-4px" }}
+                    />
+                  </div>
+                  <li className={styles.place__li}>
+                    {" "}
+                    {currentOrder?.deliver_date_EST}
+                  </li>
+                </ul>
               </div>
             </div>
-          ))}
+            <div className={styles.info}>
+              <div className={styles.info__delivery}>
+                <h5 className={styles.delivery__h5}>Information</h5>
+                <Icon
+                  component={InfoIcon}
+                  alt="frame"
+                  style={{ fontSize: "25px", marginTop: "24px" }}
+                />
+              </div>
+              <InfoBlock
+                leaded={currentOrder?.miles}
+                pieces={currentOrder?.pieces}
+                dims={currentOrder?.dims || ""}
+                weight={currentOrder?.weight}
+                truckSize={currentOrder?.suggested_truck_size}
+              />
+              <p>{currentOrder?.notes}</p>
+            </div>
+          </div>
         </div>
         <Info />
         <Miles />
@@ -139,7 +145,7 @@ export const Loadboard: React.FC = () => {
             </div>
           </div>
           <div className={styles.data__two}>
-            <p>Chreistiano (9130) Ronaldo</p>
+            <p>{currentOrder?.load_posted_by}</p>
           </div>
         </div>
 

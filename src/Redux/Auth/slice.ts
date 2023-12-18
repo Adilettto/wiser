@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { IUser } from "Shared/Types";
 import { restoreSession, signIn, signUp } from "./reducer";
 import { RootState } from "Redux/store";
-import { readObj, write } from "Service/storage";
+import { clearAll, readObj, write } from "Service/storage";
 import { ISignIn, ISignInResponse } from "Shared/Types/auth";
 
 interface ICompanyRequestsState {
@@ -21,7 +21,18 @@ const initialState: ICompanyRequestsState = {
 const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {},
+  reducers: {
+    logout(state) {
+      state.account = null;
+      clearAll();
+    },
+    setToken: (state, action) => {
+      if (state.account) {
+        state.account = { ...state.account, ...action.payload };
+        write("access", action.payload.access);
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(restoreSession.fulfilled, (state, action) => {
       state.loading = false;
@@ -41,6 +52,7 @@ const authSlice = createSlice({
       state.loading = false;
       state.error = null;
       console.log(action.payload);
+      write("account", action.payload);
       write("access", action.payload.access);
       write("refresh", action.payload.refresh);
       state.account = action.payload;
@@ -56,6 +68,8 @@ const authSlice = createSlice({
     });
   },
 });
+
+export const { logout, setToken } = authSlice.actions;
 
 export const selectAccount = (state: RootState) => state.auth.account;
 export const selectAuthLoading = (state: RootState) => state.auth.loading;

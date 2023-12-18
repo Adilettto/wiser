@@ -7,6 +7,9 @@ class Order {
   getOrderList() {
     return client.get<IOrder[]>(ORDER_URL);
   }
+  getOrder(id: number) {
+    return client.get<IOrder>(`${ORDER_URL}${id}`);
+  }
 }
 
 export default Order;
