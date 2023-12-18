@@ -16,7 +16,7 @@ export const routeMap = new Map<string, RouteData>()
     permissions: [],
   })
   .set("/capacity", {
-    page: pages.HomePage,
+    page: pages.Capacity,
     permissions: [],
   })
   .set("/forgot-password", {

@@ -30,7 +30,6 @@ export const Loadboard: React.FC = () => {
   const currentOrder = useSelector(selectCurrentOrder);
 
   useEffect(() => {
-    console.log("params.id:", params.id);
     if (params.id) {
       const orderId = parseInt(params.id, 10);
       dispatch(getOrders(orderId));

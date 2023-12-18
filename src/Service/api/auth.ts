@@ -1,10 +1,13 @@
 import { client } from "Service/axios";
-import { baseURL } from "Service/config";
 import {
   ISignIn,
   ISignInResponse,
   ISignUpResponse,
   ISignUp,
+  signForgotResponse,
+  ISignForgot,
+  ISignNewPassword,
+  ISignNewPasswordResponse,
 } from "Shared/Types/auth";
 
 const USER_URL = "token/";
@@ -15,6 +18,15 @@ class Auth {
   }
   signup(data: ISignUp) {
     return client.post<ISignUpResponse>(`users/`, data);
+  }
+  forgotPassword(data: ISignForgot) {
+    return client.post<signForgotResponse>(`users/reset-password/`, data);
+  }
+  newPassword(data: ISignNewPassword) {
+    return client.post<ISignNewPasswordResponse>(
+      `users/reset-password/confirm/`,
+      data
+    );
   }
 
   refresh() {

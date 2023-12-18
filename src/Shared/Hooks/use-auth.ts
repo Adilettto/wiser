@@ -14,7 +14,6 @@ export const usePermissions = () => {
 
 export const useAuthRedirect = ({ pathname }: Location) => {
   const profile = useSelector(selectAccount) || readObj("account");
-  console.log(profile);
   const permissions = usePermissions();
 
   if (profile == null) {
@@ -22,22 +21,14 @@ export const useAuthRedirect = ({ pathname }: Location) => {
       pathname === "/sign-in" ||
       pathname === "/not-found" ||
       pathname === "/forbidden" ||
-      pathname === "/sign-up"
+      pathname === "/sign-up" ||
+      pathname === "/forgot-password" ||
+      pathname === "/new-password"
     )
       return;
 
     return "/sign-in";
   }
-
-  // const isLoggedIn = localStorage.getItem("isLoggedIn");
-
-  // localStorage.setItem("isLoggedIn", "true");
-
-  // if (isLoggedIn === "true") {
-  // } else {
-  //   window.location.href = "/sign-in";
-  // }
-  // localStorage.removeItem("isLoggedIn");
 
   const notFound = !hasMatch(permissions, pathname);
 

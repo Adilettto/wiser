@@ -1,19 +1,44 @@
 import styles from "./Miles.module.scss";
+import { DownOutlined } from "@ant-design/icons";
+import type { MenuProps } from "antd";
+import { Dropdown, Space, Menu } from "antd";
 
 export const Miles = () => {
+  const items: MenuProps["items"] = [
+    {
+      label: <label>1st option</label>,
+      key: "0",
+    },
+    {
+      label: <label>2nd option</label>,
+      key: "0",
+    },
+    {
+      label: <label>3rd option</label>,
+      key: "0",
+    },
+  ];
+
   return (
     <ul className={styles.miles__ul}>
       <div className={styles.miles__ul__li__miles}>
-        <li className={styles.miles__title}>MILES OUT</li>
-        <div className={styles.miles__ul__mi}>
-          <li className={styles.miles__ul__dis}>227 mi</li>
+        <li className={styles.miles__title}>DRIVER</li>
+        <div className={styles.miles__ul__dropdown}>
+          <Dropdown overlay={<Menu items={items} />} trigger={["click"]}>
+            <a onClick={(e) => e.preventDefault()}>
+              <Space>
+                <span className={styles.miles__ul__cr}>CRISTIANO RONALDO </span>
+                <p className={styles.miles__ul__p}> WOO5</p>
+                <DownOutlined />
+              </Space>
+            </a>
+          </Dropdown>
         </div>
       </div>
       <div className={styles.miles__ul__li}>
-        <li className={styles.miles__title}>DRIVER</li>
+        <li className={styles.miles__title}>MILES OUT</li>
         <div className={styles.miles__ul__mi}>
-          <li className={styles.miles__ul__cr}>CRISTIANO RONALDO </li>
-          <p className={styles.miles__ul__p}> WOO5</p>
+          <li className={styles.miles__ul__dis}>227 mi</li>
         </div>
       </div>
       <div className={styles.miles__ul__li}>

@@ -20,7 +20,6 @@ const Loadfiltering: React.FC = () => {
   const orderlist = useSelector(selectOrderList);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  console.log(orderlist);
 
   useEffect(() => {
     dispatch(getOrderList());

@@ -29,9 +29,9 @@ export const ForgotPasswordContainer = () => {
         </p>
         <AuthInput
           label="Password"
-          {...register("password")}
+          {...register("email")}
           placeholder="Enter your email"
-          error={formState.errors?.password}
+          error={formState.errors?.email}
         />
         <p className={styles.forgotPass__block__request}>
           Didn’t receive the link?{" "}
