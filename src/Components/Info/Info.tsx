@@ -51,7 +51,7 @@ export const Info = () => {
 
   const sumBroker =
     calculateEmptyMi && calculateLoadedMi
-      ? calculateEmptyMi + calculateLoadedMi
+      ? (calculateEmptyMi + calculateLoadedMi) / 2
       : undefined;
 
   const revenueDistance =
