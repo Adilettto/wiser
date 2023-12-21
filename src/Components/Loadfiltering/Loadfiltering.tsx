@@ -1,7 +1,7 @@
 import { AddLoad } from "Components/AddLoad/AddLoad";
 import Button from "Components/UI/Button/Button";
 import Paginations from "Components/UI/Pagination/Pagination";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Brokerages from "./Brokerage/Brokerage";
 import Deliver from "./Deliver/Deliver";
@@ -10,13 +10,23 @@ import Match from "./Match/Match";
 import Miles from "./Miles/Miles";
 import PickUp from "./PickUp/PickUp";
 import Vehicle from "./Vehicle/Vehicle";
+import { useSelector } from "react-redux";
+import { selectOrderList } from "Redux/Order/slice";
+import { getOrderList } from "Redux/Order/reducer";
+import { useAppDispatch } from "Redux/store";
 
 const Loadfiltering: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const orderlist = useSelector(selectOrderList);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
-  const goToDetailPage = () => {
-    navigate("/load/1");
+  useEffect(() => {
+    dispatch(getOrderList());
+  }, []);
+
+  const goToDetailPage = (id: number) => {
+    navigate("/load/" + id);
   };
   return (
     <div className={styles.loadfilter}>
@@ -63,7 +73,7 @@ const Loadfiltering: React.FC = () => {
               <th>
                 <Match />
               </th>
-              <th>Pating</th>
+              <th>Rating</th>
               <th>
                 <Brokerages />
               </th>
@@ -72,45 +82,19 @@ const Loadfiltering: React.FC = () => {
           </thead>
 
           <tbody>
-            <tr onClick={goToDetailPage}>
-              <td>05:14 am</td>
-              <td>
-                miami, <br /> FL 33166
-              </td>
-              <td>
-                Orlando, <br /> FL 32827
-              </td>
-              <td>
-                CARGO <br /> VAN
-              </td>
-              <td>240</td>
-              <td>0/0</td>
-              <td>cdienoed</td>
-              <td>
-                (S) PINNACLE <br /> PRO LOGISTIC...
-              </td>
-              <td>cdienoed</td>
-            </tr>
-
-            <tr onClick={goToDetailPage}>
-              <td>05:14 am</td>
-              <td>
-                miami, <br /> FL 33166
-              </td>
-              <td>
-                Orlando, <br /> FL 32827
-              </td>
-              <td>
-                CARGO <br /> VAN
-              </td>
-              <td>240</td>
-              <td>0/0</td>
-              <td>cdienoed</td>
-              <td>
-                (S) PINNACLE <br /> PRO LOGISTIC...
-              </td>
-              <td>cdienoed</td>
-            </tr>
+            {orderlist?.map((order) => (
+              <tr onClick={() => goToDetailPage(order.id)} key={order.id}>
+                <td>{order.created_time}</td>
+                <td>{order.pick_up_at}</td>
+                <td>{order.deliver_to}</td>
+                <td>{order.suggested_truck_size}</td>
+                <td>{order.miles}</td>
+                <td>0/0</td>
+                <td>cdienoed</td>
+                <td>{order.load_posted_by}</td>
+                <td>cdienoed</td>
+              </tr>
+            ))}
           </tbody>
         </table>
         <div className={styles.loadfilter__contant__blockpagination}>

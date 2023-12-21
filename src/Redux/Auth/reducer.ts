@@ -9,7 +9,7 @@ import {
 } from "Shared/Types/auth";
 
 const restoreSession = createAsyncThunk(`auth/restoreSession`, async () => {
-  const profile = readObj("profile");
+  const profile = readObj("account");
   return { profile };
 });
 

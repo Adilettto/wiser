@@ -8,7 +8,7 @@ import { readObj } from "Service/storage";
 import { useAppDispatch } from "Redux/store";
 import { restoreSession } from "Redux/Auth/reducer";
 import { ToastBlock } from "Components/Notify/notify";
-import { selectAccount } from "Redux/Auth/slice";
+import { logout, selectAccount } from "Redux/Auth/slice";
 
 function App() {
   const location = useLocation();
@@ -24,6 +24,8 @@ function App() {
     const acc = readObj("account");
     if (acc) {
       dispatch(restoreSession());
+    } else {
+      dispatch(logout());
     }
   }
 

@@ -1,24 +1,40 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { GroupIcon } from "Assets/index";
-import { ArrowIcon } from "Assets/index";
-import { Info } from "Components/Info/Info";
-import { Miles } from "Components/Miles/Miles";
-import { InfoBlock } from "Components/InfoBlock/InfoBlock";
-import { StarIcon } from "Assets/index";
-import { Frame } from "Assets/index";
-import { MapIcon } from "Assets/index";
-import { DestinationIcon } from "Assets/index";
-import { InfoIcon } from "Assets/index";
-import { EmailIcon } from "Assets/index";
-import { PhoneIcon } from "Assets/index";
-import { HorizIcon } from "Assets/index";
-import { PrintIcon } from "Assets/index";
 import Icon from "@ant-design/icons";
+import {
+  ArrowIcon,
+  DestinationIcon,
+  EmailIcon,
+  Frame,
+  GroupIcon,
+  HorizIcon,
+  InfoIcon,
+  MapIcon,
+  PhoneIcon,
+  PrintIcon,
+  StarIcon,
+} from "Assets/index";
+import { Info } from "Components/Info/Info";
+import { InfoBlock } from "Components/InfoBlock/InfoBlock";
+import { Miles } from "Components/Miles/Miles";
+import { getOrders } from "Redux/Order/reducer";
+import { selectCurrentOrder } from "Redux/Order/slice";
+import { useAppDispatch } from "Redux/store";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./Loadboard.module.scss";
 
-export const Loadboard = () => {
+export const Loadboard: React.FC = () => {
   const navigate = useNavigate();
+  const params = useParams();
+  const dispatch = useAppDispatch();
+  const currentOrder = useSelector(selectCurrentOrder);
+
+  useEffect(() => {
+    if (params.id) {
+      const orderId = parseInt(params.id, 10);
+      dispatch(getOrders(orderId));
+    }
+  }, [params.id]);
 
   function goBack() {
     navigate(-1);
@@ -38,11 +54,12 @@ export const Loadboard = () => {
             </button>
             <h1>Loadboard</h1>
           </div>
+
           <div className={styles.loadboard__form}>
-            <h2>Order #16441744</h2>
+            <h2>Order {currentOrder?.id}</h2>
             <div className={styles.loadboard__h}>
-              <h3>RN# 178249</h3>
-              <h4>Expires 08.09.2023, 05-28</h4>
+              <h3>RN#{currentOrder?.order_number}</h3>
+              <h4>Expires {currentOrder?.this_posting_expires_est}</h4>
             </div>
             <div className={styles.place}>
               <div className={styles.place__image}>
@@ -59,7 +76,7 @@ export const Loadboard = () => {
                 <ul className={styles.place__list}>
                   <li className={styles.place__li}>Pick up</li>
                   <div className={styles.place__delivery}>
-                    <li>Miami, FL 33166</li>
+                    <li>{currentOrder?.pick_up_at}</li>
                     <Icon
                       className={styles.place__delivery__frame}
                       component={MapIcon}
@@ -67,17 +84,22 @@ export const Loadboard = () => {
                       style={{ fontSize: "25px" }}
                     />
                   </div>
-                  <li className={styles.place__li}>09/08/2023 06:00 am</li>
+                  <li className={styles.place__li}>
+                    {currentOrder?.deliver_date_EST}
+                  </li>
                   <li className={styles.place__li}>Delivery</li>
                   <div className={styles.place__delivery}>
-                    <li>Miami, FL 33166</li>
+                    <li>{currentOrder?.deliver_to}</li>
                     <Icon
                       component={DestinationIcon}
                       alt="frame"
                       style={{ fontSize: "25px", marginTop: "-4px" }}
                     />
                   </div>
-                  <li className={styles.place__li}>09/08/2023 06:00 am</li>
+                  <li className={styles.place__li}>
+                    {" "}
+                    {currentOrder?.deliver_date_EST}
+                  </li>
                 </ul>
               </div>
             </div>
@@ -91,16 +113,13 @@ export const Loadboard = () => {
                 />
               </div>
               <InfoBlock
-                leaded="240 mi"
-                pieces="1"
-                dims="15x15x15"
-                weight="10"
-                truckSize="CARGO VAN"
+                leaded={currentOrder?.miles}
+                pieces={currentOrder?.pieces}
+                dims={currentOrder?.dims || ""}
+                weight={currentOrder?.weight}
+                truckSize={currentOrder?.suggested_truck_size}
               />
-              <p>
-                LG/PJ/offloading/residential delievery/place the skid to the
-                ground
-              </p>
+              <p>{currentOrder?.notes}</p>
             </div>
           </div>
         </div>
@@ -125,7 +144,7 @@ export const Loadboard = () => {
             </div>
           </div>
           <div className={styles.data__two}>
-            <p>Chreistiano (9130) Ronaldo</p>
+            <p>{currentOrder?.load_posted_by}</p>
           </div>
         </div>
 
