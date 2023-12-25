@@ -11,10 +11,7 @@ export const routeMap = new Map<string, RouteData>()
     page: pages.HomePage,
     permissions: [],
   })
-  .set("/dashboard", {
-    page: pages.HomePage,
-    permissions: [],
-  })
+  
   .set("/capacity", {
     page: pages.Capacity,
     permissions: [],
