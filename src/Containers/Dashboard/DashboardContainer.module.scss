@@ -1,0 +1,121 @@
+.dashboard {
+    margin: 20px;
+
+    & h2, h1 {
+        font-weight: 500;
+    }
+  & .section1 {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    margin-left: 0;
+    border-radius: 10px;
+    height: 101px;
+
+    & div {
+      display: flex;
+      flex-direction: column;
+
+      & label {
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      & input,
+      select {
+        padding: 5px 16px;
+        border-radius: 10px;
+        border: 1px solid #cacaca;
+        background: #fff;
+        height: 40px;
+        margin-top: 5px;
+      }
+    }
+
+    & .dateFrom,
+    .dateTo {
+      width: 15%;
+    }
+
+    & .team,
+    .groups {
+      width: 20%;
+    }
+
+    & button {
+      width: 20%;
+      height: 38px;
+      border-radius: 10px;
+      background: #005dac;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  }
+
+  & .section2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    margin-left: 0;
+
+    & .box {
+        padding: 20px;
+      width: 23.5%;
+      border-radius: 10px;
+      background: #fffffd;
+      height: 233px;
+
+      & .row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  & .section3 {
+    
+    & table {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        
+
+        & thead {
+
+            & tr {
+                background: #005DAC;
+                opacity: 0.5;
+                width: 100%;
+                color: #fff;
+                
+
+                & th {
+                    text-align: left;
+                    padding: 14px;
+                    border: none;
+                    margin: 0;
+                    
+                }
+            }
+        }
+
+        & tbody {
+            & tr {
+                background: #fff;
+
+                & td {
+                    padding: 10px;
+                }
+            }
+        }
+    }
+  }
+}

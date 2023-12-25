@@ -12,3 +12,5 @@ export { Bids } from "./Bids/Bids";
 export { Loads } from "./Loads/Loads";
 export { BidDetailPage } from "./Bids/BidDetail";
 export { Capacity } from "./Capacity/CapacitySearch";
+export { Dashboard } from "./Dashboard/Dashboard";
+ 

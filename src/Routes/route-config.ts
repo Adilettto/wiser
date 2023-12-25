@@ -60,6 +60,10 @@ export const routeMap = new Map<string, RouteData>()
     page: pages.HomePage,
     permissions: [],
   })
+  .set("/dashboard", {
+    page: pages.Dashboard,
+    permissions: [],
+  })
   .set("/addload", {
     page: pages.HomePage,
     permissions: [],
