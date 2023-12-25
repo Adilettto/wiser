@@ -3,9 +3,9 @@ import BidsList from "Components/MyBids/BidsList/BidsList";
 import { Button, Tabs } from "antd";
 import cn from "classnames";
 import { useState } from "react";
-
 import Paginations from "Components/UI/Pagination/Pagination";
 import styles from "./MyBids.module.scss";
+import HistoryBids from "Components/MyBids/HistoryBids/HistoryBids";
 const { TabPane } = Tabs;
 
 export const MyBids = () => {
@@ -67,7 +67,7 @@ export const MyBids = () => {
             }
             key="2"
           >
-            <BidsList />
+            <HistoryBids/>
             <Paginations link="mybids" />
           </TabPane>
         </Tabs>
